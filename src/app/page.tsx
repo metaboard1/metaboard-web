@@ -8,7 +8,7 @@ const Home = async () => {
     let latestArticles: any = [];
 
     try {
-        const { data: { rows } } = await $crud.retrieve('retrieve/web/articles?limit=4');
+        const { data: { rows } } = await $crud.get('retrieve/web/articles?limit=4');
         latestArticles = rows;
     } catch (error) {
         console.error('Error fetching articles:', error);
