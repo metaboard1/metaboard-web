@@ -15,7 +15,7 @@ const Articles = async () => {
     ];
 
     try {
-        const { data: { rows, featuredArticle:fArticle } } = await $crud.retrieve('articles');
+        const { data: { rows, featuredArticle:fArticle } } = await $crud.get('retrieve/web/articles');
         featuredArticle = fArticle
         articles = rows;
     } catch (e) {

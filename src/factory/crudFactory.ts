@@ -2,6 +2,7 @@
 
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import { BASE_URL } from "@/constants";
+import { SSR_BASE_URL } from "@/constants/basePath";
 // import { snackbar } from "@/helpers";
 // import { BaseVariant } from "notistack";
 // import { loader } from "react-global-loader";
@@ -33,6 +34,7 @@ export class CrudFactory {
     dateFormat: string = "MMMM Do YYYY hh:mm A";
     SERVER_API_VERSION: string = '';
     BASE_URL: string = `${BASE_URL}/api`;
+    SSR_BASE_URL: string = `${SSR_BASE_URL}/api`;
 
     getUrl = async (...segments: string[]): Promise<string> => {
         return segments.reduce((url, segment) => url + segment);
@@ -45,7 +47,8 @@ export class CrudFactory {
     ): Promise<ApiResponse<T>> {
         return this.send({
             method: "GET",
-            url: `${this.BASE_URL}/${url}`,
+            // url: `${this.BASE_URL}/${url}`,
+            url: `${this.SSR_BASE_URL}/${url}`,
             data,
             ...requestOptions,
         });

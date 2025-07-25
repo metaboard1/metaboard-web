@@ -16,7 +16,7 @@ const ArticleDetail = async ({ searchParams }: PageProps) => {
        const resolvedSearchParams = await searchParams;
         const id = resolvedSearchParams?.id;
         if (id) {
-            const { data } = await $crud.retrieve(`article-by-id?id=${id}`);
+            const { data } = await $crud.retrieve(`retrieve/web/article-by-id?id=${id}`);
             article = data;
         }
     } catch (error) {
