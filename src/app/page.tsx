@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 
 import { $crud } from '@/factory/crudFactory';
 import { Footer, Header } from '@components/global';
