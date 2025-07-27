@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import React from 'react';
 import { ArticleCardsSection, Header, LatestHeadlinesSection, NewsLatterSection } from '@/components/local/articles';
 import { $crud } from '@/factory/crudFactory';
