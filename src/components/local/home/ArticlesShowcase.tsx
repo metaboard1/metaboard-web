@@ -10,6 +10,7 @@ type props = {
 }
 const ArticlesShowcase = ({ articles }: props) => {
 
+    console.log(articles)
 
     return (
         <section id="articles" className="py-20 bg-white">
