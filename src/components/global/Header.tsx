@@ -39,7 +39,7 @@ const Header: FC = () => {
                         <Link href="/">
                             <img
                                 src="/assets/images/logo.png"
-                                alt="Metaboard Logo"
+                                alt="MetaBoard Logo"
                                 className="h-10 w-auto"
                             />
                         </Link>
@@ -52,13 +52,13 @@ const Header: FC = () => {
                                 href={item.href}
                                 className={`transition-colors duration-300 font-medium ${pathname === item.href
                                     ? 'text-red-500'
-                                    : 'text-white hover:text-red-500'
+                                    : 'text-gray-400 hover:text-red-500'
                                     }`}
                             >
                                 {item.name}
                             </Link>
                         ))}
-                        <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 ripple-effect">
+                        <button className="bg-primary hover:bg-red-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 ripple-effect">
                             Get Started
                         </button>
                     </div>
@@ -89,7 +89,7 @@ const Header: FC = () => {
                                     {item.name}
                                 </Link>
                             ))}
-                            <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 mt-4">
+                            <button className="bg-primary hover:bg-red-700 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 mt-4">
                                 Get Started
                             </button>
                         </div>

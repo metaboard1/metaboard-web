@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { ArrowRight, BookOpen } from 'lucide-react';
+import Link from "next/link";
 
 
 const HeroSection: FC = () => {
@@ -15,7 +16,7 @@ const HeroSection: FC = () => {
             <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
                 <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
                     Welcome to{' '}
-                    <span className="text-gradient">Metaboard</span>
+                    <span className="text-gradient">MetaBoard</span>
                 </h1>
 
                 <p className="text-xl md:text-2xl text-gray-200 mb-8 font-light leading-relaxed">
@@ -25,15 +26,23 @@ const HeroSection: FC = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <button className="group bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 ripple-effect flex items-center gap-2">
-                        <BookOpen size={20} />
-                        Explore Articles
-                        <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                    </button>
 
-                    <button className="glass-hover text-white px-8 py-4 rounded-full font-semibold text-lg border border-white/20 flex items-center gap-2">
+                    <Link
+                        href='/services'
+                        className="group bg-primary hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 ripple-effect flex items-center gap-2"
+                    >
+                        <BookOpen size={20} />
+                        Explore Services
+                        <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                    </Link>
+
+                    <Link
+                        href='#services'
+                        className="glass-hover text-white px-8 py-4 rounded-full font-semibold text-lg border border-white/20 flex items-center gap-2"
+                    >
                         Learn More
-                    </button>
+                    </Link>
+
                 </div>
             </div>
 

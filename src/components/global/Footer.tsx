@@ -37,19 +37,19 @@ const Footer = () => {
                         <div className="flex gap-4">
                             <a
                                 href="#"
-                                className="w-10 h-10 bg-gray-800 hover:bg-red-600 rounded-full flex items-center justify-center transition-colors duration-300"
+                                className="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300"
                             >
                                 <Linkedin size={18} />
                             </a>
                             <a
                                 href="#"
-                                className="w-10 h-10 bg-gray-800 hover:bg-red-600 rounded-full flex items-center justify-center transition-colors duration-300"
+                                className="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300"
                             >
                                 <Twitter size={18} />
                             </a>
                             <a
                                 href="#"
-                                className="w-10 h-10 bg-gray-800 hover:bg-red-600 rounded-full flex items-center justify-center transition-colors duration-300"
+                                className="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300"
                             >
                                 <Github size={18} />
                             </a>
@@ -106,20 +106,23 @@ const Footer = () => {
                                 <span>San Francisco, CA</span>
                             </div>
                         </div>
-
+{/* 
                         <div>
                             <p className="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates.</p>
-                            <div className="flex gap-2">
+                            <div className="w-full flex flex-col sm:flex-row gap-2 sm:gap-4">
                                 <input
                                     type="email"
                                     placeholder="Enter your email"
-                                    className="flex-1 glass bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors"
+                                    className="flex-1 glass bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors w-full"
                                 />
-                                <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors duration-300 flex items-center">
+                                <button
+                                    className="bg-primary hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors duration-300 flex items-center justify-center sm:w-auto w-full"
+                                >
                                     <ArrowRight size={16} />
                                 </button>
                             </div>
-                        </div>
+
+                        </div> */}
                     </div>
                 </div>
             </div>

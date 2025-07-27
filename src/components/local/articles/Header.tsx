@@ -28,7 +28,7 @@ const Header: FC = () => {
                 </div>
             </nav>
 
-            <div className="bg-red-600 text-white py-2 overflow-hidden">
+            <div className="bg-primary text-white py-2 overflow-hidden">
                 <div className="container mx-auto px-6">
                     <div className="flex items-center space-x-8">
                         <span className="font-bold text-sm uppercase tracking-wider">Breaking:</span>

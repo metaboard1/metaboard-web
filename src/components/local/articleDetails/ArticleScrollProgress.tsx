@@ -21,7 +21,7 @@ const ArticleScrollProgress: FC = () => {
     return (<>
         <div className="fixed top-0 left-0 right-0 z-50">
             <div
-                className="h-1 bg-red-600 transition-all duration-150"
+                className="h-1 bg-primary transition-all duration-150"
                 style={{ width: `${scrollProgress}%` }}
             />
         </div>

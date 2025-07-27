@@ -29,7 +29,7 @@ const DiscussionSection: FC = () => {
                             className="w-full glass bg-white/50 border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors resize-none"
                         />
                         <div className="mt-4 flex justify-end">
-                            <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 ripple-effect">
+                            <button className="bg-primary hover:bg-red-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 ripple-effect">
                                 Post Comment
                             </button>
                         </div>
@@ -40,7 +40,7 @@ const DiscussionSection: FC = () => {
                         {/* {[].map((comment, index) => (
                             <div key={comment.id} className={`glass rounded-2xl p-6 ${index % 2 === 0 ? 'bg-gray-50/50' : 'bg-white/50'}`}>
                                 <div className="flex items-start space-x-4">
-                                    <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
+                                    <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
                                         <span className="text-sm font-bold text-white">
                                             {comment.author.split(' ').map(n => n[0]).join('')}
                                         </span>

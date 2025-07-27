@@ -55,7 +55,7 @@ const AdvisoryBoardSection = () => {
                         >
                             <div className="glass-hover rounded-2xl overflow-hidden bg-white p-8 text-center relative h-full">
 
-                                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-500 transition-colors duration-300">
+                                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-500 transition-colors duration-300">
                                     <advisor.icon size={28} className="text-white" />
                                 </div>
 

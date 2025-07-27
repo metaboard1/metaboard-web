@@ -18,7 +18,7 @@ const NewsLatterSection: FC = () => {
                         placeholder="Enter your email"
                         className="flex-1 px-4 py-3 rounded-l-full glass text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500"
                     />
-                    <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-r-full font-medium transition-all duration-300">
+                    <button className="bg-primary hover:bg-red-700 text-white px-6 py-3 rounded-r-full font-medium transition-all duration-300">
                         Subscribe
                     </button>
                 </div>

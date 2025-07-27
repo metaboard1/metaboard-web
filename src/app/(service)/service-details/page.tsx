@@ -326,7 +326,7 @@ const ServiceDetail = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                         {section.features.map((feature, index) => (
                           <div key={index} className="flex items-center gap-2">
-                            <div className="w-2 h-2 bg-red-600 rounded-full"></div>
+                            <div className="w-2 h-2 bg-primary rounded-full"></div>
                             <span className="text-sm font-medium text-gray-600">{feature}</span>
                           </div>
                         ))}
@@ -334,7 +334,7 @@ const ServiceDetail = () => {
                       
                       <button 
                         onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 ripple-effect"
+                        className="bg-primary hover:bg-red-700 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 ripple-effect"
                       >
                         Enquire Now
                       </button>
@@ -418,7 +418,7 @@ const ServiceDetail = () => {
                 
                 <button
                   type="submit"
-                  className="w-full bg-red-600 hover:bg-red-700 text-white py-4 rounded-lg font-semibold transition-all duration-300 ripple-effect text-lg"
+                  className="w-full bg-primary hover:bg-red-700 text-white py-4 rounded-lg font-semibold transition-all duration-300 ripple-effect text-lg"
                 >
                   Send Enquiry
                 </button>

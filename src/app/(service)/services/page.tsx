@@ -191,7 +191,7 @@ const Services = () => {
                             >
                                 {/* Status Ribbon */}
                                 <div className={`absolute top-4 left-4 z-10 px-3 py-1 rounded-full text-xs font-semibold ${service.status === 'Provided'
-                                        ? 'bg-red-600 text-white'
+                                        ? 'bg-primary text-white'
                                         : 'border border-red-600 text-red-600 bg-white/90 backdrop-blur-sm'
                                     }`}>
                                     {service.status}
@@ -204,7 +204,7 @@ const Services = () => {
                                 >
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center gap-4">
-                                            <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+                                            <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
                                                 <service.icon size={24} className="text-white" />
                                             </div>
                                             <div>
@@ -242,7 +242,7 @@ const Services = () => {
                                             <div className="grid grid-cols-2 gap-4 mb-6">
                                                 {service.features.map((feature, index) => (
                                                     <div key={index} className="flex items-center gap-2">
-                                                        <div className="w-2 h-2 bg-red-600 rounded-full"></div>
+                                                        <div className="w-2 h-2 bg-primary rounded-full"></div>
                                                         <span className="text-sm font-medium text-gray-600">{feature}</span>
                                                     </div>
                                                 ))}
@@ -251,7 +251,7 @@ const Services = () => {
                                             <div className="flex gap-4">
                                                 <Link
                                                     href='service-details'
-                                                    className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 ripple-effect inline-block text-center"
+                                                    className="bg-primary hover:bg-red-700 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 ripple-effect inline-block text-center"
                                                 >
                                                     Learn More
                                                 </Link>
@@ -260,7 +260,7 @@ const Services = () => {
                                                         e.stopPropagation();
                                                         document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
                                                     }}
-                                                    className="border border-red-600 text-red-600 hover:bg-red-600 hover:text-white px-6 py-2 rounded-full font-semibold transition-all duration-300"
+                                                    className="border border-red-600 text-red-600 hover:bg-primary hover:text-white px-6 py-2 rounded-full font-semibold transition-all duration-300"
                                                 >
                                                     Enquire Now
                                                 </button>
@@ -303,7 +303,7 @@ const Services = () => {
                             ></textarea>
                             <button
                                 type="submit"
-                                className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 ripple-effect"
+                                className="w-full bg-primary hover:bg-red-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 ripple-effect"
                             >
                                 Send Enquiry
                             </button>

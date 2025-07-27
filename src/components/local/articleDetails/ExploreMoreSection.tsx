@@ -5,7 +5,7 @@ import Link from "next/link"
 
 const ExploreMoreSection: FC = () => {
     return (<>
-        <section className="bg-red-600 py-12">
+        <section className="bg-primary py-12">
             <div className="container mx-auto px-6 text-center">
                 <h3 className="text-3xl font-bold text-white mb-4">
                     Explore More Articles
