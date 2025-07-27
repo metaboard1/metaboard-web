@@ -24,6 +24,9 @@ const Articles = async () => {
         console.error(e)
     }
 
+     const now = new Date().toLocaleString();
+  console.log("Page rendered at:", now);
+
     return (
         <div className="min-h-screen bg-background">
             {/* Sticky Navigation */}
