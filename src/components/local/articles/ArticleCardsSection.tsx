@@ -30,7 +30,8 @@ const ArticleCardsSection: FC<props> = ({ preloadedArticles }) => {
         }
     }
     return (<>
-        <div className="md:col-span-2">
+        {/* <div className="md:col-span-2"> */}
+        <div >
             <InfiniteScroll
                 dataLength={articles.length}
                 next={retrieveArticles}

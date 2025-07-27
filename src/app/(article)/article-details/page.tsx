@@ -1,5 +1,5 @@
-import { ArticleHeroSection, ScrollToTopBtn } from '@/components/global';
-import { ArticleContentSection, ExploreMoreSection, Header, ArticleScrollProgress } from '@/components/local/articleDetails';
+import { ArticleHeroSection, Header, ScrollToTopBtn } from '@/components/global';
+import { ArticleContentSection, ExploreMoreSection, ArticleScrollProgress } from '@/components/local/articleDetails';
 import { $crud } from '@/factory/crudFactory';
 
 type PageProps = {
@@ -50,7 +50,7 @@ const ArticleDetail = async ({ searchParams }: PageProps) => {
             <ArticleScrollProgress />
 
             {/* Header */}
-            <Header />
+            <Header styles='relative'/>
 
             {/* Article Hero */}
             <ArticleHeroSection

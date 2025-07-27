@@ -16,7 +16,9 @@ const Home = async () => {
     }
     return (
         <div className="smooth-scroll">
-            <Header />
+            <Header
+                showNavLinks
+            />
             <HeroSection />
             <ArticlesShowcase
                 articles={latestArticles}

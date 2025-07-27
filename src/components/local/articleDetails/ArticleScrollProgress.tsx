@@ -17,11 +17,11 @@ const ArticleScrollProgress: FC = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-    
+
     return (<>
-        <div className="fixed top-0 left-0 right-0 z-50">
+        <div className="fixed top-0 left-0 right-0 z-[999]">
             <div
-                className="h-1 bg-primary transition-all duration-150"
+                className="h-1 bg-primary border border-primary/50 rounded-r-full transition-all duration-150"
                 style={{ width: `${scrollProgress}%` }}
             />
         </div>

@@ -1,9 +1,9 @@
 export const dynamic = 'force-dynamic';
 
 import React from 'react';
-import { ArticleCardsSection, Header, LatestHeadlinesSection, NewsLatterSection } from '@/components/local/articles';
+import { ArticleCardsSection, LatestHeadlinesSection, NewsLatterSection } from '@/components/local/articles';
 import { $crud } from '@/factory/crudFactory';
-import { ArticleHeroSection as FeaturedArticle, ScrollToTopBtn } from '@/components/global';
+import { ArticleHeroSection as FeaturedArticle, Header, ScrollToTopBtn, SearchBar } from '@/components/global';
 
 const Articles = async () => {
 
@@ -14,10 +14,12 @@ const Articles = async () => {
         { title: "Supreme Court to Hear Landmark AI Copyright Case", time: "2 hours ago" },
         { title: "New Federal Guidelines for Cryptocurrency Regulation", time: "4 hours ago" },
         { title: "Legal Tech Startup Raises $50M Series B", time: "6 hours ago" },
+        { title: "Legal Tech Startup Raises $50M Series B", time: "6 hours ago" },
+        { title: "Legal Tech Startup Raises $50M Series B", time: "6 hours ago" },
     ];
 
     try {
-        const { data: { rows, featuredArticle:fArticle } } = await $crud.get('retrieve/web/articles');
+        const { data: { rows, featuredArticle: fArticle } } = await $crud.get('retrieve/web/articles');
         featuredArticle = fArticle
         articles = rows;
     } catch (e) {
@@ -27,8 +29,8 @@ const Articles = async () => {
     return (
         <div className="min-h-screen bg-background">
             {/* Sticky Navigation */}
-            <Header />
-           
+            <Header styles='sticky' />
+
             <FeaturedArticle
                 data={featuredArticle}
                 showReadBtn
@@ -38,9 +40,14 @@ const Articles = async () => {
                 <div className="container mx-auto px-6">
                     <div className="grid md:grid-cols-3 gap-8">
                         {/* Main Articles Column */}
-                        <ArticleCardsSection
-                            preloadedArticles={articles}
-                        />
+                        <div className='md:col-span-2'>
+                            {/* <SearchBar/> */}
+
+
+                            <ArticleCardsSection
+                                preloadedArticles={articles}
+                            />
+                        </div>
 
                         {/* Latest Headlines Sidebar */}
                         <LatestHeadlinesSection
@@ -51,7 +58,7 @@ const Articles = async () => {
             </section>
 
             {/* Newsletter Section */}
-            <NewsLatterSection />
+            {/* <NewsLatterSection /> */}
 
             {/* Back to Top Button */}
             <ScrollToTopBtn />

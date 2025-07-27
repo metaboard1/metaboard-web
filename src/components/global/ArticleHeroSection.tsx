@@ -1,7 +1,9 @@
+'use client';
+
 import { type FC } from "react"
 import { BASE_ASSETS_URL } from "@/constants"
 import dayjs from "dayjs"
-import { Clock, Facebook, Linkedin, Twitter } from "lucide-react"
+import { Clock, Facebook, Linkedin, Share, Share2, Twitter } from "lucide-react"
 import Link from "next/link"
 
 type props = {
@@ -10,8 +12,20 @@ type props = {
 }
 
 const ArticleHeroSection: FC<props> = ({ data, showReadBtn }) => {
+
+    const onShare = () => {
+        const shareData = {
+            title: data.title,
+            text: data.description,
+            url: window.location.href,
+        };
+        if (navigator.canShare(shareData)) {
+            navigator.share(shareData);
+        }
+    }
+
     return (<>
-        <section className="relative h-[60vh] overflow-hidden">
+        <section className="relative overflow-hidden py-10 sm:py-20">
             <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: `url(${BASE_ASSETS_URL}/article-cover-images/${data?.coverImage})` }}
@@ -19,7 +33,7 @@ const ArticleHeroSection: FC<props> = ({ data, showReadBtn }) => {
                 <div className="absolute inset-0 glass bg-black/50"></div>
             </div>
 
-            <div className="relative container mx-auto px-6 h-full flex items-center pb-12">
+            <div className="relative container mx-auto px-6 h-full flex items-center">
                 <div className="max-w-4xl">
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
                         {data?.title}
@@ -79,6 +93,16 @@ const ArticleHeroSection: FC<props> = ({ data, showReadBtn }) => {
                                         <Linkedin size={18} />
                                     </div>
                                 </Link>
+
+                            }
+                            {
+                                <button
+                                    onClick={onShare}
+                                >
+                                    <div className="glass hover:glass-hover p-2 rounded-full text-white hover:text-red-500 transition-colors">
+                                        <Share2 size={18} />
+                                    </div>
+                                </button>
 
                             }
                         </div>
