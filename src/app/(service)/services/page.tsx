@@ -91,49 +91,96 @@ const Services = () => {
 
     return (
         <div className="min-h-screen bg-white">
-            {/* <Header /> */}
+            <Header styles='fixed' showNavLinks />
 
-            {/* Breadcrumb */}
-            {/* <div className="sticky top-16 z-40 bg-white/80 backdrop-blur-sm border-b border-gray-200">
-                <div className="container mx-auto px-6 py-4">
-                    <div className="flex items-center gap-4">
-                        <Link
-                            href="/"
-                            className="flex items-center gap-2 text-gray-600 hover:text-red-600 transition-colors"
-                        >
-                            <ArrowLeft size={20} />
-                            <span>Home</span>
-                        </Link>
-                        <span className="text-red-600">/</span>
-                        <span className="text-black font-medium">Services</span>
-                    </div>
-                </div>
-            </div> */}
+            <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+                {/* Animated Background */}
+                <div className="absolute inset-0 gradient-mesh"></div>
 
-            {/* Services Intro */}
-            <section className="py-20 bg-black text-white">
-                <div className="container mx-auto px-6">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <h1 className="text-5xl md:text-6xl font-bold mb-8">
-                            Our <span className="text-red-500">Services</span>
-                        </h1>
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/40"></div>
 
-                        <div className="glass-panel p-8 rounded-2xl backdrop-blur-sm bg-white/5 border border-white/10">
-                            <p className="text-xl text-gray-300 leading-relaxed">
-                                Empowering your legal tech journey through comprehensive consulting,
-                                education, and innovation services.
-                            </p>
+                {/* Content */}
+                <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+                    {/* <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                   Services
+                </h1> */}
+
+                    <div className="container mx-auto px-6">
+                        <div className="max-w-4xl mx-auto text-center">
+                            <h1 className="text-5xl md:text-6xl font-bold mb-8 text-white">
+                                Our <span className="text-red-500">Services</span>
+                            </h1>
+
+                            <div className="glass-panel p-8 flex flex-col gap-5 rounded-2xl backdrop-blur-sm bg-white/5 border border-white/10">
+                                <p className="text-xl text-gray-300 leading-relaxed">
+                                    Empowering your legal tech journey through comprehensive consulting,
+                                    education, and innovation services.
+                                </p>
+
+                                <div className="w-24 h-1 bg-primary mx-auto"></div>
+
+                                <p className="text-lg text-gray-400 leading-relaxed">
+                                    We envision a future where every lawyer and law student has access to the latest
+                                    technological innovations, ethical frameworks, and educational resources that define
+                                    modern legal practice.
+                                </p>
+
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </section>
 
-            {/* Team Profiles */}
+
             <section className="py-20 bg-gray-50">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
                             Our <span className="text-gradient">Team</span>
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                            Meet the experts driving innovation in legal technology.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        {teamMembers.map((member) => (
+                            <div
+                                key={member.id}
+                                className="glass-hover rounded-2xl overflow-hidden bg-white p-8"
+                            >
+                                <div className="flex items-start gap-6">
+                                    <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        className="w-20 h-20 rounded-full object-cover flex-shrink-0"
+                                    />
+
+                                    <div className="flex-1">
+                                        <h3 className="text-xl font-bold text-black mb-2">
+                                            {member.name}
+                                        </h3>
+                                        <p className="text-red-600 font-semibold mb-3">
+                                            {member.role}
+                                        </p>
+                                        <p className="text-gray-600 text-sm leading-relaxed">
+                                            {member.bio}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className="py-20 bg-gray-50">
+                <div className="container mx-auto px-6">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+                            Our <span className="text-gradient">Technical Team</span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                             Meet the experts driving innovation in legal technology.
@@ -189,13 +236,6 @@ const Services = () => {
                                 key={service.id}
                                 className="glass-hover rounded-2xl overflow-hidden bg-white border border-gray-100 relative"
                             >
-                                {/* Status Ribbon */}
-                                <div className={`absolute top-4 left-4 z-10 px-3 py-1 rounded-full text-xs font-semibold ${service.status === 'Provided'
-                                        ? 'bg-primary text-white'
-                                        : 'border border-red-600 text-red-600 bg-white/90 backdrop-blur-sm'
-                                    }`}>
-                                    {service.status}
-                                </div>
 
                                 {/* Service Header */}
                                 <div
@@ -249,13 +289,13 @@ const Services = () => {
                                             </div>
 
                                             <div className="flex gap-4">
-                                                <Link
-                                                    href='service-details'
+                                                <div
                                                     className="bg-primary hover:bg-red-700 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 ripple-effect inline-block text-center"
                                                 >
-                                                    Learn More
-                                                </Link>
-                                                <button
+                                                    Upcoming
+                                                </div>
+                                                <a
+                                                    href='#contact-form'
                                                     onClick={(e) => {
                                                         e.stopPropagation();
                                                         document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
@@ -263,7 +303,7 @@ const Services = () => {
                                                     className="border border-red-600 text-red-600 hover:bg-primary hover:text-white px-6 py-2 rounded-full font-semibold transition-all duration-300"
                                                 >
                                                     Enquire Now
-                                                </button>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

@@ -31,7 +31,7 @@ const Header: FC<props> = ({
         { name: 'Home', href: '/' },
         { name: 'Articles', href: '/articles' },
         { name: 'Services', href: '/services' },
-        { name: 'MetaRules', href: '/services' },
+        { name: 'MetaRules', href: '/metarules' },
     ];
 
     return (
