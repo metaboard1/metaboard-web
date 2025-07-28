@@ -1,9 +1,10 @@
 export const dynamic = 'force-dynamic';
 
 import React from 'react';
-import { ArticleCardsSection, LatestHeadlinesSection, NewsLatterSection } from '@/components/local/articles';
+import { ArticleCardsSection, LatestHeadlinesSection } from '@/components/local/articles';
 import { $crud } from '@/factory/crudFactory';
-import { ArticleHeroSection as FeaturedArticle, Header, ScrollToTopBtn, SearchBar } from '@/components/global';
+import { ArticleHeroSection as FeaturedArticle, Header, ScrollToTopBtn } from '@/components/global';
+import { SearchArticleProvider } from '@/context/SearchArticleContext';
 
 const Articles = async () => {
 
@@ -22,47 +23,52 @@ const Articles = async () => {
         const { data: { rows, featuredArticle: fArticle } } = await $crud.get('retrieve/web/articles');
         featuredArticle = fArticle
         articles = rows;
+        // await new Promise((resolve) => setTimeout(() => resolve(true), 3000));
     } catch (e) {
         console.error(e)
     }
 
     return (
-        <div className="min-h-screen bg-background">
-            {/* Sticky Navigation */}
-            <Header styles='sticky' />
+        <SearchArticleProvider>
+            <div className="min-h-screen bg-background">
+                {/* Sticky Navigation */}
+                <Header
+                    styles='sticky'
+                />
 
-            <FeaturedArticle
-                data={featuredArticle}
-                showReadBtn
-            />
+                <FeaturedArticle
+                    data={featuredArticle}
+                    showReadBtn
+                />
 
-            <section className="py-12 bg-gray-50">
-                <div className="container mx-auto px-6">
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {/* Main Articles Column */}
-                        <div className='md:col-span-2'>
-                            {/* <SearchBar/> */}
+                <section className="py-12 bg-gray-50">
+                    <div className="container mx-auto px-6">
+                        <div className="grid md:grid-cols-3 gap-8">
+                            {/* Main Articles Column */}
+                            <div className='md:col-span-2'>
+                                {/* <SearchBar/> */}
 
 
-                            <ArticleCardsSection
-                                preloadedArticles={articles}
+                                <ArticleCardsSection
+                                    preloadedArticles={articles}
+                                />
+                            </div>
+
+                            {/* Latest Headlines Sidebar */}
+                            <LatestHeadlinesSection
+                                headlinesData={latestHeadlines}
                             />
                         </div>
-
-                        {/* Latest Headlines Sidebar */}
-                        <LatestHeadlinesSection
-                            headlinesData={latestHeadlines}
-                        />
                     </div>
-                </div>
-            </section>
+                </section>
 
-            {/* Newsletter Section */}
-            {/* <NewsLatterSection /> */}
+                {/* Newsletter Section */}
+                {/* <NewsLatterSection /> */}
 
-            {/* Back to Top Button */}
-            <ScrollToTopBtn />
-        </div>
+                {/* Back to Top Button */}
+                <ScrollToTopBtn />
+            </div>
+        </SearchArticleProvider>
     );
 };
 

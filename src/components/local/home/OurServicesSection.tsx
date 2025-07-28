@@ -1,15 +1,11 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight, Code, Scale, GraduationCap, FileText, Search, Users, Shield, Briefcase, Plus, Minus } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Plus, Minus } from 'lucide-react';
 import { ourServicesData } from '@/appData';
-// import { Carousel } from 'react-responsive-carousel';
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import '../../../styles/swiper.css';
@@ -47,7 +43,7 @@ const OurServicesSection = () => {
 
     return (
         <section id="services" className="py-20 bg-black relative overflow-hidden">
-            
+
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -60,7 +56,7 @@ const OurServicesSection = () => {
 
                 {/* Film Strip Carousel */}
                 <div className="max-w-7xl mx-auto">
-                   
+
                     <div className='relative flex items-center'>
 
                         <Swiper
@@ -91,6 +87,8 @@ const OurServicesSection = () => {
                                 return (
                                     <SwiperSlide key={service.id}>
                                         <div
+                                            onMouseEnter={() => swiperInstance.autoplay.stop()}
+                                            onMouseLeave={() => swiperInstance.autoplay.start()}
                                             className="glass-hover bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:bg-white/10 hover:border-red-600/30 hover:scale-105 relative group"
                                         >
                                             <div className="flex justify-center mb-6 mt-8">
