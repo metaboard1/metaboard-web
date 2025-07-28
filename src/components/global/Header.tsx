@@ -42,7 +42,7 @@ const Header: FC<props> = ({
                 } ${styles}`}>
                 <nav className="container mx-auto px-4 sm:px-6 py-4">
                     <div className="flex items-center justify-between min-h-[48px]">
-                        
+
                         {/* Logo Section */}
                         <div className="flex items-center space-x-3 flex-shrink-0">
                             <Link href="/">
@@ -54,29 +54,36 @@ const Header: FC<props> = ({
                             </Link>
                         </div>
 
-                        {/* Desktop Navigation Links */}
+                       
                         {showNavLinks ? (
-                            <div className="hidden md:flex items-center space-x-8">
-                                {navItems.map((item) => (
-                                    <Link
-                                        key={item.name}
-                                        href={item.href}
-                                        className={`transition-colors duration-300 text-base font-bold whitespace-nowrap ${
-                                            pathname === item.href
-                                                ? 'text-red-500'
-                                                : 'text-gray-400 hover:text-red-500'
-                                        }`}
-                                    >
-                                        {item.name}
-                                    </Link>
-                                ))}
-                            </div>
+                            <>
+                                <div className="hidden md:flex items-center space-x-8">
+                                    {navItems.map((item) => (
+                                        <Link
+                                            key={item.name}
+                                            href={item.href}
+                                            className={`transition-colors duration-300 text-base font-bold whitespace-nowrap ${pathname === item.href
+                                                    ? 'text-red-500'
+                                                    : 'text-gray-400 hover:text-red-500'
+                                                }`}
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    ))}
+                                </div>
+                                <button
+                                    className="md:hidden text-white p-2"
+                                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                                >
+                                    {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                                </button>
+                            </>
                         ) : (
-                            /* Search Bar Section - Desktop & Mobile */
                             <div className="flex justify-end flex-1 min-w-0">
                                 <SearchBar />
                             </div>
                         )}
+
                     </div>
 
                     {/* Mobile Navigation */}
@@ -87,25 +94,15 @@ const Header: FC<props> = ({
                                     <Link
                                         key={item.name}
                                         href={item.href}
-                                        className={`transition-colors duration-300 font-medium py-2 ${
-                                            pathname === item.href
+                                        className={`transition-colors duration-300 font-medium py-2 ${pathname === item.href
                                                 ? 'text-red-500'
                                                 : 'text-white hover:text-red-500'
-                                        }`}
+                                            }`}
                                         onClick={() => setIsMobileMenuOpen(false)}
                                     >
                                         {item.name}
                                     </Link>
                                 ))}
-                                
-                                {/* Mobile Search Bar in Menu */}
-                                <div className="pt-4 border-t border-gray-700">
-                                    <SearchBar />
-                                </div>
-                                
-                                <button className="bg-primary hover:bg-red-700 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 mt-4">
-                                    Get Started
-                                </button>
                             </div>
                         </div>
                     )}
