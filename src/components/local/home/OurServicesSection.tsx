@@ -65,7 +65,7 @@ const OurServicesSection = () => {
                             navigation={{ prevEl: prevBtnRef.current, nextEl: nextBtnRef.current }}
                             spaceBetween={20}
                             autoplay={{
-                                delay: 1000,
+                                delay: 3000,
                                 disableOnInteraction: true,
                             }}
                             slidesPerView={3}
