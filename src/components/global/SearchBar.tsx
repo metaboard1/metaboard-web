@@ -11,6 +11,7 @@ const SearchBar: FC = () => {
     const inputRef = useRef<HTMLInputElement>(null);
     const { data, onSearch } = useSearchArticle();
 
+    console.log(data)
     const handleClear = () => {
         onSearch('');
         if (inputRef.current) {
@@ -22,48 +23,38 @@ const SearchBar: FC = () => {
     const searchDebounce = debounce((e) => onSearch(e), 500);
 
     return (
-        <div 
-            className="relative h-12" 
-            onMouseLeave={() => setIsFocused(false)} 
-            onMouseEnter={() => setIsFocused(true)}
+        <div
+            className="relative h-12 w-[100%]"
         >
             <div
-                className={`flex items-center gap-2 rounded-full transition-all duration-300 ease-in-out overflow-hidden h-full 
+               className={`flex items-center gap-2 rounded-full transition-all duration-300 ease-in-out overflow-hidden h-full  bg-white pl-4  pr-2
                     ${isFocused 
-                        ? 'w-48 xs:w-56 sm:w-64 md:w-72 lg:w-80 pl-4 pr-2 border-2 border-red-500 shadow-md bg-white' 
-                        : 'w-12 justify-center bg-transparent border-transparent'
+                        ? 'pl-6 pr-4 border-2 border-red-500 shadow-md ' 
+                        : 'justify-center bg-transparent border'
                     }`}
             >
                 <button
                     type="button"
-                    onClick={() => {
-                        setIsFocused(true);
-                        setTimeout(() => inputRef.current?.focus(), 10);
-                    }}
                     className="text-gray-400 hover:text-red-500 transition-colors flex-shrink-0"
                     aria-label="Search"
                 >
                     <Search className="w-5 h-5" />
                 </button>
 
-                {isFocused && (
-                    <input
-                        ref={inputRef}
-                        type="text"
-                        placeholder="Search articles..."
-                        onChange={(e) => {
-                            searchDebounce(e.target.value);
-                        }}
-                        onBlur={() => {
-                            // Delay hiding to allow for result clicks
-                            setTimeout(() => setIsFocused(false), 150);
-                        }}
-                        onFocus={() => setIsFocused(true)}
-                        className={`bg-transparent text-gray-900 placeholder-gray-500 border-none outline-none w-full text-sm sm:text-base
-                            transition-all duration-300 ease-in-out
-                            ${isFocused ? 'opacity-100 ml-2' : 'opacity-0 ml-0 pointer-events-none'}`}
-                    />
-                )}
+
+                <input
+                    ref={inputRef}
+                    type="text"
+                    placeholder="Search articles..."
+                    onChange={(e) => {
+                        searchDebounce(e.target.value);
+                    }}
+                    onBlur={() => {
+                        setTimeout(() => setIsFocused(false), 150);
+                    }}
+                    onFocus={() => setIsFocused(true)}
+                    className={'bg-transparent text-gray-900 placeholder-gray-500 border-none outline-none w-full text-sm sm:text-base transition-all duration-300 ease-in-out opacity-100 ml-2'}
+                />
 
                 {isFocused && (
                     <button
@@ -77,7 +68,7 @@ const SearchBar: FC = () => {
             </div>
 
             {isFocused && !!data.length && (
-                <div className="absolute top-full mt-2 w-48 xs:w-56 sm:w-64 md:w-72 lg:w-80 bg-white border border-gray-200 rounded-xl shadow-lg z-30 overflow-hidden animate-in fade-in slide-in-from-top-1 duration-300">
+                <div className="absolute top-full w-[100%] mt-2 bg-white border border-gray-200 rounded-xl shadow-lg z-30 overflow-hidden animate-in fade-in slide-in-from-top-1 duration-300">
                     <div className="py-2 max-h-48 overflow-y-auto">
                         {data.map((item, idx) => (
                             <Link
@@ -87,8 +78,8 @@ const SearchBar: FC = () => {
                                 onClick={() => setIsFocused(false)}
                             >
                                 <Search className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-gray-400 flex-shrink-0" />
-                                <span 
-                                    className="text-gray-700 flex-1 leading-tight" 
+                                <span
+                                    className="text-gray-700 flex-1 leading-tight"
                                     style={{
                                         display: '-webkit-box',
                                         WebkitLineClamp: 2,

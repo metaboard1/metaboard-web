@@ -1,10 +1,9 @@
 'use client';
 
+import { memo, useEffect, useState, type FC } from "react"
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { memo, useEffect, useState, type FC } from "react"
-import SearchBar from "./SearchBar";
 
 type props = {
     styles?: string;
@@ -31,7 +30,7 @@ const Header: FC<props> = ({
         { name: 'Home', href: '/' },
         { name: 'Articles', href: '/articles' },
         { name: 'Services', href: '/services' },
-        { name: 'MetaRules', href: '/metarules' },
+        { name: 'MetaRules', href: '/metarule' },
     ];
 
     return (
@@ -54,8 +53,8 @@ const Header: FC<props> = ({
                             </Link>
                         </div>
 
-                       
-                        {showNavLinks ? (
+
+                        {showNavLinks && (
                             <>
                                 <div className="hidden md:flex items-center space-x-8">
                                     {navItems.map((item) => (
@@ -63,8 +62,8 @@ const Header: FC<props> = ({
                                             key={item.name}
                                             href={item.href}
                                             className={`transition-colors duration-300 text-base font-bold whitespace-nowrap ${pathname === item.href
-                                                    ? 'text-red-500'
-                                                    : 'text-gray-400 hover:text-red-500'
+                                                ? 'text-red-500'
+                                                : 'text-gray-400 hover:text-red-500'
                                                 }`}
                                         >
                                             {item.name}
@@ -78,12 +77,7 @@ const Header: FC<props> = ({
                                     {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                                 </button>
                             </>
-                        ) : (
-                            <div className="flex justify-end flex-1 min-w-0">
-                                <SearchBar />
-                            </div>
                         )}
-
                     </div>
 
                     {/* Mobile Navigation */}
@@ -95,8 +89,8 @@ const Header: FC<props> = ({
                                         key={item.name}
                                         href={item.href}
                                         className={`transition-colors duration-300 font-medium py-2 ${pathname === item.href
-                                                ? 'text-red-500'
-                                                : 'text-white hover:text-red-500'
+                                            ? 'text-red-500'
+                                            : 'text-white hover:text-red-500'
                                             }`}
                                         onClick={() => setIsMobileMenuOpen(false)}
                                     >

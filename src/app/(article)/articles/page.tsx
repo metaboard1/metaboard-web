@@ -3,13 +3,14 @@ export const dynamic = 'force-dynamic';
 import React from 'react';
 import { ArticleCardsSection, LatestHeadlinesSection } from '@/components/local/articles';
 import { $crud } from '@/factory/crudFactory';
-import { ArticleHeroSection as FeaturedArticle, Header, ScrollToTopBtn } from '@/components/global';
+import { ArticleHeroSection as FeaturedArticle, Footer, Header, ScrollToTopBtn, SearchBar } from '@/components/global';
 import { SearchArticleProvider } from '@/context/SearchArticleContext';
 
 const Articles = async () => {
 
     let articles: any[] = [];
     let featuredArticle = {};
+    let totalArticles: number = 0;
 
     const latestHeadlines = [
         { title: "Supreme Court to Hear Landmark AI Copyright Case", time: "2 hours ago" },
@@ -20,9 +21,10 @@ const Articles = async () => {
     ];
 
     try {
-        const { data: { rows, featuredArticle: fArticle } } = await $crud.get('retrieve/web/articles');
+        const { data: { rows, featuredArticle: fArticle, count } } = await $crud.get('retrieve/web/articles');
         featuredArticle = fArticle
         articles = rows;
+        totalArticles = count;
         // await new Promise((resolve) => setTimeout(() => resolve(true), 3000));
     } catch (e) {
         console.error(e)
@@ -34,6 +36,7 @@ const Articles = async () => {
                 {/* Sticky Navigation */}
                 <Header
                     styles='sticky'
+                    showNavLinks
                 />
 
                 <FeaturedArticle
@@ -45,12 +48,14 @@ const Articles = async () => {
                     <div className="container mx-auto px-6">
                         <div className="grid md:grid-cols-3 gap-8">
                             {/* Main Articles Column */}
-                            <div className='md:col-span-2'>
-                                {/* <SearchBar/> */}
+                            <div className='md:col-span-2 flex flex-col gap-5'>
+                                <SearchBar/>
 
 
                                 <ArticleCardsSection
                                     preloadedArticles={articles}
+                                    totalArticles={totalArticles}
+                                    limit={10}
                                 />
                             </div>
 
@@ -67,6 +72,7 @@ const Articles = async () => {
 
                 {/* Back to Top Button */}
                 <ScrollToTopBtn />
+                <Footer/>
             </div>
         </SearchArticleProvider>
     );

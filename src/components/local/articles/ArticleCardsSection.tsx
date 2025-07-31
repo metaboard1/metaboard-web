@@ -7,81 +7,77 @@ import Link from "next/link";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { $crud } from "@/factory/crudFactory";
 import { useSearchArticle } from "@/context/SearchArticleContext";
+import { Pagination } from "@/components/ui";
 
 
 type props = {
-    preloadedArticles: ArticleInterface[]
+    preloadedArticles: ArticleInterface[];
+    totalArticles: number;
+    limit: number;
 }
 
-const ArticleCardsSection: FC<props> = ({ preloadedArticles }) => {
+const ArticleCardsSection: FC<props> = ({ preloadedArticles, totalArticles, limit }) => {
 
-    const [listConfig, setListConfig] = useState<{
+    const [articleListData, setArticleListData] = useState<{
         data: ArticleInterface[],
         page: number;
-        hasMore: boolean;
     }>({
-        data: [],
-        page: 1,
-        hasMore: true
+        data: preloadedArticles,
+        page: 0
     });
+    const [isLoading, setIsLoading] = useState(false);
+
     const { search, setData } = useSearchArticle();
 
     useEffect(() => {
-        if (search) {
-            retrieveArticles(0, search);
-        } else {
-            setListConfig((prev) => ({ ...prev, data: preloadedArticles, page: 1, hasMore: true }));
-        }
+        // if (search) {
+        retrieveArticles(0, search);
+        // }
     }, [search]);
 
-    const retrieveArticles = useCallback(async (defaultPage = listConfig.page, defaultSearch = search) => {
+
+    const retrieveArticles = useCallback(async (defaultPage: number, defaultSearch: string) => {
         try {
+            setIsLoading(true);
             const { data: { rows } } = await $crud.retrieve(`articles?page=${defaultPage}&search=${defaultSearch}`);
-            setListConfig((prev) => {
-                const data = !defaultPage ? rows : [...prev.data, ...rows]
-                return {
-                    ...prev,
-                    data,
-                    hasMore: rows.length > 0,
-                    page: (!defaultPage ? defaultPage : prev.page) + 1
-                }
-            });
-            if (search && rows.length) {
+
+            setArticleListData((prev) => ({
+                page: defaultPage,
+                data: rows
+            }));
+            if (search) {
                 setData(rows);
             }
+            setIsLoading(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         } catch (e) {
             console.error(e);
         }
-    }, [listConfig.page, search]);
+    }, [search]);
 
 
+    const handlePageChange = (updatedPage: number) => {
+        setArticleListData((prev) => ({
+            ...prev,
+            page: updatedPage,
+        }));
+        retrieveArticles(updatedPage, search);
+    }
     return (<>
         {/* <div className="md:col-span-2"> */}
-        <div >
+        {
+            isLoading &&
+            <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-gray-500 bg-opacity-40 backdrop-blur-[2px]  z-[999]">
+                <div className="spinner"></div>
+            </div>
+        }
+
+        <div className="flex flex-col gap-10">
+
             {
-                !!listConfig.data.length ?
-                    <InfiniteScroll
-                        dataLength={listConfig.data.length}
-                        next={retrieveArticles}
-                        hasMore={listConfig.hasMore}
-                        loader={<h4>Loading...</h4>}
-                        endMessage={
-                            <p style={{ textAlign: 'center' }}>
-                                <b>Yay! You have seen it all</b>
-                            </p>
-                        }
-                        refreshFunction={retrieveArticles}
-                        pullDownToRefresh
-                        pullDownToRefreshThreshold={50}
-                        pullDownToRefreshContent={
-                            <h3 style={{ textAlign: 'center' }}>&#8595; Pull down to refresh</h3>
-                        }
-                        releaseToRefreshContent={
-                            <h3 style={{ textAlign: 'center' }}>&#8593; Release to refresh</h3>
-                        }
-                        className="grid gap-8"
-                    >
-                        {listConfig.data.map((article, index) => (
+                articleListData.data.length ?
+                    (<>
+                        {articleListData.data.map((article, index) => (
                             <article
                                 key={index}
                                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 glass-hover group cursor-pointer"
@@ -113,11 +109,19 @@ const ArticleCardsSection: FC<props> = ({ preloadedArticles }) => {
                                 </Link>
                             </article>
                         ))}
-                    </InfiniteScroll>
-                    : <h3 className="text-center text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors">
+                    </>)
+                    :
+                    <h3 className="text-center text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors">
                         No results found
                     </h3>
             }
+            <Pagination
+                totalRecords={totalArticles}
+                limit={limit}
+                currentPage={articleListData.page}
+                onPageChange={handlePageChange}
+            />
+
 
         </div>
     </>)

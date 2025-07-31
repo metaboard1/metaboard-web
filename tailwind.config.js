@@ -75,6 +75,10 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        'fade-in': {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -91,12 +95,33 @@ const config = {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
         },
+        "dialog-show": {
+          "0%": { opacity: "0", transform: "translate(-50%, -48%) scale(0.95)" },
+          "100%": { opacity: "1", transform: "translate(-50%, -50%) scale(1)" },
+        },
+        "dialog-hide": {
+          "0%": { opacity: "1", transform: "translate(-50%, -50%) scale(1)" },
+          "100%": { opacity: "0", transform: "translate(-50%, -48%) scale(0.95)" },
+        },
+        "overlay-fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "0.8" },
+        },
+        "overlay-fade-out": {
+          "0%": { opacity: "0.8" },
+          "100%": { opacity: "0" },
+        },
       },
       animation: {
+        'fade-in': 'fade-in 0.5s ease-out forwards',
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         float: "float 3s ease-in-out infinite",
         shimmer: "shimmer 2s infinite",
+        "dialog-in": "dialog-show 0.25s ease-out forwards",
+        "dialog-out": "dialog-hide 0.2s ease-in forwards",
+        "overlay-in": "overlay-fade-in 0.25s ease-out forwards",
+        "overlay-out": "overlay-fade-out 0.2s ease-in forwards",
       },
     },
   },
