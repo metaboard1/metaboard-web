@@ -40,7 +40,7 @@ const BrowseByTagSection: FC = () => {
             <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2">
                     <Filter className="w-5 h-5 text-primary" />
-                    <h3 className="text-lg font-semibold">Browse by Topic</h3>
+                    <h3 className="text-lg font-semibold text-foreground">Browse by Topic</h3>
                 </div>
                 {selectedTags.length > 0 && (
                     <Button

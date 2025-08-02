@@ -50,8 +50,6 @@ const Articles = async () => {
                             {/* Main Articles Column */}
                             <div className='md:col-span-2 flex flex-col gap-5'>
                                 <SearchBar/>
-
-
                                 <ArticleCardsSection
                                     preloadedArticles={articles}
                                     totalArticles={totalArticles}

@@ -106,7 +106,7 @@ const PublicationSection: FC = () => {
                                         </Button>
                                         <Button
                                             size="sm"
-                                            variant="outline"
+                                            variant="secondary"
                                             onClick={() => handleShare(publication)}
                                             className="border-glass"
                                         >

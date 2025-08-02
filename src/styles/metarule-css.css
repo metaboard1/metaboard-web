@@ -9,16 +9,20 @@
         /* MetaBoard Brand Colors */
         --metaboard-red: 0 76% 40%;
         --metaboard-red-light: 0 76% 50%;
-        --metaboard-red-dark: 0 76% 30%;
+        /* --metaboard-red-dark: 0 76% 30%; */
+        --metaboard-red-dark: 35 44% 83%;
 
         /* Background & Glass System */
-        --background: 0 0% 3%;
+        /* --background: 0 0% 3%; */
+        --background: 35 44% 83%;
         --background-secondary: 0 0% 8%;
-        --foreground: 0 0% 98%;
+        /* --foreground: 0 0% 98%; */
+        --foreground: 0 0% 0%;
+        /* --foreground: 0, 60%, 45%; */
 
         /* Glass Effect Variables */
         --glass-bg: 0 0% 100% / 0.08;
-        --glass-border: 0 0% 100% / 0.2;
+       --glass-border: 0 0% 0% / 0.2;
         --glass-hover: 0 0% 100% / 0.12;
 
         /* Card System */
@@ -31,13 +35,15 @@
         --primary-foreground: 0 0% 98%;
         --primary-hover: 0 76% 45%;
 
-        --secondary: 0 0% 100% / 0.1;
-        --secondary-foreground: 0 0% 90%;
+        /* --secondary: 0 0% 100% / 0.1; */
+        --secondary: 0 0% 0%;
+        /* --secondary-foreground: 0 0% 90%; */
+        --secondary-foreground: 0, 0%, 20%;
         --secondary-hover: 0 0% 100% / 0.15;
 
         /* Muted & Accents */
         --muted: 0 0% 100% / 0.05;
-        --muted-foreground: 0 0% 65%;
+        --muted-foreground: 0, 0%, 23%;
 
         --accent: 0 76% 40%;
         --accent-foreground: 0 0% 98%;
@@ -54,7 +60,8 @@
         --radius: 1rem;
 
         /* Gradients */
-        --gradient-primary: linear-gradient(135deg, hsl(var(--background)), hsl(var(--metaboard-red-dark)));
+        /* --gradient-primary: linear-gradient(135deg, hsl(var(--background)), hsl(var(--metaboard-red-dark))); */
+        --gradient-primary: hsl(var(--background));
         --gradient-glass: linear-gradient(145deg, hsl(var(--glass-bg)), hsl(var(--glass-hover)));
         --gradient-red: linear-gradient(135deg, hsl(var(--metaboard-red)), hsl(var(--metaboard-red-light)));
 

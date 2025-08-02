@@ -4,7 +4,6 @@ import { useCallback, useEffect, useState, type FC } from "react"
 import { BASE_ASSETS_URL } from "@/constants";
 import dayjs from "dayjs";
 import Link from "next/link";
-import InfiniteScroll from "react-infinite-scroll-component";
 import { $crud } from "@/factory/crudFactory";
 import { useSearchArticle } from "@/context/SearchArticleContext";
 import { Pagination } from "@/components/ui";
@@ -77,7 +76,7 @@ const ArticleCardsSection: FC<props> = ({ preloadedArticles, totalArticles, limi
             {
                 articleListData.data.length ?
                     (<>
-                        {articleListData.data.map((article, index) => (
+                        {articleListData.data.map((article, index) =>
                             <article
                                 key={index}
                                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 glass-hover group cursor-pointer"
@@ -108,7 +107,7 @@ const ArticleCardsSection: FC<props> = ({ preloadedArticles, totalArticles, limi
                                     </div>
                                 </Link>
                             </article>
-                        ))}
+                        )}
                     </>)
                     :
                     <h3 className="text-center text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors">

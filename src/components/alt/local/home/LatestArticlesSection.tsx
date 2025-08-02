@@ -117,7 +117,7 @@ const LatestArticlesSection: FC = () => {
                                         <ArrowRight className="w-4 h-4 ml-2" />
                                     </Button>
                                     <Button
-                                        variant="outline"
+                                        variant="secondary"
                                         size="icon"
                                         onClick={() => handleBookmark(article.id)}
                                         className="border-glass"
@@ -125,7 +125,7 @@ const LatestArticlesSection: FC = () => {
                                         <Bookmark className="w-4 h-4" />
                                     </Button>
                                     <Button
-                                        variant="outline"
+                                        variant="secondary"
                                         size="icon"
                                         onClick={() => handleShare(article)}
                                         className="border-glass"
@@ -182,7 +182,7 @@ const LatestArticlesSection: FC = () => {
                                     </Button>
                                     <Button
                                         size="sm"
-                                        variant="outline"
+                                        variant="secondary"
                                         onClick={() => handleBookmark(article.id)}
                                         className="border-glass"
                                     >

@@ -1,3 +1,5 @@
+'use client';
+
 import { BookOpen, Briefcase, FileText, Home, Menu, X } from "lucide-react";
 import { memo, useState } from "react";
 import { Button } from "../ui";
@@ -11,7 +13,7 @@ const AltHeader = () => {
 
     const navigation = [
         { name: 'Home', href: '/metarule', icon: Home },
-        { name: 'Articles', href: '#', icon: FileText },
+        { name: 'Blogs', href: '/metarule/blog', icon: FileText },
         { name: 'Publications', href: '/metarule/publications', icon: BookOpen },
     ];
 

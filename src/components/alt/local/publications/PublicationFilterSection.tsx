@@ -3,9 +3,14 @@ import { FC } from "react";
 import { Badge, Button } from "../../ui";
 
 
+type props = {
+    totalPublications: number;
+}
 
-
-const PublicationFilterSection: FC = () => {
+const PublicationFilterSection: FC<props> = ({
+    totalPublications
+}) => {
+    console.log(totalPublications)
     return (<>
         <section className="mb-8">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
@@ -13,8 +18,7 @@ const PublicationFilterSection: FC = () => {
                     <Filter className="w-5 h-5 text-primary" />
                     <h2 className="text-xl font-bold">Publications Library</h2>
                     <Badge variant="secondary" className="glass">
-                        4 publications
-                        {/* {filteredPublications.length} {filteredPublications.length === 1 ? 'publication' : 'publications'} */}
+                        {`${totalPublications} Publication${totalPublications > 1 ? 's' : ''}`}
                     </Badge>
                 </div>
 
@@ -31,7 +35,7 @@ const PublicationFilterSection: FC = () => {
                         ))}
                     </select> */}
 
-                    
+
                 </div>
             </div>
 

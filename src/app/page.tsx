@@ -1,7 +1,7 @@
 export const dynamic = 'force-dynamic';
 
 import { $crud } from '@/factory/crudFactory';
-import { Footer, Header } from '@components/global';
+import { Footer, Header, ScrollToTopBtn } from '@components/global';
 import { AdvisoryBoardSection, ArticlesShowcase, HeroSection, OurServicesSection, OurVisionSection, UsefulLinksSection } from '@components/local/home';
 
 const Home = async () => {
@@ -28,6 +28,7 @@ const Home = async () => {
             <AdvisoryBoardSection />
             <UsefulLinksSection />
             <Footer />
+             <ScrollToTopBtn />
         </div>
     );
 };

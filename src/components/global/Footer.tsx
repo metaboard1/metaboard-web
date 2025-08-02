@@ -1,18 +1,19 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Github, ArrowRight, Instagram } from 'lucide-react';
+import Link from 'next/link';
 
 const Footer = () => {
     const quickLinks = [
-        { name: 'Articles', href: '#articles' },
+        { name: 'Articles', href: '/articles' },
         { name: 'About Us', href: '#about' },
         { name: 'Projects', href: '#projects' },
         { name: 'Contact', href: '#contact' }
     ];
 
     const legalLinks = [
-        { name: 'Privacy Policy', href: '#' },
-        { name: 'Terms of Service', href: '#' },
+        { name: 'Privacy Policy', href: '/privacy' },
+        { name: 'Terms of Service', href: '/terms' },
         { name: 'Cookie Policy', href: '#' },
         { name: 'Legal Notice', href: '#' }
     ];
@@ -24,7 +25,7 @@ const Footer = () => {
                     <div className="lg:col-span-1">
                         <div className="flex items-center space-x-3 mb-6">
                             <img
-                                src="/lovable-uploads/9ed31169-b797-495a-b3d2-754d0f261a96.png"
+                                src="/assets/images/logo-light.webp"
                                 alt="Metaboard Logo"
                                 className="h-8 w-auto"
                             />
@@ -51,7 +52,7 @@ const Footer = () => {
                                 href="#"
                                 className="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300"
                             >
-                                <Github size={18} />
+                                <Instagram size={18} />
                             </a>
                         </div>
                     </div>
@@ -62,12 +63,12 @@ const Footer = () => {
                         <ul className="space-y-3">
                             {quickLinks.map((link) => (
                                 <li key={link.name}>
-                                    <a
+                                    <Link
                                         href={link.href}
                                         className="text-gray-400 hover:text-red-400 transition-colors duration-300"
                                     >
                                         {link.name}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -78,12 +79,12 @@ const Footer = () => {
                         <ul className="space-y-3">
                             {legalLinks.map((link) => (
                                 <li key={link.name}>
-                                    <a
+                                    <Link
                                         href={link.href}
                                         className="text-gray-400 hover:text-red-400 transition-colors duration-300"
                                     >
                                         {link.name}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>

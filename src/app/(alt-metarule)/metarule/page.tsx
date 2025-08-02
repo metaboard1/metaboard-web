@@ -29,7 +29,7 @@ const MetaRule = () => {
 
                         {/* Latest Publications Section */}
                         <section className="mb-12">
-                            <div className="flex items-center justify-between mb-6">
+                            {/* <div className="flex items-center justify-between mb-6">
                                 <div className="flex items-center gap-3">
                                     <BookOpen className="w-6 h-6 text-primary" />
                                     <h2 className="text-2xl font-bold">Latest Publications</h2>
@@ -40,12 +40,12 @@ const MetaRule = () => {
                                         View All
                                     </a>
                                 </Button>
-                            </div>
+                            </div> */}
                             <PublicationSection />
                         </section>
 
                         {/* Recent Podcast Episodes */}
-                        <section className="mb-12">
+                        {/* <section className="mb-12">
                             <div className="flex items-center justify-between mb-6">
                                 <div className="flex items-center gap-3">
                                     <Briefcase className="w-6 h-6 text-primary" />
@@ -58,8 +58,8 @@ const MetaRule = () => {
                                     </a>
                                 </Button>
                             </div>
-                            {/* <PodcastSection /> */}
-                        </section>
+                            <PodcastSection />
+                        </section> */}
 
                         {/* Blog Feed */}
                         <section>

@@ -13,13 +13,13 @@ const ArticleContentSection: FC<props> = ({
     relatedArticles
 }) => {
     return (<>
-        <section className="py-12 bg-white">
+        <section className="py-12 gradient-primary">
             <div className="container mx-auto px-6">
                 <div className="grid lg:grid-cols-3 gap-12">
                     {/* Main Content */}
                     <div className="lg:col-span-2">
 
-                        <div className="article-content">
+                        <div className="article-content text-white">
                             <style dangerouslySetInnerHTML={{ __html: articleCss }} />
                             <div dangerouslySetInnerHTML={{ __html: articleHtml }} />
                         </div>

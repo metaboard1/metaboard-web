@@ -30,7 +30,7 @@ const Header: FC<props> = ({
         { name: 'Home', href: '/' },
         { name: 'Articles', href: '/articles' },
         { name: 'Services', href: '/services' },
-        { name: 'MetaRules', href: '/metarule' },
+        { name: 'MetaRule', href: '/metarule' },
     ];
 
     return (
