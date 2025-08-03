@@ -11,7 +11,7 @@ const Publications = async () => {
     let totalPublications = 0;
 
     try {
-        const { data: { rows, count } } = await $crud.get('retrieve/web/publications');
+        const { data: { rows, count } } = await $crud.get('retrieve/web/metarule/publications');
         publicationList = rows;
         totalPublications = count;
     } catch (e) {

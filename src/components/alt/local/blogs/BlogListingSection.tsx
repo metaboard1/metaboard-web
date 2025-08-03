@@ -1,29 +1,29 @@
 'use client';
 
 import { FC, useCallback, useEffect, useState } from "react";
-import PublicationFilterSection from "./PublicationFilterSection";
-import PublicationCard from "./PublicationCard";
+// import PublicationFilterSection from "./PublicationFilterSection";
+// import PublicationCard from "./PublicationCard";
 import { $crud } from "@/factory/crudFactory";
 import { Pagination } from "@/components/ui";
 import { FilterSection } from "../../global";
+import BlogCard from "./BlogCard";
 
 type props = {
-    preloadPublications: PublicationInterface[];
-    totalPublications: number;
+    preloadBlogs: BlogInterface[];
+    totalRecords: number;
 }
 
 
-const PublicationListingSection: FC<props> = ({
-    preloadPublications,
-    totalPublications
+const BlogListingSection: FC<props> = ({
+    preloadBlogs = [],
+    totalRecords
 }) => {
-
-    const [publicationListData, setPublicationListData] = useState<{
-        data: PublicationInterface[],
+    const [blogListData, setBlogListData] = useState<{
+        data: BlogInterface[],
         page: number;
         search: string;
     }>({
-        data: preloadPublications,
+        data: preloadBlogs,
         page: 0,
         search: ''
     });
@@ -32,17 +32,18 @@ const PublicationListingSection: FC<props> = ({
 
     useEffect(() => {
         // if (search) {
-        // retrieveArticles(0, '');
+        // retrieveBlogs(0, '');
         // }
+        // retrieveBlogs(0, '')
     }, []);
 
 
-    const retrievePublications = useCallback(async (defaultPage: number, defaultSearch: string) => {
+    const retrieveBlogs = useCallback(async (defaultPage: number, defaultSearch: string) => {
         try {
             setIsLoading(true);
-            const { data: { rows } } = await $crud.retrieve(`metarule/publications?page=${defaultPage}&search=${defaultSearch}`);
+            const { data: { rows } } = await $crud.retrieve(`metarule/blogs?page=${defaultPage}&search=${defaultSearch}`);
 
-            setPublicationListData((prev) => ({
+            setBlogListData((prev) => ({
                 ...prev,
                 page: defaultPage,
                 data: rows
@@ -57,19 +58,19 @@ const PublicationListingSection: FC<props> = ({
 
 
     const handlePageChange = (updatedPage: number) => {
-        setPublicationListData((prev) => ({
+        setBlogListData((prev) => ({
             ...prev,
             page: updatedPage,
         }));
-        retrievePublications(updatedPage, '');
+        retrieveBlogs(updatedPage, '');
     }
 
     const handleSearch = (value: string) => {
-        setPublicationListData((prev) => ({
+        setBlogListData((prev) => ({
             ...prev,
             search: value,
         }));
-        retrievePublications(0, value);
+        retrieveBlogs(0, value);
     }
 
     return (<>
@@ -82,25 +83,25 @@ const PublicationListingSection: FC<props> = ({
         <div className="container px-4 sm:px-6 lg:px-8 py-12 space-y-10">
             {/* Controls */}
             <FilterSection
-                totalRecords={totalPublications}
-                filterTitle='Publication'
+                filterTitle='Blog'
+                totalRecords={8}
                 onSearch={handleSearch}
             />
             <section>
-                <div className={true ? 'grid md:grid-cols-2 lg:grid-cols-3 gap-6' : 'space-y-6'}>
+                <div className='space-y-6'>
                     {
-                        publicationListData.data.map((e) => <PublicationCard data={e} />)
+                        blogListData.data.map((e) => <BlogCard data={e} />)
                     }
                 </div>
             </section>
             <Pagination
-                totalRecords={totalPublications}
+                totalRecords={totalRecords}
                 limit={10}
-                currentPage={publicationListData.page}
+                currentPage={blogListData.page}
                 onPageChange={handlePageChange}
             />
         </div>
 
     </>);
 }
-export default PublicationListingSection
+export default BlogListingSection

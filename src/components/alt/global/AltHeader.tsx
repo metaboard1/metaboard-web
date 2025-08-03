@@ -13,7 +13,7 @@ const AltHeader = () => {
 
     const navigation = [
         { name: 'Home', href: '/metarule', icon: Home },
-        { name: 'Blogs', href: '/metarule/blog', icon: FileText },
+        { name: 'Blogs', href: '/metarule/blogs', icon: FileText },
         { name: 'Publications', href: '/metarule/publications', icon: BookOpen },
     ];
 
@@ -22,13 +22,13 @@ const AltHeader = () => {
     return (<>
 
         <header className="glass border-b border-glass sticky top-0 z-50 backdrop-blur-lg">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="container px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <div className="flex items-center">
                         <div className="flex-shrink-0">
                             <h1 className="text-2xl font-bold text-foreground">
-                                <span className="text-primary">Meta</span>Rule
+                                <span className="text-primary">Meta</span>Rule By MetaBoard
                             </h1>
                         </div>
                     </div>
