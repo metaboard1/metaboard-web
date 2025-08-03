@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 
 import { AltHeader, HeroSection } from '@/components/alt/global';
 import { PublicationListingSection } from '@/components/alt/local/publications';
