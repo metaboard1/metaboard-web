@@ -91,7 +91,6 @@ const Services = () => {
 
     return (
         <div className="min-h-screen bg-white">
-            <Header styles='fixed' showNavLinks />
 
             <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
                 {/* Animated Background */}
@@ -351,8 +350,6 @@ const Services = () => {
                     </div>
                 </div>
             </section>
-
-            <Footer />
         </div>
     );
 };

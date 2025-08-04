@@ -74,8 +74,8 @@ const RelatedPosts: FC = () => {
                             <div className="flex-1 min-w-0">
                                 <div className="space-y-2">
                                     <Badge
-                                        variant="secondary"
-                                        className="glass text-xs"
+                                        variant="outline"
+                                        className="text-xs"
                                     >
                                         {post.category}
                                     </Badge>

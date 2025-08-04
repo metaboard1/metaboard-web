@@ -81,7 +81,7 @@ const ArticleCardsSection: FC<props> = ({ preloadedArticles, totalArticles, limi
                                 key={index}
                                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 glass-hover group cursor-pointer"
                             >
-                                <Link href={`/article-details/?id=${article.id}`} className="block">
+                                <Link href={`/read-article/?id=${article.id}`} className="block">
                                     <div className="md:flex">
                                         <div className="md:w-1/3">
                                             <img

@@ -34,11 +34,7 @@ const Articles = async () => {
         <SearchArticleProvider>
             <div className="min-h-screen bg-background">
                 {/* Sticky Navigation */}
-                <Header
-                    styles='sticky'
-                    showNavLinks
-                />
-
+               
                 <FeaturedArticle
                     data={featuredArticle}
                     showReadBtn
@@ -70,7 +66,6 @@ const Articles = async () => {
 
                 {/* Back to Top Button */}
                 <ScrollToTopBtn />
-                <Footer/>
             </div>
         </SearchArticleProvider>
     );

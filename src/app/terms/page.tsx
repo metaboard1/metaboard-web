@@ -8,10 +8,9 @@ import Link from "next/link";
 const TermsOfService = () => {
     return (
         <>
-            <Header />
             <div className="min-h-screen bg-gradient-to-br from-slate-50 via-red-50 to-rose-100">
                 {/* Hero Section */}
-                <section className="relative py-20 overflow-hidden">
+                <section className="relative flex items-center py-20 overflow-hidden h-screen md:h-auto">
                     <div className="absolute inset-0 bg-gradient-to-r from-red-600/10 to-rose-600/10"></div>
                     <div className="container mx-auto px-6 relative z-10">
                         <div className="text-center max-w-4xl mx-auto">
@@ -25,7 +24,7 @@ const TermsOfService = () => {
                                     Use
                                 </span>
                             </h1>
-                            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                            <p className="text-base text-gray-600 mb-8 leading-relaxed">
                                 Please read these terms carefully before using our services. By
                                 accessing Metaboard®, you agree to be bound by these terms and
                                 conditions.
@@ -416,7 +415,6 @@ const TermsOfService = () => {
                     </div>
                 </section>
             </div>
-            <Footer />
         </>
     );
 };

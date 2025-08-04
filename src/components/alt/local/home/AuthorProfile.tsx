@@ -64,7 +64,7 @@ const AuthorProfile = () => {
                     {/* Expertise Tags */}
                     <div className="flex flex-wrap gap-2">
                         {expertise.slice(0, 3).map((skill) => (
-                            <Badge key={skill} variant="secondary" className="glass text-xs">
+                            <Badge key={skill} variant="outline" className="text-xs">
                                 {skill}
                             </Badge>
                         ))}
@@ -114,7 +114,7 @@ const AuthorProfile = () => {
                         <h3 className="text-lg font-semibold text-foreground mb-3">All Expertise Areas</h3>
                         <div className="flex flex-wrap gap-2">
                             {expertise.map((skill) => (
-                                <Badge key={skill} variant="secondary" className="glass text-xs">
+                                <Badge key={skill} variant="outline" className="text-xs">
                                     {skill}
                                 </Badge>
                             ))}

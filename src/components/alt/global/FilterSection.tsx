@@ -1,9 +1,8 @@
 'use client';
 
+import { type FC, useRef } from "react";
 import { Filter, Search } from "lucide-react";
-import { FC, useRef } from "react";
-import { Badge } from "../../ui";
-import { Button } from "../ui";
+import { Button, Badge } from "../ui";
 
 
 type props = {
@@ -17,29 +16,29 @@ const FilterSection: FC<props> = ({
     filterTitle,
     onSearch
 }) => {
-
     const searchRef = useRef<HTMLInputElement>(null);
 
-    const handleSearch = () => searchRef?.current?.value && onSearch(searchRef?.current?.value);
+    const handleSearch = () => onSearch(searchRef?.current?.value ?? '');
+    
     return (<>
         <section>
-            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
+            <div className="flex flex-col sm:flex-row lg:items-center justify-between gap-4 mb-6">
                 <div className="flex items-center gap-3">
                     <Filter className="w-5 h-5 text-primary" />
                     <h2 className="text-xl font-bold">{filterTitle}s Library</h2>
-                    <Badge variant="secondary" className="glass">
+                    <Badge variant='outline' className="">
                         {`${totalRecords} ${filterTitle}${totalRecords > 1 ? 's' : ''}`}
                     </Badge>
                 </div>
 
                 <div className="flex items-center gap-4">
-                    <div className="flex border border-5 border-gray bg-white br-10 rounded-lg p-[3px]">
+                    <div className="flex border border-5 border-gray bg-white br-10 rounded-lg p-[3px] w-screen sm:w-auto">
                         <input
                             ref={searchRef}
                             name="search"
                             type="text"
                             placeholder={`Search for ${filterTitle.toLowerCase()}...`}
-                            className="block min-w-0 grow py-1.5 pr-3 pl-3 bg-transparent text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                            className="block min-w-0 grow py-1.5 pr-3 pl-3 bg-transparent text-base text-gray-900 placeholder:text-gray-400 focus:outline-none text-sm"
                         />
                         <Button
                             variant="default"

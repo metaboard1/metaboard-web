@@ -22,35 +22,30 @@ const BlogListingSection: FC<props> = ({
         data: BlogInterface[],
         page: number;
         search: string;
+        count: number;
     }>({
         data: preloadBlogs,
         page: 0,
-        search: ''
+        search: '',
+        count: totalRecords
     });
     const [isLoading, setIsLoading] = useState(false);
 
-
-    useEffect(() => {
-        // if (search) {
-        // retrieveBlogs(0, '');
-        // }
-        // retrieveBlogs(0, '')
-    }, []);
-
-
-    const retrieveBlogs = useCallback(async (defaultPage: number, defaultSearch: string) => {
+    const retrieveBlogs = useCallback(async (defaultPage: number, defaultSearch: string = '') => {
         try {
             setIsLoading(true);
-            const { data: { rows } } = await $crud.retrieve(`metarule/blogs?page=${defaultPage}&search=${defaultSearch}`);
+            const { data: { rows, count } } = await $crud.retrieve(`metarule/blogs?page=${defaultPage}&search=${defaultSearch}`);
 
             setBlogListData((prev) => ({
                 ...prev,
                 page: defaultPage,
-                data: rows
+                data: rows,
+                search: defaultSearch,
+                count
             }));
 
             setIsLoading(false);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.getElementById("blogListSection")?.scrollIntoView({ behavior: "smooth" });
         } catch (e) {
             console.error(e);
         }
@@ -58,18 +53,10 @@ const BlogListingSection: FC<props> = ({
 
 
     const handlePageChange = (updatedPage: number) => {
-        setBlogListData((prev) => ({
-            ...prev,
-            page: updatedPage,
-        }));
-        retrieveBlogs(updatedPage, '');
+        retrieveBlogs(updatedPage, blogListData.search);
     }
 
     const handleSearch = (value: string) => {
-        setBlogListData((prev) => ({
-            ...prev,
-            search: value,
-        }));
         retrieveBlogs(0, value);
     }
 
@@ -80,23 +67,23 @@ const BlogListingSection: FC<props> = ({
                 <div className="spinner"></div>
             </div>
         }
-        <div className="container px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+        <div id="blogListSection" className="container px-4 sm:px-6 lg:px-8 py-12 space-y-10">
             {/* Controls */}
             <FilterSection
                 filterTitle='Blog'
-                totalRecords={8}
+                totalRecords={blogListData.count}
                 onSearch={handleSearch}
             />
             <section>
                 <div className='space-y-6'>
                     {
-                        blogListData.data.map((e) => <BlogCard data={e} />)
+                        blogListData.data.map((e) => <BlogCard key={e.id} data={e} />)
                     }
                 </div>
             </section>
             <Pagination
                 totalRecords={totalRecords}
-                limit={10}
+                limit={blogListData.count}
                 currentPage={blogListData.page}
                 onPageChange={handlePageChange}
             />

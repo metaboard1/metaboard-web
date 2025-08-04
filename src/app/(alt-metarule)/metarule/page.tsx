@@ -3,7 +3,7 @@
 import { AltHeader, HeroSection } from '@/components/alt/global';
 import { AuthorProfile, BrowseByTagSection, LatestArticlesSection, PublicationSection, RelatedPosts } from '@/components/alt/local/home';
 import { Button } from '@/components/alt/ui';
-import { Footer } from '@/components/global';
+import { Footer, Header } from '@/components/global';
 import { BookOpen, Briefcase, ExternalLink, FileText } from 'lucide-react';
 
 
@@ -12,8 +12,7 @@ const MetaRule = () => {
     return (<>
         <div className="min-h-screen gradient-primary">
             {/* Navigation Header */}
-            <AltHeader />
-
+            {/* <AltHeader /> */}
             {/* Hero Section */}
             <HeroSection
                 page='home'
@@ -76,15 +75,12 @@ const MetaRule = () => {
                         <div className="sticky top-24 space-y-8">
                             {/* Related Posts */}
                             <RelatedPosts />
-                            {/* Tag Filter */}
                             <BrowseByTagSection />
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Footer */}
-            <Footer />
         </div>
     </>);
 }

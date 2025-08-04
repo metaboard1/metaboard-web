@@ -1,7 +1,6 @@
 'use client';
 
-import { FC, useCallback, useEffect, useState } from "react";
-import PublicationFilterSection from "./PublicationFilterSection";
+import { FC, useCallback, useState } from "react";
 import PublicationCard from "./PublicationCard";
 import { $crud } from "@/factory/crudFactory";
 import { Pagination } from "@/components/ui";
@@ -9,47 +8,42 @@ import { FilterSection } from "../../global";
 
 type props = {
     preloadPublications: PublicationInterface[];
-    totalPublications: number;
+    totalRecords: number;
 }
 
 
 const PublicationListingSection: FC<props> = ({
     preloadPublications,
-    totalPublications
+    totalRecords
 }) => {
 
     const [publicationListData, setPublicationListData] = useState<{
         data: PublicationInterface[],
         page: number;
         search: string;
+        count: number;
     }>({
         data: preloadPublications,
         page: 0,
-        search: ''
+        search: '',
+        count: totalRecords,
     });
     const [isLoading, setIsLoading] = useState(false);
 
 
-    useEffect(() => {
-        // if (search) {
-        // retrieveArticles(0, '');
-        // }
-    }, []);
-
-
-    const retrievePublications = useCallback(async (defaultPage: number, defaultSearch: string) => {
+    const retrievePublications = useCallback(async (defaultPage: number, defaultSearch: string = '') => {
         try {
             setIsLoading(true);
-            const { data: { rows } } = await $crud.retrieve(`metarule/publications?page=${defaultPage}&search=${defaultSearch}`);
+            const { data: { rows, count } } = await $crud.retrieve(`metarule/publications?page=${defaultPage}&search=${defaultSearch}`);
 
             setPublicationListData((prev) => ({
-                ...prev,
                 page: defaultPage,
-                data: rows
+                data: rows,
+                search: defaultSearch,
+                count
             }));
-
             setIsLoading(false);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.getElementById("publicationListSection")?.scrollIntoView({ behavior: "smooth" });
         } catch (e) {
             console.error(e);
         }
@@ -57,18 +51,10 @@ const PublicationListingSection: FC<props> = ({
 
 
     const handlePageChange = (updatedPage: number) => {
-        setPublicationListData((prev) => ({
-            ...prev,
-            page: updatedPage,
-        }));
-        retrievePublications(updatedPage, '');
+        retrievePublications(updatedPage, publicationListData.search);
     }
 
     const handleSearch = (value: string) => {
-        setPublicationListData((prev) => ({
-            ...prev,
-            search: value,
-        }));
         retrievePublications(0, value);
     }
 
@@ -79,22 +65,22 @@ const PublicationListingSection: FC<props> = ({
                 <div className="spinner"></div>
             </div>
         }
-        <div className="container px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+        <div id="publicationListSection" className="container px-4 sm:px-6 lg:px-8 py-12 space-y-10">
             {/* Controls */}
             <FilterSection
-                totalRecords={totalPublications}
+                totalRecords={publicationListData.count}
                 filterTitle='Publication'
                 onSearch={handleSearch}
             />
             <section>
                 <div className={true ? 'grid md:grid-cols-2 lg:grid-cols-3 gap-6' : 'space-y-6'}>
                     {
-                        publicationListData.data.map((e) => <PublicationCard data={e} />)
+                        publicationListData.data.map((e) => <PublicationCard key={e.id} data={e} />)
                     }
                 </div>
             </section>
             <Pagination
-                totalRecords={totalPublications}
+                totalRecords={publicationListData.count}
                 limit={10}
                 currentPage={publicationListData.page}
                 onPageChange={handlePageChange}

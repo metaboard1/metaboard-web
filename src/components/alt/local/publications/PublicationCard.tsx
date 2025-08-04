@@ -2,14 +2,12 @@ import { type FC } from "react";
 import { Calendar, Download, ExternalLink, Share2, User } from "lucide-react";
 import { Badge, Button, Card, DialogHeader } from "../../ui";
 import { Dialog, DialogContent, DialogTitle, DialogTrigger, } from '../../ui';
-import { BASE_ASSETS_URL } from "@/constants";
 import dayjs from "dayjs";
 import Link from "next/link";
 
 type props = {
-    data: PublicationInterface
+    data: PublicationInterface;
 }
-
 
 const PublicationCard: FC<props> = ({
     data

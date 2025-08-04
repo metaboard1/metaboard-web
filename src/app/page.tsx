@@ -16,9 +16,6 @@ const Home = async () => {
     }
     return (
         <div className="smooth-scroll">
-            <Header
-                showNavLinks
-            />
             <HeroSection />
             <ArticlesShowcase
                 articles={latestArticles}
@@ -27,8 +24,7 @@ const Home = async () => {
             <OurServicesSection />
             <AdvisoryBoardSection />
             <UsefulLinksSection />
-            <Footer />
-             <ScrollToTopBtn />
+            <ScrollToTopBtn />
         </div>
     );
 };

@@ -1,5 +1,5 @@
+import { type FC } from "react";
 import { Badge } from "@/components/ui";
-import { FC } from "react";
 import { Button } from "../ui";
 
 type HeroSectionTypes = {

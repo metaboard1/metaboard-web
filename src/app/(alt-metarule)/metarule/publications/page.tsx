@@ -20,22 +20,13 @@ const Publications = async () => {
     }
     return (<>
         <div className="min-h-screen gradient-primary">
-            {/* Navigation Header */}
-            <AltHeader />
-
-            {/* Hero Section */}
             <HeroSection
                 page='publications'
             />
             <PublicationListingSection
                 preloadPublications={publicationList}
-                totalPublications={totalPublications}
+                totalRecords={totalPublications}
             />
-
-
-
-            {/* Footer */}
-            <Footer />
         </div>
     </>);
 }

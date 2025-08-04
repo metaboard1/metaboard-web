@@ -7,6 +7,8 @@
 /* Import Inter font for clean typography */
 
 /* Metaboard Design System - Professional Black, Red, White */
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;

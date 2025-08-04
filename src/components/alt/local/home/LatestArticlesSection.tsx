@@ -87,7 +87,7 @@ const LatestArticlesSection: FC = () => {
                         <div className="md:w-3/5 p-6 md:p-8">
                             <div className="space-y-4">
                                 <div>
-                                    <Badge variant="secondary" className="glass mb-3">
+                                    <Badge variant="outline" className="mb-3">
                                         {article.category}
                                     </Badge>
                                     <h2 className="text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
@@ -153,7 +153,7 @@ const LatestArticlesSection: FC = () => {
                         <div className="p-6">
                             <div className="space-y-3">
                                 <div>
-                                    <Badge variant="secondary" className="glass mb-2 text-xs">
+                                    <Badge variant="outline" className="mb-2 text-xs">
                                         {article.category}
                                     </Badge>
                                     <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight">

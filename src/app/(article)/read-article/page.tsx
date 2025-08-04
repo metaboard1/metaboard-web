@@ -1,5 +1,4 @@
-import { AltHeader } from '@/components/alt/global';
-import { ArticleHeroSection, Footer, ScrollToTopBtn } from '@/components/global';
+import { ArticleHeroSection, ScrollToTopBtn } from '@/components/global';
 import { ArticleContentSection, ExploreMoreSection, ArticleScrollProgress } from '@/components/local/read-article';
 import { $crud } from '@/factory/crudFactory';
 
@@ -9,16 +8,16 @@ type PageProps = {
 
 export const dynamic = 'force-dynamic';
 
-const ReadBlog = async ({ searchParams }: PageProps) => {
+const ArticleDetail = async ({ searchParams }: PageProps) => {
 
-    let blog: any = [];
+    let article: any = [];
 
     try {
        const resolvedSearchParams = await searchParams;
         const id = resolvedSearchParams?.id;
         if (id) {
-            const { data } = await $crud.get(`retrieve/web/metarule/blog-by-id?id=${id}`);
-            blog = data;
+            const { data } = await $crud.get(`retrieve/web/article-by-id?id=${id}`);
+            article = data;
         }
     } catch (error) {
         console.error('Error fetching article:', error);
@@ -51,30 +50,26 @@ const ReadBlog = async ({ searchParams }: PageProps) => {
             <ArticleScrollProgress />
 
             {/* Header */}
-            <AltHeader/>
 
             {/* Article Hero */}
             <ArticleHeroSection
-                data={blog}
+                data={article}
             />
 
             {/* Article Content */}
             <ArticleContentSection
                 relatedArticles={relatedArticles}
-                articleHtml={blog.contentHtml}
-                articleCss={blog.contentCss}
+                articleHtml={article.contentHtml}
+                articleCss={article.contentCss}
             />
 
             {/* Footer CTA */}
             <ExploreMoreSection />
 
-            <Footer/>
             {/* Back to Top Button */}
             <ScrollToTopBtn />
-
-
         </div>
     );
 };
 
-export default ReadBlog;
+export default ArticleDetail;
