@@ -67,7 +67,7 @@ const Header: FC<props> = ({
 
     return (
         <>
-            <header className={`${(pathname !== '/read-article' && pathname !== '/articles') ? 'fixed' : ''} top-0 left-0 right-0 z-50 overflow-hidden transition-all duration-300 ${isScrolled
+            <header className={`${(pathname !== '/read-article' && pathname !== '/articles') ? 'fixed' : 'overflow-hidden'}   top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
                 ? 'glass backdrop-blur-lg bg-black/20'
                 : 'bg-transparent'
                 } ${styles}`}>

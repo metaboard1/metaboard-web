@@ -2,7 +2,7 @@ export const dynamic = 'force-dynamic';
 
 import { AltHeader, HeroSection } from '@/components/alt/global';
 import { PublicationListingSection } from '@/components/alt/local/publications';
-import { Footer } from '@/components/global';
+import { Footer, ScrollToTopBtn } from '@/components/global';
 import { $crud } from '@/factory/crudFactory';
 
 
@@ -27,6 +27,7 @@ const Publications = async () => {
                 preloadPublications={publicationList}
                 totalRecords={totalPublications}
             />
+            <ScrollToTopBtn />
         </div>
     </>);
 }

@@ -3,6 +3,7 @@
 import React from "react";
 import { Shield, Mail } from "lucide-react";
 import { Header, Footer, ScrollToTopBtn, HeroSection } from "@/components/global";
+import Link from "next/link";
 
 const PrivacyPolicy = () => {
     return (<>
@@ -279,19 +280,19 @@ const PrivacyPolicy = () => {
                                     exercise your data rights.
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                    <a
-                                        href="mailto:info@metaboard.com"
+                                    <Link
+                                        href='/contact'
                                         className="inline-flex items-center justify-center px-6 py-3 bg-white text-red-600 rounded-lg hover:bg-red-50 transition-colors duration-200"
                                     >
                                         <Mail className="w-5 h-5 mr-2" />
-                                        Contact Privacy Officer
-                                    </a>
-                                    <a
+                                        Email Support
+                                    </Link>
+                                    <Link
                                         href="/terms"
                                         className="inline-flex items-center justify-center px-6 py-3 bg-red-700 text-white rounded-lg hover:bg-red-800 transition-colors duration-200"
                                     >
                                         View Terms of Service
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

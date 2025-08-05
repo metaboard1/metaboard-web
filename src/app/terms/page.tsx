@@ -373,19 +373,18 @@ const TermsOfService = () => {
                                     </p>
                                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                         <Link
-                                            // href="mailto:info@metaboard.com"
                                             href="/contact"
                                             className="inline-flex items-center justify-center px-6 py-3 bg-white text-red-600 rounded-lg hover:bg-red-50 transition-colors duration-200"
                                         >
                                             <Mail className="w-5 h-5 mr-2" />
                                             Email Support
                                         </Link>
-                                        <a
+                                        <Link
                                             href="/aboutUs"
                                             className="inline-flex items-center justify-center px-6 py-3 bg-red-700 text-white rounded-lg hover:bg-red-800 transition-colors duration-200"
                                         >
                                             Learn About Us
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
