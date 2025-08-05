@@ -1,11 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import React from "react";
+import { Mail, Phone, MapPin, NotepadText, Home } from "lucide-react";
 import { HeroSection, ScrollToTopBtn } from "@/components/global";
-import { Button } from "@/components/ui";
 import { ContactForm } from "@/components/local/contact";
-// import { Button } from "@/components/alt/ui";
 
 
 
@@ -13,11 +11,10 @@ import { ContactForm } from "@/components/local/contact";
 
 
 const ContactUs = () => {
-  
+
     return (
         <>
             <div className="min-h-screen">
-                {/* Hero Section */}
                 <HeroSection
                     RenderTopIcon={Mail}
                     heading="Contact"
@@ -32,37 +29,39 @@ const ContactUs = () => {
                         className="max-w-6xl mx-auto my-20  rounded-3xl border border-red-100 shadow-lg overflow-hidden"
                     >
                         <div className="flex flex-col-reverse lg:flex-row">
-                            {/* Left Side - Form Content */}
-                            <ContactForm/>
-                          
-
+                            <ContactForm />
                             {/* Right Side - Contact Info */}
-                            <div className="bg-primary from-red-500 to-red-600 p-6 lg:p-8 text-white lg:w-1/2">
+                            <div className="bg-primary p-6 lg:p-8 text-white flex-1">
                                 <div className="h-full flex flex-col justify-center">
-                                    <h4
-                                        className={`text-xl font-bold mb-4`}
-                                    >
-                                        Let's Start a Conversation
-                                    </h4>
+                                    
+                                    <div className="mb-6">
+                                        <h5 className="font-bold text-lg mb-2">Metaboard®</h5>
+                                        <p className="text-red-100 text-sm leading-relaxed">
+                                            Metarion Knowledge Solutions Private Limited
+                                        </p>
+                                    </div>
 
-                                    {/* Contact Info Separator */}
-                                    <div className="w-12 h-0.5 bg-white/30 mb-6"></div>
-
-                                    <div className="space-y-4">
+                                    <div className="space-y-5">
+                                        {/* Main Office */}
                                         <div className="flex items-start gap-3">
                                             <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                                                <Phone
+                                                <MapPin
                                                     size={20}
                                                 />
                                             </div>
                                             <div>
-                                                <h5 className="font-medium mb-1 text-sm">Phone</h5>
-                                                <p className="text-red-100 text-sm">
-                                                    +1 (555) 123-4567
+                                                <h5 className="font-medium mb-1 text-sm">
+                                                    Main Office
+                                                </h5>
+                                                <p className="text-red-100 text-sm leading-relaxed">
+                                                    Level 2, Elegance, Mathura Road, Jasola,
+                                                    <br />
+                                                    New Delhi – 110025, India
                                                 </p>
                                             </div>
                                         </div>
 
+                                        {/* Email */}
                                         <div className="flex items-start gap-3">
                                             <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
                                                 <Mail
@@ -72,23 +71,52 @@ const ContactUs = () => {
                                             <div>
                                                 <h5 className="font-medium mb-1 text-sm">Email</h5>
                                                 <p className="text-red-100 text-sm">
-                                                    hello@metaboard.com
+                                                    info@metaboard.com
                                                 </p>
                                             </div>
                                         </div>
 
+                                        {/* Phone */}
                                         <div className="flex items-start gap-3">
                                             <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                                                <MapPin
+                                                <Phone
                                                     size={20}
                                                 />
                                             </div>
                                             <div>
-                                                <h5 className="font-medium mb-1 text-sm">Address</h5>
-                                                <p className="text-red-100 text-sm">
-                                                    123 Legal Tech Ave
+                                                <h5 className="font-medium mb-1 text-sm">Telephone</h5>
+                                                <p className="text-red-100 text-sm">+91 11 6635 1542</p>
+                                            </div>
+                                        </div>
+
+                                        {/* Fax */}
+                                        <div className="flex items-start gap-3">
+                                            <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                                                <NotepadText
+                                                    size={20}
+                                                />
+                                            </div>
+                                            <div>
+                                                <h5 className="font-medium mb-1 text-sm">Facsimile</h5>
+                                                <p className="text-red-100 text-sm">+91 11 6635 1235</p>
+                                            </div>
+                                        </div>
+
+                                        {/* R&D Centre */}
+                                        <div className="flex items-start gap-3">
+                                            <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                                                <Home
+                                                    size={20}
+                                                />
+                                            </div>
+                                            <div>
+                                                <h5 className="font-medium mb-1 text-sm">R&D Centre</h5>
+                                                <p className="text-red-100 text-sm leading-relaxed">
+                                                    'Metaboard'
                                                     <br />
-                                                    Innovation District, NY 10001
+                                                    Village – Karnera, Ballabhgarh
+                                                    <br />
+                                                    Faridabad – 121004 Haryana, India
                                                 </p>
                                             </div>
                                         </div>
@@ -101,6 +129,7 @@ const ContactUs = () => {
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </section>
