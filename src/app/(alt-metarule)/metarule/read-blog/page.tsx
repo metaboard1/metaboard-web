@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { AltHeader } from '@/components/alt/global';
 import { ArticleHeroSection, Footer, ScrollToTopBtn } from '@/components/global';
 import { ArticleContentSection, ExploreMoreSection, ArticleScrollProgress } from '@/components/local/read-article';
@@ -7,7 +9,6 @@ type PageProps = {
     searchParams: Promise<Record<string, string | string[]>>;
 };
 
-export const dynamic = 'force-dynamic';
 
 const ReadBlog = async ({ searchParams }: PageProps) => {
 

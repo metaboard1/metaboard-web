@@ -6,9 +6,9 @@ import Link from 'next/link';
 const Footer = () => {
     const quickLinks = [
         { name: 'Articles', href: '/articles' },
-        { name: 'About Us', href: '#about' },
-        { name: 'Projects', href: '#projects' },
-        { name: 'Contact', href: '#contact' }
+        { name: 'About Us', href: '#' },
+        { name: 'Projects', href: '#' },
+        { name: 'Contact', href: '/contact' }
     ];
 
     const legalLinks = [

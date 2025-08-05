@@ -43,11 +43,11 @@ const BlogListingSection: FC<props> = ({
                 search: defaultSearch,
                 count
             }));
-
-            setIsLoading(false);
             document.getElementById("blogListSection")?.scrollIntoView({ behavior: "smooth" });
         } catch (e) {
             console.error(e);
+        }finally{
+            setIsLoading(false);
         }
     }, []);
 

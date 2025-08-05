@@ -111,7 +111,7 @@ const ArticleHeroSection: FC<props> = ({ data, showReadBtn }) => {
                     {
                         showReadBtn &&
                         <Link
-                            href={`/article-details?id=${data?.id}`}
+                            href={`/read-article?id=${data?.id}`}
                             className="inline-block mt-8 bg-primary hover:bg-red-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 ripple-effect"
                         >
                             Read Full Story

@@ -30,9 +30,7 @@ const ArticleCardsSection: FC<props> = ({ preloadedArticles, totalArticles, limi
     const { search, setData } = useSearchArticle();
 
     useEffect(() => {
-        // if (search) {
         retrieveArticles(0, search);
-        // }
     }, [search]);
 
 
@@ -48,10 +46,11 @@ const ArticleCardsSection: FC<props> = ({ preloadedArticles, totalArticles, limi
             if (search) {
                 setData(rows);
             }
-            setIsLoading(false);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } catch (e) {
             console.error(e);
+        }finally{
+            setIsLoading(false);
         }
     }, [search]);
 

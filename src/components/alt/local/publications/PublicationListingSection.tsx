@@ -42,10 +42,11 @@ const PublicationListingSection: FC<props> = ({
                 search: defaultSearch,
                 count
             }));
-            setIsLoading(false);
             document.getElementById("publicationListSection")?.scrollIntoView({ behavior: "smooth" });
         } catch (e) {
             console.error(e);
+        }finally{
+            setIsLoading(false);
         }
     }, []);
 
