@@ -7,6 +7,7 @@ import Link from "next/link";
 import { $crud } from "@/factory/crudFactory";
 import { useSearchArticle } from "@/context/SearchArticleContext";
 import { Pagination } from "@/components/ui";
+import { Loader } from "@/components/global";
 
 
 type props = {
@@ -64,13 +65,9 @@ const ArticleCardsSection: FC<props> = ({ preloadedArticles, totalArticles, limi
     }
     return (<>
         {/* <div className="md:col-span-2"> */}
-        {
-            isLoading &&
-            <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-gray-500 bg-opacity-40 backdrop-blur-[2px]  z-[999]">
-                <div className="spinner"></div>
-            </div>
-        }
-
+        <Loader
+            isVisible={isLoading}
+        />
         <div className="flex flex-col gap-10">
 
             {

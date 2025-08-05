@@ -1,7 +1,7 @@
 'use client';
 
-import { Children, memo, useEffect, useState, type FC } from "react"
-import { ArrowBigDown, ArrowBigLeft, ChevronDown, Menu, X } from "lucide-react";
+import { memo, useEffect, useState, type FC } from "react"
+import { ChevronDown, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
@@ -31,7 +31,7 @@ const Header: FC<props> = ({
         { name: 'Home', href: '/', children: [] },
         { name: 'Knowledge center', href: '', children: [{ name: 'Articles', href: '/articles' }] },
         { name: 'MetaRule', href: '/metarule', children: [{ name: 'Home', href: '/metarule' }, { name: 'Blogs', href: '/metarule/blogs' }, { name: 'Publications', href: '/metarule/publications' }] },
-        { name: 'Others', href: '', children: [{ name: 'About us', href: '/articles' },{ name: 'Contact us', href: '/contact' }]  },
+        { name: 'Others', href: '', children: [{ name: 'About us', href: '/articles' }, { name: 'Contact us', href: '/contact' }] },
         { name: 'Services', href: '/services', children: [] },
     ];
 
@@ -95,7 +95,7 @@ const Header: FC<props> = ({
                                                                                     <div className="h-3 w-3 rounded-sm bg-red-500 group-hover:bg-red-400 transition-colors duration-200"></div>
                                                                                 </div>
                                                                                 <div className="flex flex-col">
-                                                                                    <div className={`${isMetaruleSection  ? 'text-black' : 'text-white' } group-hover:text-red-400 font-semibold transition-colors duration-200`}>
+                                                                                    <div className={`${isMetaruleSection ? 'text-black' : 'text-white'} group-hover:text-red-400 font-semibold transition-colors duration-200`}>
                                                                                         {name}
                                                                                     </div>
                                                                                     <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors duration-200">
@@ -121,7 +121,7 @@ const Header: FC<props> = ({
                             <div className="absolute left-0 top-full flex w-full justify-center [perspective:600px]">
                                 <NavigationMenu.Viewport
                                     className={`
-                                        ${ !isMetaruleSection ?  'bg-gradient-to-br border-red-500/20' :'bg-gradient-primary'}
+                                        ${!isMetaruleSection ? 'bg-gradient-to-br border-red-500/20' : 'gradient-primary'}
                                     relative mt-2 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-xl  from-gray-900/95 to-black/95 backdrop-blur-xl border  shadow-2xl shadow-red-500/10 transition-[width,_height] duration-300 data-[state=closed]:animate-scaleOut data-[state=open]:animate-scaleIn sm:w-[var(--radix-navigation-menu-viewport-width)] [perspective-origin:center_top]`}
                                 />
                             </div>

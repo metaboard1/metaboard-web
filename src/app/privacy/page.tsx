@@ -2,52 +2,19 @@
 
 import React from "react";
 import { Shield, Mail } from "lucide-react";
-import { Header, Footer, ScrollToTopBtn } from "@/components/global";
+import { Header, Footer, ScrollToTopBtn, HeroSection } from "@/components/global";
 
 const PrivacyPolicy = () => {
     return (<>
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-red-50 to-rose-100">
             {/* Hero Section */}
-            <section className="relative flex items-center py-20 overflow-hidden h-screen md:h-auto">
-                <div className="absolute inset-0 bg-gradient-to-r from-red-600/10 to-rose-600/10"></div>
-                <div className="container mx-auto px-6 relative z-10">
-                    <div className="text-center max-w-4xl mx-auto">
-                        <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-6">
-                            <Shield className="w-8 h-8 text-red-600" />
-                        </div>
-                        <h1 className="text-5xl md:text-6xl text-gray-900 mb-6">
-                            Privacy
-                            <span className="bg-gradient-to-r from-red-600 to-rose-600 bg-clip-text text-transparent">
-                                {" "}
-                                Policy
-                            </span>
-                        </h1>
-                        <p className="text-base text-gray-600 mb-8 leading-relaxed">
-                            This Privacy Policy sets out how we at Metaboard®, a subsidiary
-                            of Metarion Knowledge Solutions Private Limited [Metarion®],
-                            collect, use, share, and safeguard your [hereinafter referred to
-                            as "Data Principal"] information through www.metaboard.com.
-                        </p>
-                        <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 border border-red-100">
-                            <p className="text-sm text-gray-700">
-                                We respect your privacy and are committed to protecting your
-                                personal data in line with the{" "}
-                                <span className="">
-                                    Digital Personal Data Protection Act, 2023
-                                </span>
-                                , and other applicable laws.
-                            </p>
-                            <div className="mt-3 flex items-center justify-center space-x-2">
-                                <Mail className="w-4 h-4 text-red-600" />
-                                <span className="text-sm text-gray-600">
-                                    For questions or concerns: info@metaboard.com
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            <HeroSection
+                RenderTopIcon={Shield}
+                heading="Privacy"
+                headingSpan="Policy"
+                description='This Privacy Policy sets out how we at Metaboard®, a subsidiary of Metarion Knowledge Solutions Private Limited [Metarion®], collect, use, share, and safeguard your [hereinafter referred to as "Data Principal"] information through www.metaboard.com.'
+                note="We respect your privacy and are committed to protecting your personal data in line with the Digital Personal Data Protection Act, 2023, and other applicable laws."
+            />
             {/* Privacy Policy Content */}
             <section className="py-20 bg-white/50">
                 <div className="container mx-auto px-6">

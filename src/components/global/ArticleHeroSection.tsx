@@ -5,6 +5,7 @@ import { BASE_ASSETS_URL } from "@/constants"
 import dayjs from "dayjs"
 import { Clock, Facebook, Linkedin, Share, Share2, Twitter } from "lucide-react"
 import Link from "next/link"
+import { Button } from "../ui";
 
 type props = {
     data: any;
