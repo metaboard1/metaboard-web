@@ -1,5 +1,4 @@
 'use client';
-
 import { useEffect, useState, type FC } from "react"
 import { ChevronUp } from "lucide-react"
 
@@ -16,35 +15,21 @@ const ScrollToTopBtn: FC = () => {
     const onPageScroll = () => {
         window.scrollY >= window.innerHeight ? setIsVisible(true) : (isVisible && setIsVisible(false));
     }
-    return (
-        <>
-            <style jsx>{`
-                .scroll-to-top {
-                    position: fixed;
-                    bottom: 24px;
-                    right: 24px;
-                    opacity: 0;
-                    transform: scale(0.9);
-                    transition: all 0.3s ease-in-out;
-                    pointer-events: none;
-                    z-index: 40;
-                }
-                
-                /* Show button when not at top */
-                .scroll-container:not(.at-top) .scroll-to-top {
-                    opacity: 1;
-                    transform: scale(1);
-                    pointer-events: auto;
-                }
-            `}</style>
-            
-            <button
-                className="scroll-to-top group p-4 rounded-full text-white bg-primary hover:bg-primary hover:text-white"
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                aria-label="Scroll to top"
-            >
-                <ChevronUp size={20} className="group-hover:-translate-y-0.5 transition-transform duration-300" />
-            </button>
+    return (<>
+
+        <button
+            className={`group fixed bottom-6 right-6 p-4 rounded-full z-40 text-white transition-all duration-300 ease-in-out bg-primary
+                    ${isVisible ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-90 pointer-events-none'}
+                     hover:bg-primary hover:text-white
+                `}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+            <ChevronUp size={20}
+                // className="text-gray-500 group-hover:text-white"
+                className="group-hover:-translate-y-0.5 transition-transform duration-300"
+
+            />
+        </button>
     </>);
 }
 
