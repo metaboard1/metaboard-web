@@ -16,15 +16,23 @@ const Header: FC<props> = ({
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [expandedMobileItem, setExpandedMobileItem] = useState<string | null>(null);
+    const [mounted, setMounted] = useState(false);
     const pathname = usePathname();
 
+    // Handle mounting to prevent hydration mismatch
     useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    useEffect(() => {
+        if (!mounted) return;
+        
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [mounted]);
 
     // Close mobile menu when pathname changes
     useEffect(() => {
@@ -32,26 +40,41 @@ const Header: FC<props> = ({
         setExpandedMobileItem(null);
     }, [pathname]);
 
-    // Prevent body scroll when mobile menu is open
-    // useEffect(() => {
-    //     document.body.style.overflow = 'hidden';
-    //     if (isMobileMenuOpen) {
-    //     } else {
-    //         document.body.style.overflow = '';
-    //     }
-
-    //     return () => {
-    //         document.body.style.overflow = '';
-    //     };
-    // }, [isMobileMenuOpen]);
-
     const navItems = [
         { name: 'Home', href: '/', children: [] },
-        { name: 'Knowledge center', href: '', children: [{ name: 'Articles', href: '/articles' }] },
+        { name: 'Knowledge centre', href: '', children: [{ name: 'Articles', href: '/articles' }] },
         { name: 'MetaRule', href: '/metarule', children: [{ name: 'Home', href: '/metarule' }, { name: 'Blogs', href: '/metarule/blogs' }, { name: 'Publications', href: '/metarule/publications' }] },
-        { name: 'Others', href: '', children: [{ name: 'About us', href: '/articles' }, { name: 'Contact us', href: '/contact' }] },
         { name: 'Services', href: '/services', children: [] },
+        { name: 'Know us', href: '', children: [{ name: 'About us', href: '/about' }, { name: 'Contact us', href: '/contact' }] },
     ];
+
+    // Don't render dynamic content until mounted
+    if (!mounted) {
+        return (
+            <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent ${styles}`}>
+                <nav className="container mx-auto px-4 sm:px-6 py-3 md:py-4">
+                    <div className="flex items-center justify-between min-h-[48px]">
+                        <div className="flex items-center space-x-3 flex-shrink-0">
+                            <Link href="/">
+                                <img
+                                    src="/assets/images/logo.webp"
+                                    alt="MetaBoard Logo"
+                                    className="h-7 md:h-8 w-auto transition-all duration-300"
+                                />
+                            </Link>
+                        </div>
+                        <button
+                            className="lg:hidden text-gray-500 p-2 rounded-lg hover:bg-white/10 transition-colors duration-200"
+                            aria-label="Toggle mobile menu"
+                            disabled
+                        >
+                            <Menu size={20} />
+                        </button>
+                    </div>
+                </nav>
+            </header>
+        );
+    }
 
     const isMetaruleSection = pathname.split('/')[1] === 'metarule';
 
@@ -63,11 +86,12 @@ const Header: FC<props> = ({
         setIsMobileMenuOpen(false);
         setExpandedMobileItem(null);
     };
+    
     const navLinksTextColor = pathname.split('/')[1] !== '' ? 'text-gray-700' : 'text-gray-300';
 
     return (
         <>
-            <header className={`${(pathname !== '/read-article' && pathname !== '/articles') ? 'fixed' : 'overflow-hidden'}   top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+            <header className={`${(pathname !== '/read-article' && pathname !== '/articles') ? 'fixed' : 'overflow-hidden'} top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
                 ? 'glass backdrop-blur-lg bg-black/20'
                 : 'bg-transparent'
                 } ${styles}`}>

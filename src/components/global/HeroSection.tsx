@@ -8,7 +8,7 @@ type props = {
     heading: string;
     headingSpan: string;
     description: string;
-    note:string;
+    note: string;
 }
 
 const HeroSection: FC<props> = ({ RenderTopIcon, heading, headingSpan, description, note }) => {
@@ -29,12 +29,15 @@ const HeroSection: FC<props> = ({ RenderTopIcon, heading, headingSpan, descripti
                         </span>
                     </h1>
                     <p className="text-base text-gray-600 mb-8 leading-relaxed">
-                      {description}
+                        {description}
                     </p>
                     <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 border border-red-100">
-                        <p className="text-sm text-gray-700">
-                           {note}
-                        </p>
+                        {
+                            note &&
+                            <p className="text-sm text-gray-700">
+                                {note}
+                            </p>
+                        }
                         <div className="mt-3 flex items-center justify-center space-x-2">
                             <Mail className="w-4 h-4 text-red-600" />
                             <span className="text-sm text-gray-600">

@@ -1,7 +1,7 @@
 'use client';
 
 import { type FC } from "react";
-import { Calendar, ExternalLink, Share2, User } from "lucide-react";
+import { Calendar, ExternalLink, Share2 } from "lucide-react";
 import { Button, Card } from "../../ui";
 import dayjs from "dayjs";
 import Link from "next/link";

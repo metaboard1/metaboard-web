@@ -1,8 +1,6 @@
 'use client';
 
-import { FC, useCallback, useEffect, useState } from "react";
-// import PublicationFilterSection from "./PublicationFilterSection";
-// import PublicationCard from "./PublicationCard";
+import { FC, useCallback, useState } from "react";
 import { $crud } from "@/factory/crudFactory";
 import { Pagination } from "@/components/ui";
 import { FilterSection } from "../../global";
@@ -16,7 +14,7 @@ type props = {
 
 const BlogListingSection: FC<props> = ({
     preloadBlogs = [],
-    totalRecords
+    totalRecords = 0,
 }) => {
     const [blogListData, setBlogListData] = useState<{
         data: BlogInterface[],
@@ -82,8 +80,8 @@ const BlogListingSection: FC<props> = ({
                 </div>
             </section>
             <Pagination
-                totalRecords={totalRecords}
-                limit={blogListData.count}
+                totalRecords={blogListData.count}
+                limit={10}
                 currentPage={blogListData.page}
                 onPageChange={handlePageChange}
             />
