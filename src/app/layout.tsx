@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "../styles/index.css";
 import "../styles/app.css";
 import { Footer, Header } from "@/components/global";
+import { Suspense } from "react";
+import Loading from "./loading";
 // import "../styles/metarule-css.css";
 
 
@@ -14,9 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header/>
-        {children}
-        <Footer/>
+        {/* <Suspense fallback={<Loading />}> */}
+          <Header />
+          {children}
+          <Footer />
+        {/* </Suspense> */}
       </body>
     </html>
   );

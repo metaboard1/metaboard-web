@@ -20,9 +20,10 @@ const PublicationCard: FC<props> = ({
                 <div className="relative">
                     <img
                         // src={BASE_ASSETS_URL + `/publications/${data.coverImage}`}
-                        src={data.coverImage}
+                        // src={data.coverImage}
                         alt='publication'
                         className="w-full h-64 object-cover transition-transform group-hover:scale-105"
+                        loading='lazy'
                     />
                     <div className="absolute top-3 left-3">
                         {/* <Badge

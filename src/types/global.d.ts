@@ -11,6 +11,7 @@ interface BlogInterface {
     title: string;
     description: string;
     author: string;
+    estimateReadTime: number;
     coverImage: string;
     publishedAt: string;
 }

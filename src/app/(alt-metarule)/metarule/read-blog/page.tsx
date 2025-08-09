@@ -9,17 +9,17 @@ type PageProps = {
     searchParams: Promise<Record<string, string | string[]>>;
 };
 
-
 const ReadBlog = async ({ searchParams }: PageProps) => {
 
     let blog: any = [];
 
     try {
-       const resolvedSearchParams = await searchParams;
+        const resolvedSearchParams = await searchParams;
         const id = resolvedSearchParams?.id;
         if (id) {
             const { data } = await $crud.get(`retrieve/web/metarule/blog-by-id?id=${id}`);
             blog = data;
+            // await new Promise((resolve) => setTimeout(() => { resolve(true) }, 10000));
         }
     } catch (error) {
         console.error('Error fetching article:', error);
@@ -52,7 +52,7 @@ const ReadBlog = async ({ searchParams }: PageProps) => {
             <ArticleScrollProgress />
 
             {/* Header */}
-            <AltHeader/>
+            {/* <AltHeader/> */}
 
             {/* Article Hero */}
             <ArticleHeroSection
@@ -69,7 +69,6 @@ const ReadBlog = async ({ searchParams }: PageProps) => {
             {/* Footer CTA */}
             <ExploreMoreSection />
 
-            <Footer/>
             {/* Back to Top Button */}
             <ScrollToTopBtn />
 
