@@ -1,3 +1,5 @@
+'use client';
+
 import {  ChevronDown, ChevronUp, Globe, Linkedin, Mail, TwitterIcon } from "lucide-react";
 import { Button, Card,Badge } from "../../ui"
 import { useState } from "react";

@@ -31,7 +31,7 @@ const ArticlesShowcase = ({ articles }: props) => {
                         >
                             <div className="relative overflow-hidden">
                                 <img
-                                    src={BASE_ASSETS_URL + `/article-cover-images/${article.coverImage}`}
+                                    src={BASE_ASSETS_URL + `/articles/${article.coverImage}`}
                                     alt={article.title}
                                     className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                                 />
@@ -61,7 +61,7 @@ const ArticlesShowcase = ({ articles }: props) => {
                                 </div>
 
                                 <Link
-                                    href={`/article-details?id=${article.id}`}
+                                    href={`read-article?id=${article.id}`}
                                     className="group/btn flex items-center gap-2 text-red-600 font-semibold hover:text-red-700 transition-colors"
                                 >
                                     Read More

@@ -8,48 +8,28 @@ type PageProps = {
 
 export const dynamic = 'force-dynamic';
 
-const ArticleDetail = async ({ searchParams }: PageProps) => {
+const Read = async ({ searchParams }: PageProps) => {
 
-    let article: any = [];
+    let article: any = {};
+    let relatedArticlesArr: RelatedArticleInterface[] = [];
 
     try {
-       const resolvedSearchParams = await searchParams;
+        const resolvedSearchParams = await searchParams;
         const id = resolvedSearchParams?.id;
         if (id) {
-            const { data } = await $crud.get(`retrieve/web/article-by-id?id=${id}`);
-            article = data;
+            const { data: { articleDetails, relatedArticles } } = await $crud.retrieve(`article-details?id=${id}`);
+            article = articleDetails;
+            relatedArticlesArr = relatedArticles;
         }
     } catch (error) {
         console.error('Error fetching article:', error);
     }
 
-    const relatedArticles = [
-        {
-            id: 2,
-            title: "Constitutional Law in the Digital Age",
-            image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=300&h=200",
-            date: "Dec 14, 2024"
-        },
-        {
-            id: 3,
-            title: "Legal Education Reform: Preparing Tomorrow's Lawyers",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&h=200",
-            date: "Dec 13, 2024"
-        },
-        {
-            id: 4,
-            title: "Blockchain and Smart Contracts",
-            image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=300&h=200",
-            date: "Dec 12, 2024"
-        }
-    ];
 
     return (
         <div className="min-h-screen bg-background">
             {/* Progress Bar */}
             <ArticleScrollProgress />
-
-            {/* Header */}
 
             {/* Article Hero */}
             <ArticleHeroSection
@@ -58,7 +38,7 @@ const ArticleDetail = async ({ searchParams }: PageProps) => {
 
             {/* Article Content */}
             <ArticleContentSection
-                relatedArticles={relatedArticles}
+                relatedArticles={relatedArticlesArr}
                 articleHtml={article.contentHtml}
                 articleCss={article.contentCss}
             />
@@ -72,4 +52,4 @@ const ArticleDetail = async ({ searchParams }: PageProps) => {
     );
 };
 
-export default ArticleDetail;
+export default Read;

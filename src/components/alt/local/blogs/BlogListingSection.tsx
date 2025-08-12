@@ -32,8 +32,7 @@ const BlogListingSection: FC<props> = ({
     const retrieveBlogs = useCallback(async (defaultPage: number, defaultSearch: string = '') => {
         try {
             setIsLoading(true);
-            const { data: { rows, count } } = await $crud.retrieve(`metarule/blogs?page=${defaultPage}&search=${defaultSearch}`);
-
+            const { data: { rows, count } } = await $crud.retrieve(`metarule/blogs?page=${defaultPage}&search=${encodeURIComponent(defaultSearch)}`);
             setBlogListData((prev) => ({
                 ...prev,
                 page: defaultPage,
@@ -55,6 +54,7 @@ const BlogListingSection: FC<props> = ({
     }
 
     const handleSearch = (value: string) => {
+        console.log(value)
         retrieveBlogs(0, value);
     }
 
@@ -70,6 +70,7 @@ const BlogListingSection: FC<props> = ({
             <FilterSection
                 filterTitle='Blog'
                 totalRecords={blogListData.count}
+                showTagFilter
                 onSearch={handleSearch}
             />
             <section>

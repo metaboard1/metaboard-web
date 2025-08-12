@@ -26,7 +26,7 @@ const Header: FC<props> = ({
 
     useEffect(() => {
         if (!mounted) return;
-        
+
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
         };
@@ -86,15 +86,16 @@ const Header: FC<props> = ({
         setIsMobileMenuOpen(false);
         setExpandedMobileItem(null);
     };
-    
+
     const navLinksTextColor = pathname.split('/')[1] !== '' ? 'text-gray-700' : 'text-gray-300';
 
     return (
         <>
-            <header className={`${(pathname !== '/read-article' && pathname !== '/articles') ? 'fixed' : 'overflow-hidden'} top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                ? 'glass backdrop-blur-lg bg-black/20'
-                : 'bg-transparent'
-                } ${styles}`}>
+            <header
+                className={`${(pathname !== '/read-article' && pathname !== '/metarule/read-blog' && pathname !== '/articles')
+                    ? 'fixed'
+                    : 'overflow-hidden lg:overflow-visible'} top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled}`}
+            >
                 <nav className="container mx-auto px-4 sm:px-6 py-3 md:py-4">
                     <div className="flex items-center justify-between min-h-[48px]">
 

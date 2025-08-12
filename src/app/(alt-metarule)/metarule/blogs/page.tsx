@@ -1,9 +1,9 @@
 export const dynamic = 'force-dynamic';
 
-import { AltHeader, HeroSection } from '@/components/alt/global';
+import { HeroSection } from '@/components/alt/global';
 import { BlogListingSection } from '@/components/alt/local/blogs';
-import {  Footer, ScrollToTopBtn } from '@/components/global';
-import {  ArticleScrollProgress } from '@/components/local/read-article';
+import { BrowseByTagSection, RelatedPosts } from '@/components/alt/local/home';
+import { ScrollToTopBtn } from '@/components/global';
 import { $crud } from '@/factory/crudFactory';
 
 type PageProps = {
@@ -29,7 +29,7 @@ const Blogs = async ({ searchParams }: PageProps) => {
 
             {/* Article Hero */}
             <HeroSection
-                page='publications'
+                page='blog'
             />
 
             {/* Article Content */}
@@ -38,6 +38,12 @@ const Blogs = async ({ searchParams }: PageProps) => {
                 totalRecords={totalRecords}
             />
 
+            {/* <div className="lg:col-span-4 mt-12 lg:mt-0">
+                <div className="sticky top-24 space-y-8">
+                    <RelatedPosts />
+                    <BrowseByTagSection />
+                </div>
+            </div> */}
             <ScrollToTopBtn />
         </div>
     );

@@ -6,6 +6,13 @@ interface ArticleInterface {
     coverImage: string;
     publishedAt: string;
 }
+interface RelatedArticleInterface {
+    id: number;
+    title: string;
+    coverImage: string;
+    publishedAt: string;
+    tags: string[];
+}
 interface BlogInterface {
     id: number;
     title: string;

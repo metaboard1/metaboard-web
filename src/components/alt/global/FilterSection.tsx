@@ -1,25 +1,42 @@
 'use client';
 
-import { type FC, useRef } from "react";
+import { type FC, useEffect, useRef, useState } from "react";
 import { Filter, Search } from "lucide-react";
 import { Button, Badge } from "../ui";
+import { $crud } from "@/factory/crudFactory";
 
 
 type props = {
     totalRecords: number;
     filterTitle: string;
+    showTagFilter?: boolean;
     onSearch: (search: string) => void;
 }
 
 const FilterSection: FC<props> = ({
     totalRecords,
     filterTitle,
+    showTagFilter,
     onSearch
 }) => {
     const searchRef = useRef<HTMLInputElement>(null);
+    const [tags, setTags] = useState<{ name: string }[]>([]);
 
+    useEffect(() => {
+        retrieveTags();
+    }, []);
+
+    const retrieveTags = async () => {
+        try {
+            const { data: { rows } } = await $crud.retrieve('tags');
+            console.log(rows)
+            setTags(() => rows);
+        } catch (e) {
+            console.error(e)
+        }
+    }
     const handleSearch = () => onSearch(searchRef?.current?.value ?? '');
-    
+
     return (<>
         <section>
             <div className="flex flex-col sm:flex-row lg:items-center justify-between gap-4 mb-6">
@@ -50,21 +67,34 @@ const FilterSection: FC<props> = ({
                             Search
                         </Button>
                     </div>
-                    {/* <select
-                        value={sortBy}
-                        onChange={(e) => setSortBy(e.target.value)}
-                        className="bg-glass border border-glass rounded-md px-3 py-2 text-sm text-foreground"
-                    >
-                        {sortOptions.map((option) => (
-                            <option key={option.value} value={option.value} className="bg-background">
-                                {option.label}
-                            </option>
-                        ))}
-                    </select> */}
-
 
                 </div>
+
+
             </div>
+            {
+                showTagFilter &&
+                <div className="flex flex-wrap gap-2">
+                    {
+                        tags.map((tag, index) => <Badge
+                            key={index}
+                            variant='outline'
+                            className={`cursor-pointer transition-all ${"hover:bg-glass-hover"
+                                }`}
+                            onClick={() => onSearch(`#${tag.name}`)}
+                        >
+                            # {tag.name}
+                        </Badge>)
+                    }
+                    <Badge
+                        variant='outline'
+                        className={'cursor-pointer transition-all hover:bg-glass-hover'}
+                        onClick={() => onSearch('')}
+                    >
+                        Show all
+                    </Badge>
+                </div>
+            }
 
 
             {/* Category Filter */}

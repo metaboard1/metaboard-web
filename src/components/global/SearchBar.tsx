@@ -73,7 +73,7 @@ const SearchBar: FC = () => {
                         {data.map((item, idx) => (
                             <Link
                                 key={idx}
-                                href={`/article-details?id=${item?.id}`}
+                                href={`/read-article?id=${item?.id}`}
                                 className="px-3 sm:px-4 py-2 sm:py-3 flex items-center space-x-2 hover:bg-gray-50 cursor-pointer text-xs sm:text-sm border-b border-gray-50 last:border-b-0"
                                 onClick={() => setIsFocused(false)}
                             >

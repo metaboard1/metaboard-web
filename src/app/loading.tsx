@@ -16,7 +16,7 @@ const Loading = () => {
                 <img
                     src="/assets/images/loading.gif"
                     alt=""
-                    style={{ height: '60vh' }}
+                    style={{ height: '40vh' }}
                 />
 
                 {/* <DotLottieReact
@@ -27,7 +27,7 @@ const Loading = () => {
                     onLoad={() => console.log('Lottie loaded successfully')}
                     onError={(error) => console.error('Lottie error:', error)}
                 /> */}
-                <div className="text-xl font-semibold animate-pulse text-white">Meta Loading...</div>
+                <div className="text-xl font-semibold animate-pulse text-white mt-10">Meta Loading...</div>
             </div>
         </div>
 

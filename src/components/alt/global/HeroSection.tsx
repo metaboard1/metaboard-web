@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui";
 import { Button } from "../ui";
 
 type HeroSectionTypes = {
-    page: 'publications' | 'home'
+    page: 'publications' | 'home' | 'blog'
 }
 
 const HeroSection: FC<HeroSectionTypes> = ({
@@ -13,12 +13,20 @@ const HeroSection: FC<HeroSectionTypes> = ({
         home: {
             badgeText: 'MetaRule Insights',
             cardTitle: 'Legal Technology',
+            spanTitle: 'Book Publications Excellence',
             description: 'Empowering legal professionals with cutting-edge technology insights, comprehensive publications, and engaging podcast conversations that drive industry innovation.'
+        },
+        blog: {
+            badgeText: 'MetaRule Insights',
+            cardTitle: 'Stories That Matter and',
+            spanTitle: 'Perspectives That Inspire',
+            description: 'Discover meaningful stories and fresh perspectives that spark curiosity, ignite inspiration, and offer deeper understanding of the world around us.'
         },
         publications: {
             badgeText: 'MetaRule Insights',
-            cardTitle: 'Legal Technology',
-            description: 'Empowering legal professionals with cutting-edge technology insights, comprehensive publications, and engaging podcast conversations that drive industry innovation.'
+            cardTitle: 'Book Publications',
+            spanTitle: 'Excellence',
+            description: 'Dive into a curated collection of impactful books, thought-provoking narratives, and insightful works that inspire, inform, and spark meaningful conversations.'
         },
     }
     return (<>
@@ -38,22 +46,21 @@ const HeroSection: FC<HeroSectionTypes> = ({
                         <Badge className="mb-4 bg-primary text-primary-foreground">
                             {content[page].badgeText}
                         </Badge>
-                        <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-                            Legal Technology
-                            {content[page].cardTitle}
-                            <span className="text-primary"> Excellence</span>
-                        </h1>
-                        <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+                        <div className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+                            <h1>
+                                {content[page].cardTitle}{'\n'}
+                            </h1>
+                            <span className="text-primary">{content[page].spanTitle}</span>
+                        </div>
+
+                        <p className="text-xl text-muted-foreground leading-relaxed">
                             {content[page].description}
                         </p>
-                        <div className="flex flex-col gap-4 sm:flex-row">
+                        {/* <div className="flex flex-col gap-4 sm:flex-row">
                             <Button size="lg" className="shadow-lg">
                                 Explore Articles
                             </Button>
-                            <Button size="lg" variant="outline" className="border-glass">
-                                Subscribe to Newsletter
-                            </Button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

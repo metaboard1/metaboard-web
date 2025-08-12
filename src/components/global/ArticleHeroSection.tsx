@@ -3,9 +3,8 @@
 import { type FC } from "react"
 import { BASE_ASSETS_URL } from "@/constants"
 import dayjs from "dayjs"
-import { Clock, Facebook, Linkedin, Share, Share2, Twitter } from "lucide-react"
+import { Clock, Facebook, Linkedin, Share2, Twitter } from "lucide-react"
 import Link from "next/link"
-import { Button } from "../ui";
 
 type props = {
     data: any;
@@ -29,7 +28,7 @@ const ArticleHeroSection: FC<props> = ({ data, showReadBtn }) => {
         <section className="relative overflow-hidden py-10 sm:py-20">
             <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${BASE_ASSETS_URL}/article-cover-images/${data?.coverImage})` }}
+                style={{ backgroundImage: `url(${BASE_ASSETS_URL}/articles/${data?.coverImage})` }}
             >
                 <div className="absolute inset-0 glass bg-black/50"></div>
             </div>
@@ -59,6 +58,7 @@ const ArticleHeroSection: FC<props> = ({ data, showReadBtn }) => {
                         {
                             console.log(data)
                         } */}
+
                         <div className="flex items-center space-x-3">
                             {
                                 data?.authorSocials?.facebook &&
@@ -108,6 +108,15 @@ const ArticleHeroSection: FC<props> = ({ data, showReadBtn }) => {
                             }
                         </div>
                     </div>
+
+                    {
+                        data?.tags?.length &&
+                        <div className="mt-8">
+                            {
+                                data.tags.map((tag: string, i: number) => <span key={i} className="py-1.5 px-3 rounded-full text-xs font-medium bg-gray-50 text-gray-500 dark:bg-white/10 dark:text-white">#{tag}</span>)
+                            }
+                        </div>
+                    }
                     {
                         showReadBtn &&
                         <Link
@@ -117,7 +126,6 @@ const ArticleHeroSection: FC<props> = ({ data, showReadBtn }) => {
                             Read Full Story
                         </Link>
                     }
-
                 </div>
             </div>
         </section>

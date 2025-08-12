@@ -1,10 +1,12 @@
 import { type FC } from "react";
 import Link from "next/link";
+import dayjs from "dayjs";
+import { BASE_ASSETS_URL } from "@/constants";
 
 type props = {
     articleHtml: string;
     articleCss: string;
-    relatedArticles: any
+    relatedArticles: RelatedArticleInterface[];
 }
 
 const ArticleContentSection: FC<props> = ({
@@ -17,7 +19,7 @@ const ArticleContentSection: FC<props> = ({
             <div className="container mx-auto px-6">
                 <div className="grid lg:grid-cols-3 gap-12">
                     {/* Main Content */}
-                    <div className="lg:col-span-2">
+                    <div className={`lg:col-span-${relatedArticles.length ? 2 : 3}`}>
 
                         <div className="article-content text-white">
                             <style dangerouslySetInnerHTML={{ __html: articleCss }} />
@@ -27,38 +29,42 @@ const ArticleContentSection: FC<props> = ({
                     </div>
 
                     {/* Sidebar */}
-                    <div className="lg:col-span-1">
-                        <div className="sticky top-24">
-                            <div className="glass rounded-2xl p-6">
-                                <h3 className="text-xl font-bold text-red-600 mb-6 pb-3 border-b border-gray-200">
-                                    Related Reads
-                                </h3>
-                                <div className="space-y-4">
-                                    {relatedArticles.map((relatedArticle: any) => (
-                                        <Link
-                                            key={relatedArticle.id}
-                                            href={`/articles/${relatedArticle.id}`}
-                                            className="group block"
-                                        >
-                                            <div className="flex space-x-3 glass-hover hover:bg-gray-50 rounded-lg p-3 transition-all duration-300">
-                                                <img
-                                                    src={relatedArticle.image}
-                                                    alt={relatedArticle.title}
-                                                    className="w-16 h-16 object-cover rounded-lg"
-                                                />
-                                                <div className="flex-1">
-                                                    <h4 className="font-semibold text-gray-900 group-hover:text-red-600 transition-colors text-sm mb-1 leading-tight">
-                                                        {relatedArticle.title}
-                                                    </h4>
-                                                    <p className="text-xs text-gray-500">{relatedArticle.date}</p>
+                    {
+                        !!relatedArticles.length &&
+                        <div className="lg:col-span-1">
+                            <div className="sticky top-24">
+                                <div className="glass rounded-2xl p-6">
+                                    <h3 className="text-xl font-bold text-red-600 mb-6 pb-3 border-b border-gray-200">
+                                        Related Reads
+                                    </h3>
+                                    <div className="space-y-4">
+                                        {relatedArticles.map((relatedArticle: RelatedArticleInterface) => (
+                                            <Link
+                                                key={relatedArticle.id}
+                                                href={`/read-article?id=${relatedArticle.id}`}
+                                                className="group block"
+                                            >
+                                                <div className="flex space-x-3 glass-hover hover:bg-gray-50 rounded-lg p-3 transition-all duration-300">
+                                                    <img
+                                                        src={`${BASE_ASSETS_URL}/articles/${relatedArticle.coverImage}`}
+                                                        alt={relatedArticle.title}
+                                                        className="w-16 h-16 object-cover rounded-lg"
+                                                        loading="lazy"
+                                                    />
+                                                    <div className="flex-1">
+                                                        <h4 className="font-semibold text-gray-900 group-hover:text-red-600 transition-colors text-sm mb-1 leading-tight">
+                                                            {relatedArticle.title}
+                                                        </h4>
+                                                        <p className="text-xs text-gray-500">{dayjs(relatedArticle.publishedAt).format('DD MMM YYYY')}</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </Link>
-                                    ))}
+                                            </Link>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    }
                 </div>
             </div>
         </section>

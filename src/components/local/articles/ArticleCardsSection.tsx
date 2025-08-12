@@ -81,7 +81,7 @@ const ArticleCardsSection: FC<props> = ({ preloadedArticles, totalArticles, limi
                                     <div className="md:flex">
                                         <div className="md:w-1/3">
                                             <img
-                                                src={BASE_ASSETS_URL + `/article-cover-images/${article.coverImage}`}
+                                                src={BASE_ASSETS_URL + `/articles/${article.coverImage}`}
                                                 alt={article.title}
                                                 className="w-full h-48 md:h-full object-cover"
                                             />
