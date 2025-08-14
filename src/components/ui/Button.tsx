@@ -11,7 +11,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const variantClasses: Record<ButtonVariant, string> = {
     default: "bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 ripple-effect",
     destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-    outline: "border border-primary  hover:bg-primary hover:text-white transition-all duration-300",
+    outline: "border border-primary text-primary  hover:bg-primary hover:text-white transition-all duration-300",
     // outline: "bg-transparent border-1 border-red-500 hover:bg-accent hover:text-accent-foreground",
     secondary: "bg-secondary text-white hover:bg-primary/90",
     ghost: "hover:bg-accent hover:text-accent-foreground",

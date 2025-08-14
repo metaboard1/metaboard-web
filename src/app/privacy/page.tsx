@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Shield, Mail } from "lucide-react";
-import { Header, Footer, ScrollToTopBtn, HeroSection } from "@/components/global";
+import { ScrollToTopBtn, HeroSection } from "@/components/global";
 import Link from "next/link";
 
 const PrivacyPolicy = () => {
@@ -10,7 +10,6 @@ const PrivacyPolicy = () => {
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-red-50 to-rose-100">
             {/* Hero Section */}
             <HeroSection
-                RenderTopIcon={Shield}
                 heading="Privacy"
                 headingSpan="Policy"
                 description='This Privacy Policy sets out how we at Metaboard®, a subsidiary of Metarion Knowledge Solutions Private Limited [Metarion®], collect, use, share, and safeguard your [hereinafter referred to as "Data Principal"] information through www.metaboard.com.'

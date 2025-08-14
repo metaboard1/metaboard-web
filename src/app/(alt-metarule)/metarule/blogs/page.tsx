@@ -25,8 +25,7 @@ const Blogs = async ({ searchParams }: PageProps) => {
     }
 
     return (
-        <div className="min-h-screen bg-background">
-
+        <div>
             {/* Article Hero */}
             <HeroSection
                 page='blog'

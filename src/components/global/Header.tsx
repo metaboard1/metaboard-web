@@ -94,7 +94,7 @@ const Header: FC<props> = ({
             <header
                 className={`${(pathname !== '/read-article' && pathname !== '/metarule/read-blog' && pathname !== '/articles')
                     ? 'fixed'
-                    : 'overflow-hidden lg:overflow-visible'} top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled}`}
+                    : 'overflow-hidden lg:overflow-visible'} top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass' : ''}`}
             >
                 <nav className="container mx-auto px-4 sm:px-6 py-3 md:py-4">
                     <div className="flex items-center justify-between min-h-[48px]">

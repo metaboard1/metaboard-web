@@ -11,7 +11,6 @@ const TermsOfService = () => {
             <div className="min-h-screen bg-gradient-to-br from-slate-50 via-red-50 to-rose-100">
                 {/* Hero Section */}
                 <HeroSection
-                    RenderTopIcon={FileText}
                     heading="Terms of"
                     headingSpan="Use"
                     description="Please read these terms carefully before using our services. By accessing Metaboard®, you agree to be bound by these terms and conditions."

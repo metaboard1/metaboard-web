@@ -44,7 +44,7 @@ const Read = async ({ searchParams }: PageProps) => {
             />
 
             {/* Footer CTA */}
-            <ExploreMoreSection />
+            {/* <ExploreMoreSection /> */}
 
             {/* Back to Top Button */}
             <ScrollToTopBtn />

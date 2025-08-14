@@ -6,7 +6,7 @@ import Link from 'next/link';
 const Footer = () => {
     const quickLinks = [
         { name: 'Articles', href: '/articles' },
-        { name: 'About Us', href: '#' },
+        { name: 'About Us', href: '/about' },
         { name: 'Projects', href: '#' },
         { name: 'Contact', href: '/contact' }
     ];

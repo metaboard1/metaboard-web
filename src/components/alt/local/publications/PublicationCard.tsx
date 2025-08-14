@@ -61,10 +61,6 @@ const PublicationCard: FC<props> = ({
                                 <Calendar className="w-3 h-3" />
                                 {dayjs(data.publicationDate).format("MM YYYY")}
                             </div>
-                            {/* <div className="flex items-center gap-1">
-                                <Star className="w-3 h-3 fill-primary text-primary" />
-                                {publication.rating} ({publication.reviews})
-                            </div> */}
                         </div>
 
                         {/* Action Buttons */}
@@ -77,7 +73,7 @@ const PublicationCard: FC<props> = ({
                                 </DialogTrigger>
                                 <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto bg-background/95 backdrop-blur-lg border-glass">
                                     <DialogHeader>
-                                        <DialogTitle className=" font-bold text-foreground">
+                                        <DialogTitle className="font-bold text-foreground">
                                             {data.title}
                                         </DialogTitle>
                                     </DialogHeader>
@@ -97,10 +93,10 @@ const PublicationCard: FC<props> = ({
                                                 <p><strong>ISBN:</strong> {data.isbn}</p>
                                                 <p><strong>Price:</strong> <span className="text-primary font-semibold">₹{data.price}</span></p>
                                             </div>
-                                            <div className="flex gap-2">
+                                            <div className="flex gap-2 flex-wrap">
                                                 {
                                                     Object.entries(data.storeLinks).filter(([_, value]) => value).map(([key, value]) =>
-                                                        <Link className="flex-1" href={value} target="_blank">
+                                                        <Link className="" href={value} target="_blank">
                                                             <Button>
                                                                 <ExternalLink className="w-4 h-4 mr-2" />
                                                                 {key.charAt(0).toUpperCase() + key.substring(1, key.length)}
@@ -117,12 +113,12 @@ const PublicationCard: FC<props> = ({
                                         <div className="md:col-span-2 space-y-6">
                                             <div>
                                                 <h4 className="text-lg font-semibold mb-2">Description</h4>
-                                                <p className="text-muted-foreground leading-relaxed">
+                                                <p className="text-sm text-muted-foreground leading-relaxed">
                                                     {data.description}
                                                 </p>
                                             </div>
                                             <div>
-                                                <h4 className="text-lg font-semibold mb-3">Author</h4>
+                                                <h4 className="text-lg font-semibold mb-2">Author</h4>
                                                 <div className="space-y-4">
                                                     <div className="flex gap-4">
                                                         {/* <Avatar className="w-12 h-12">
@@ -139,10 +135,10 @@ const PublicationCard: FC<props> = ({
                                             </div>
                                             <div className="flex gap-4">
                                                 
-                                                <Button variant="outline" className="border-glass ">
+                                                {/* <Button variant="outline" className="border-glass ">
                                                     <Download className="w-4 h-4 mr-2" />
                                                     Sample Chapter
-                                                </Button>
+                                                </Button> */}
                                                 <Button variant="outline" className="border-glass">
                                                     <User className="w-4 h-4 mr-2" />
                                                     Contact Author

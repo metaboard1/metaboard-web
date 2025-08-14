@@ -1,6 +1,5 @@
 import { type FC } from "react";
 import { Badge } from "@/components/ui";
-import { Button } from "../ui";
 
 type HeroSectionTypes = {
     page: 'publications' | 'home' | 'blog'
@@ -30,30 +29,20 @@ const HeroSection: FC<HeroSectionTypes> = ({
         },
     }
     return (<>
-        <section className="relative py-20 overflow-hidden">
-            {/* <div className="absolute inset-0">
-                <img
-                    src={'/assets/images/hero-workspace.jpg'}
-                    alt="Legal Technology Workspace"
-                    className="w-full h-full object-cover opacity-20"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-            </div> */}
-
-            <div className="relative container px-4 sm:px-6 lg:px-8">
-                <div className="max-w-3xl">
-                    <div className="p-8 rounded-2xl">
+        <section className="flex items-center py-20 mt-[50px] sm:h-auto overflow-hidden">
+            <div className="container px-4 sm:px-6 lg:px-8">
+                    <div className="sm:p-8 rounded-2xl sm:max-w-3xl">
                         <Badge className="mb-4 bg-primary text-primary-foreground">
                             {content[page].badgeText}
                         </Badge>
-                        <div className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+                        <div className="text-3xl sm:text-5xl font-bold text-foreground mb-6 leading-tight">
                             <h1>
                                 {content[page].cardTitle}{'\n'}
                             </h1>
                             <span className="text-primary">{content[page].spanTitle}</span>
                         </div>
 
-                        <p className="text-xl text-muted-foreground leading-relaxed">
+                        <p className="text-base sm:text-xl text-muted-foreground leading-relaxed">
                             {content[page].description}
                         </p>
                         {/* <div className="flex flex-col gap-4 sm:flex-row">
@@ -63,7 +52,6 @@ const HeroSection: FC<HeroSectionTypes> = ({
                         </div> */}
                     </div>
                 </div>
-            </div>
         </section>
     </>);
 }

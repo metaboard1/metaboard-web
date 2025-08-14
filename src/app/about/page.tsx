@@ -437,74 +437,16 @@ const AboutUs = () => {
 
     return (
         <div className="min-h-screen">
-            {/* <div className="sticky top-16 z-40 bg-white/80 backdrop-blur-sm border-b border-gray-200">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center gap-4">
-            <Link
-              href="/"
-              className="flex items-center gap-2 text-gray-600 hover:text-red-600 transition-colors"
-            >
-              <ArrowLeft size={20} />
-              <span>Home</span>
-            </Link>
-            <span className="text-red-600">/</span>
-            <span className="text-black font-medium">Services</span>
-          </div>
-        </div>
-      </div> */}
 
             {/* Hero Section */}
             <HeroSection
                 heading="We are"
                 headingSpan="MetaBoard®"
                 description="We're transforming how legal professionals work with cutting-edge technology, intelligent automation, and innovative solutions that drive efficiency and excellence."
-                RenderTopIcon={Building2}
                 note=""
             />
 
-            {/* Mission & Vision Section
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center mb-6">
-                  <Award size={32} className="text-red-600" />
-                </div>
-                <h3
-                  className={`text-2xl font-bold text-black mb-4 ${playfairDisplay.className}`}
-                >
-                  Our Mission
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  To empower businesses through innovative digital solutions
-                  that drive growth, efficiency, and competitive advantage.
-                  We're committed to delivering exceptional value while
-                  fostering long-term partnerships built on trust and
-                  excellence.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center mb-6">
-                  <TrendingUp size={32} className="text-red-600" />
-                </div>
-                <h3
-                  className={`text-2xl font-bold text-black mb-4 ${playfairDisplay.className}`}
-                >
-                  Our Vision
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  To be the leading catalyst for digital transformation, setting
-                  new standards for innovation and client success. We envision a
-                  future where technology seamlessly enhances human potential
-                  and business outcomes.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
+     
             <div className="py-8 bg-gray-50">
                 <div className="container mx-auto px-6">
                     <div className="flex items-center justify-center">
