@@ -149,13 +149,13 @@ const PublicationCard: FC<props> = ({
                                 </DialogContent>
                             </Dialog>
 
-                            <Button size="sm" variant="outline" className="border-glass bg-black">
+                            <Button size="sm" variant='secondary' className="border-glass bg-black">
                                 <span className="font-semibold"> ₹ {data.price}</span>
                             </Button>
 
                             <Button
                                 size="sm"
-                                variant="outline"
+                                variant='secondary'
                                 // onClick={() => handleShare(publication)}
                                 className="border-glass bg-black"
                             >

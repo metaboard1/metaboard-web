@@ -2,7 +2,7 @@ import { type FC } from "react";
 import { Badge } from "@/components/ui";
 
 type HeroSectionTypes = {
-    page: 'publications' | 'home' | 'blog'
+    page: 'publications' | 'home' | 'blog' | 'document'
 }
 
 const HeroSection: FC<HeroSectionTypes> = ({
@@ -22,6 +22,12 @@ const HeroSection: FC<HeroSectionTypes> = ({
             description: 'Discover meaningful stories and fresh perspectives that spark curiosity, ignite inspiration, and offer deeper understanding of the world around us.'
         },
         publications: {
+            badgeText: 'MetaRule Insights',
+            cardTitle: 'Book Publications',
+            spanTitle: 'Excellence',
+            description: 'Dive into a curated collection of impactful books, thought-provoking narratives, and insightful works that inspire, inform, and spark meaningful conversations.'
+        },
+        document: {
             badgeText: 'MetaRule Insights',
             cardTitle: 'Book Publications',
             spanTitle: 'Excellence',
