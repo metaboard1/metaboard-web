@@ -11,11 +11,13 @@ const Documents = async ({
     params,
     searchParams
 }: {
-    params: Promise<{ page: string }>;
-    searchParams: Promise<{ q: string }>
+    params: Promise<{ page?: string }>;
+    searchParams: Promise<{ q?: string }>
 }) => {
-    const { page } = await params;
-    const { q } = await searchParams || {};
+    const { page: pageParam } = await params;
+    const resolvedSearchParams = await searchParams;
+    const { q = "" } = resolvedSearchParams || {};
+    const page = pageParam?.[0] || "0";
 
     let documents: any = [];
     let recordsCount: number = 0;
