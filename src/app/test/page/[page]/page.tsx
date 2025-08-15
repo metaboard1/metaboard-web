@@ -5,7 +5,7 @@ import { $crud } from "@/factory/crudFactory";
 
 
 
-const Documents = async ({ params, searchParams }: { params: { page: string }; searchParams?: { q?: string }; }) => {
+const Documents = async ({ params, searchParams }: { params: Promise<{ page: string }>; searchParams?: Promise<{ page: string }>; }) => {
     const { page } = await params;
     // @ts-ignore
     const { q } = await searchParams;
