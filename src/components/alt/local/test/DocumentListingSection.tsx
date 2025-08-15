@@ -8,7 +8,7 @@ import DocumentCard from "./DocumentCard";
 import { useRouter } from "next/navigation";
 
 type props = {
-    preloadDocuments: BlogInterface[];
+    preloadDocuments: DocumentInterface[];
     recordsCount: number;
     currentPage: number;
 }
