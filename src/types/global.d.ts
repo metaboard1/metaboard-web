@@ -35,3 +35,13 @@ interface PublicationInterface {
     coverImage: string;
     storeLinks:Object;
 }
+
+interface DocumentInterface {
+    id: number;
+    title: string;
+    description: string;
+    estimateReadTime: number;
+    file: string;
+    fileSize: number;
+    publishedAt: string;
+}
