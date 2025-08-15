@@ -29,9 +29,9 @@ const HeroSection: FC<HeroSectionTypes> = ({
         },
         document: {
             badgeText: 'MetaRule Insights',
-            cardTitle: 'Book Publications',
-            spanTitle: 'Excellence',
-            description: 'Dive into a curated collection of impactful books, thought-provoking narratives, and insightful works that inspire, inform, and spark meaningful conversations.'
+            cardTitle: 'Documents That Matter and',
+            spanTitle: 'Insights That Inspire',
+            description: 'Discover meaningful documents and fresh perspectives that spark curiosity, ignite inspiration, and offer deeper understanding of the digital world around us.'
         },
     }
     return (<>
