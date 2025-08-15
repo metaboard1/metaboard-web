@@ -10,12 +10,14 @@ type props = {
     totalRecords: number;
     filterTitle: string;
     showTagFilter?: boolean;
+    defaultSearch?: string;
     onSearch: (search: string) => void;
 }
 
 const FilterSection: FC<props> = ({
     totalRecords,
     filterTitle,
+    defaultSearch,
     showTagFilter,
     onSearch
 }) => {
@@ -54,6 +56,7 @@ const FilterSection: FC<props> = ({
                             ref={searchRef}
                             name="search"
                             type="text"
+                            defaultValue={defaultSearch}
                             placeholder={`Search for ${filterTitle.toLowerCase()}...`}
                             className="block min-w-0 grow py-1.5 pr-3 pl-3 bg-transparent text-base text-gray-900 placeholder:text-gray-400 focus:outline-none text-sm"
                         />
@@ -67,11 +70,24 @@ const FilterSection: FC<props> = ({
                             Search
                         </Button>
                     </div>
-
                 </div>
-
-
             </div>
+
+            {
+                defaultSearch &&
+                <div className="flex items-center space-x-2 text-sm flex-wrap gap-2">
+                    <span className="text-gray-600 font-bold">Search results for:</span>
+                    <span className="bg-red-100 text-red-800 px-2 py-1 rounded text-xs font-medium flex items-center max-w-32 sm:max-w-48 md:max-w-64 lg:max-w-80">
+                        <span className="truncate">{defaultSearch}</span>
+                        <button className="ml-2 text-red-600 hover:text-red-800 flex-shrink-0" onClick={() => onSearch('')}>
+                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </span>
+                </div>
+            }
+
             {
                 showTagFilter &&
                 <div className="flex flex-wrap gap-2">
