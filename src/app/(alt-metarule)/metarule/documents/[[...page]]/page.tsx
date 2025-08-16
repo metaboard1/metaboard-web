@@ -1,9 +1,12 @@
 export const revalidate = 120;
+export const dynamic = 'force-static'; 
+export const dynamicParams = true;
 
 import { HeroSection } from "@/components/alt/global";
 import { DocumentListingSection } from "@/components/alt/local/test";
 import { ScrollToTopBtn } from "@/components/global";
 import { $crud } from "@/factory/crudFactory";
+import dayjs from "dayjs";
 
 
 
@@ -36,7 +39,7 @@ const Documents = async ({
             <HeroSection
                 page='document'
             />
-            <p>Generated at: {new Date().toISOString()}</p>
+            <p>Generated at: {dayjs().format('hh-m-s')}</p>
             {/* Article Content */}
             <DocumentListingSection
                 preloadDocuments={documents}
@@ -44,13 +47,6 @@ const Documents = async ({
                 currentPage={+page}
                 query={q}
             />
-
-            {/* <div className="lg:col-span-4 mt-12 lg:mt-0">
-                <div className="sticky top-24 space-y-8">
-                    <RelatedPosts />
-                    <BrowseByTagSection />
-                </div>
-            </div> */}
             <ScrollToTopBtn />
         </div>
     </>);
