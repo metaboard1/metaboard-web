@@ -23,11 +23,11 @@ const DocumentListingSection: FC<props> = ({
     const router = useRouter();
 
     const handlePageChange = (updatedPage: number) => {
-        router.push(`/metarule/documents/${updatedPage}?q=${encodeURIComponent(query)}`);
+        router.push(`/metarule/documents/${updatedPage}/${encodeURIComponent(query)}`);
     }
 
     const handleSearch = (value: string) => {
-        router.push(`/metarule/documents/0?q=${encodeURIComponent(value)}`);
+        router.push(`/metarule/documents/0/${encodeURIComponent(value)}`);
     }
 
     return (<>
