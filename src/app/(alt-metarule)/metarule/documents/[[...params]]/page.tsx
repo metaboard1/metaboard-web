@@ -1,5 +1,5 @@
 export const revalidate = 120;
-export const dynamic = 'force-static'; 
+export const dynamic = 'force-static';
 export const dynamicParams = true;
 
 import { HeroSection } from "@/components/alt/global";
@@ -12,21 +12,22 @@ import dayjs from "dayjs";
 
 const Documents = async ({
     params,
-    searchParams
 }: {
-    params: Promise<{ page?: string }>;
-    searchParams: Promise<{ q?: string }>
+    params: Promise<{ params?: string[] }>;
+    // searchParams: Promise<{ q?: string }>
 }) => {
-    const { page: pageParam } = await params;
-    const resolvedSearchParams = await searchParams;
-    const { q = "" } = resolvedSearchParams || {};
-    const page = pageParam?.[0] || "0";
+
+
+    const segments = (await params).params ?? [];
+    const page = segments[0] ?? "0";
+    const query = decodeURIComponent(segments[1] ?? "");
+    // console.log(page, decodeURIComponent(query))
 
     let documents: any = [];
     let recordsCount: number = 0;
 
     try {
-        const { data: { rows, count } } = await $crud.retrieve(`metarule/documents?page=${page ?? 0}&limit=12&search=${q ?? ''}`);
+        const { data: { rows, count } } = await $crud.retrieve(`metarule/documents?page=${page}&limit=12&search=${query}`);
         documents = rows;
         recordsCount = count;
     } catch (error) {
@@ -45,7 +46,7 @@ const Documents = async ({
                 preloadDocuments={documents}
                 recordsCount={recordsCount}
                 currentPage={+page}
-                query={q}
+                query={query}
             />
             <ScrollToTopBtn />
         </div>
