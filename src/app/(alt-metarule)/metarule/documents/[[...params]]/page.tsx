@@ -17,7 +17,6 @@ const Documents = async ({
     // searchParams: Promise<{ q?: string }>
 }) => {
 
-
     const segments = (await params).params ?? [];
     const page = segments[0] ?? "0";
     const query = decodeURIComponent(segments[1] ?? "");

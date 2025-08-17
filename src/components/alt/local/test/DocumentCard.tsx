@@ -20,7 +20,17 @@ const DocumentCard: FC<props> = ({
         return inMb > 0 ? `${inMb} mb` : `${inKb} kb`
     }
 
-    const onPreview = () => window.open(data.file?.split('.')?.[1] === 'pdf' ? BASE_ASSETS_URL + `/documents/${data.file}` : `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(BASE_ASSETS_URL + '/documents/presentation.pptx')}`, "_blank", "noopener,noreferrer");
+    const onPreview = () => window.open(data.file?.split('.')?.[1] === 'pdf' ? BASE_ASSETS_URL + `/documents/${data.file}` : `https://docs.google.com/gview?url=https://api.metaboard.in/uploads/documents/file-c3eb8e282edc3838d9f4634a71bddf7817554514284871.pptx`, "_blank", "noopener,noreferrer");
+
+    const handleDownload = () => {
+        const link = document.createElement("a");
+        link.href = `${BASE_ASSETS_URL}/documents/${data.file}`;
+        link.setAttribute("download", data.file);
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+    };
+
 
     return (<>
         <Card className="glass-card overflow-hidden glass-hover group p-6">
@@ -77,17 +87,17 @@ const DocumentCard: FC<props> = ({
                     <Eye className="w-4 h-4 mr-2" />
                     Preview
                 </Button>
-                <Button variant="outline" size="sm" className="flex-1">
-                    <a
+                <Button variant="outline" size="sm" className="flex-1" onClick={handleDownload}>
+                    {/* <a
                         href={`${BASE_URL}/uploads/documents/${data.file}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         download
                         className="w-full flex justify-center items-center"
-                    >
-                        <Download className="w-4 h-4 mr-2" />
-                        Download
-                    </a>
+                    > */}
+                    <Download className="w-4 h-4 mr-2" />
+                    Download
+                    {/* </a> */}
                 </Button>
             </div>
         </Card>

@@ -19,7 +19,7 @@ const ArticleContentSection: FC<props> = ({
             <div className="container mx-auto px-6">
                 <div className="grid lg:grid-cols-3 gap-12">
                     {/* Main Content */}
-                    <div className={`lg:col-span-${relatedArticles.length ? 2 : 4}`}>
+                    <div className={`${relatedArticles.length ? 'lg:col-span-2' : 'lg:col-span-3'}`}>
 
                         <div className="article-content text-white">
                             <style dangerouslySetInnerHTML={{ __html: articleCss }} />
