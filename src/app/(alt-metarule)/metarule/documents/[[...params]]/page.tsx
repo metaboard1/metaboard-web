@@ -21,7 +21,6 @@ const Documents = async ({
     const segments = (await params).params ?? [];
     const page = segments[0] ?? "0";
     const query = decodeURIComponent(segments[1] ?? "");
-    // console.log(page, decodeURIComponent(query))
 
     let documents: any = [];
     let recordsCount: number = 0;
@@ -43,7 +42,7 @@ const Documents = async ({
             <p>Generated at: {dayjs().format('hh-m-s')}</p>
             {/* Article Content */}
             <DocumentListingSection
-                preloadDocuments={documents}
+                documentsData={documents}
                 recordsCount={recordsCount}
                 currentPage={+page}
                 query={query}

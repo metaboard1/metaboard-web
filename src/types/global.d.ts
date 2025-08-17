@@ -20,6 +20,8 @@ interface BlogInterface {
     author: string;
     estimateReadTime: number;
     coverImage: string;
+    coverUrl: string;
+    tags: string[];
     publishedAt: string;
 }
 interface PublicationInterface {

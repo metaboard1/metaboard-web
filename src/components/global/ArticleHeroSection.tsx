@@ -28,7 +28,8 @@ const ArticleHeroSection: FC<props> = ({ data, showReadBtn }) => {
         <section className="relative overflow-hidden py-10 sm:py-20">
             <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${BASE_ASSETS_URL}/articles/${data?.coverImage})` }}
+                // style={{ backgroundImage: `url(${BASE_ASSETS_URL}/articles/${data?.coverImage})` }}
+                style={{ backgroundImage: `url(${data.coverUrl})` }}
             >
                 <div className="absolute inset-0 glass bg-black/50"></div>
             </div>
@@ -54,10 +55,6 @@ const ArticleHeroSection: FC<props> = ({ data, showReadBtn }) => {
                                 <span>{data?.estimateReadTime} min</span>
                             </div>
                         </div>
-                        {/* 
-                        {
-                            console.log(data)
-                        } */}
 
                         <div className="flex items-center space-x-3">
                             {

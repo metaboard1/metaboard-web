@@ -22,7 +22,7 @@
 
         /* Glass Effect Variables */
         --glass-bg: 0 0% 100% / 0.08;
-       --glass-border: 0 0% 0% / 0.2;
+        --glass-border: 0 0% 0% / 0.2;
         --glass-hover: 0 0% 100% / 0.12;
 
         /* Card System */
@@ -166,10 +166,16 @@
 
     .glass-card {
         background: hsl(var(--card));
-        backdrop-filter: var(--blur-sm);
+        /* backdrop-filter: var(--blur-sm); */
         border: 1px solid hsl(var(--border));
         box-shadow: var(--shadow-subtle);
     }
+
+    /* @media (min-width: 768px) {
+        .glass-card {
+            backdrop-filter: var(--blur-sm);
+        }
+    } */
 
     .gradient-primary {
         background: var(--gradient-primary);

@@ -31,7 +31,6 @@ const FilterSection: FC<props> = ({
     const retrieveTags = async () => {
         try {
             const { data: { rows } } = await $crud.retrieve('tags');
-            console.log(rows)
             setTags(() => rows);
         } catch (e) {
             console.error(e)
@@ -45,7 +44,7 @@ const FilterSection: FC<props> = ({
                 <div className="flex items-center gap-3">
                     <Filter className="w-5 h-5 text-primary" />
                     <h2 className="text-xl font-bold">{filterTitle}s Library</h2>
-                    <Badge variant='outline' className="">
+                    <Badge variant='outline'>
                         {`${totalRecords} ${filterTitle}${totalRecords > 1 ? 's' : ''}`}
                     </Badge>
                 </div>
@@ -95,8 +94,7 @@ const FilterSection: FC<props> = ({
                         tags.map((tag, index) => <Badge
                             key={index}
                             variant='outline'
-                            className={`cursor-pointer transition-all ${"hover:bg-glass-hover"
-                                }`}
+                            className='cursor-pointer'
                             onClick={() => onSearch(`#${tag.name}`)}
                         >
                             # {tag.name}
@@ -104,7 +102,7 @@ const FilterSection: FC<props> = ({
                     }
                     <Badge
                         variant='outline'
-                        className={'cursor-pointer transition-all hover:bg-glass-hover'}
+                        className='cursor-pointer'
                         onClick={() => onSearch('')}
                     >
                         Show all

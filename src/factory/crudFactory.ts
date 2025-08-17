@@ -137,7 +137,7 @@ export class CrudFactory {
         const fullUrl: string = await this.getUrl(url);
         // let token = await getTokenAsync();
         const token: string = "";
-        console.log(url)
+        // console.log(url)
 
         options.headers = {
             ...options.headers,

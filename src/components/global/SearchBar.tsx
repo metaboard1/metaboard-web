@@ -11,7 +11,6 @@ const SearchBar: FC = () => {
     const inputRef = useRef<HTMLInputElement>(null);
     const { data, onSearch } = useSearchArticle();
 
-    console.log(data)
     const handleClear = () => {
         onSearch('');
         if (inputRef.current) {

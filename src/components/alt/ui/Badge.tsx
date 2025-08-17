@@ -1,7 +1,7 @@
 import { FC, type HTMLAttributes, type ReactNode } from "react";
 
 type BadgeProp = HTMLAttributes<HTMLDivElement> &{
-    className: string;
+    className?: string;
     variant?: 'default' | 'secondary' | 'destructive' | 'outline';
     children?: ReactNode;
 }
@@ -12,7 +12,7 @@ const Badge: FC<BadgeProp> = ({ className, variant = 'default', children, ...res
         default: "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
         secondary: "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
         destructive: "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
-        outline: "text-foreground border border-gray-300 backdrop-blur-md shadow-md",
+        outline: "text-foreground border border-gray-300 shadow-md",
     }
     return (
         <div

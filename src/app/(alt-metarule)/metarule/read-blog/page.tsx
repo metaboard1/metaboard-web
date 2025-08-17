@@ -43,8 +43,6 @@ const Read = async ({ searchParams }: PageProps) => {
                 articleCss={blogs.contentCss}
             />
 
-            {/* Footer CTA */}
-            {/* <ExploreMoreSection /> */}
 
             {/* Back to Top Button */}
             <ScrollToTopBtn />

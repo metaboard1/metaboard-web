@@ -388,6 +388,22 @@ const Services = () => {
                 "Innovation Workshops",
             ],
         },
+        {
+            id: 5,
+            slug: "innovation-labs",
+            icon: Zap,
+            title: "Innovation Labs",
+            brief: "Research and development of next-generation legal tools",
+            status: "Upcoming",
+            details:
+                "Our innovation labs are at the forefront of legal technology research and development. We work on prototype development and collaborate with industry partners.",
+            features: [
+                "Prototype Development",
+                "Research Partnerships",
+                "Technology Testing",
+                "Innovation Workshops",
+            ],
+        },
     ];
 
     const toggleService = (serviceId: number) => {
@@ -409,7 +425,7 @@ const Services = () => {
             {/* Testimonials Section */}
 
             {/* Section Separator */}
-            <div className="py-8 bg-white">
+            {/* <div className="py-8 bg-white">
                 <div className="container mx-auto px-6">
                     <div className="flex items-center justify-center">
                         <div className="flex-1 border-t border-gray-300"></div>
@@ -421,7 +437,7 @@ const Services = () => {
                         <div className="flex-1 border-t border-gray-300"></div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* Service Offerings */}
             <section className="py-20 bg-white">
@@ -444,7 +460,7 @@ const Services = () => {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8  mx-auto">
                         {services.map((service) => (
                             <div
                                 key={service.id}
@@ -509,7 +525,7 @@ const Services = () => {
                     </div>
 
                     {/* FAQ Section */}
-                    <div className="max-w-4xl mx-auto mt-20">
+                    {/* <div className="max-w-4xl mx-auto mt-20">
                         <div className="text-center mb-12">
                             <h3
                                 className={`text-3xl md:text-4xl font-bold text-black mb-4 `}
@@ -521,7 +537,6 @@ const Services = () => {
                                 Get answers to common questions about our services and approach.
                             </p>
 
-                            {/* Mini Separator */}
                             <div className="flex justify-center mt-6">
                                 <div className="w-16 h-0.5 bg-red-500"></div>
                             </div>
@@ -567,15 +582,15 @@ const Services = () => {
                                 </div>
                             ))}
                         </div>
-                    </div>
+                    </div> */}
 
-                    <div className="flex justify-center my-12">
+                    {/* <div className="flex justify-center my-12">
                         <div className="flex items-center gap-3">
                             <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-red-500"></div>
                             <div className="w-4 h-4 border-2 border-red-500 rounded-full bg-white"></div>
                             <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-red-500"></div>
                         </div>
-                    </div>
+                    </div> */}
 
 
                 </div>

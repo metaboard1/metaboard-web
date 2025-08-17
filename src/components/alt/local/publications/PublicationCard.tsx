@@ -4,6 +4,7 @@ import { Badge, Button, Card, DialogHeader } from "../../ui";
 import { Dialog, DialogContent, DialogTitle, DialogTrigger, } from '../../ui';
 import dayjs from "dayjs";
 import Link from "next/link";
+import Image from "next/image";
 
 type props = {
     data: PublicationInterface;
@@ -71,7 +72,7 @@ const PublicationCard: FC<props> = ({
                                         Learn More
                                     </Button>
                                 </DialogTrigger>
-                                <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto bg-background/95 backdrop-blur-lg border-glass">
+                                <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto bg-background/95">
                                     <DialogHeader>
                                         <DialogTitle className="font-bold text-foreground">
                                             {data.title}
@@ -81,12 +82,15 @@ const PublicationCard: FC<props> = ({
                                     <div className="grid md:grid-cols-3 gap-6">
                                         {/* Book Cover */}
                                         <div className="space-y-4">
-                                            <img
-                                                // src={BASE_ASSETS_URL + `/publications/${data.coverImage}`}
-                                                src={data.coverImage}
-                                                alt='publication'
-                                                className="w-full h-[300px] rounded-lg"
-                                            />
+                                            <div className="relative w-full h-[300px]">
+                                                <Image
+                                                    //   src={BASE_ASSETS_URL + `/publications/${data.coverImage}`}
+                                                    src={data.coverImage}
+                                                    alt="publication"
+                                                    fill
+                                                    className="object-cover rounded-lg"
+                                                />
+                                            </div>
                                             <div className="space-y-2 text-sm">
                                                 <p><strong>Publisher:</strong> {data.publisher}</p>
                                                 <p><strong>Pages:</strong> {data.pages}</p>
@@ -134,7 +138,7 @@ const PublicationCard: FC<props> = ({
                                                 </div>
                                             </div>
                                             <div className="flex gap-4">
-                                                
+
                                                 {/* <Button variant="outline" className="border-glass ">
                                                     <Download className="w-4 h-4 mr-2" />
                                                     Sample Chapter

@@ -4,7 +4,6 @@ import { type FC } from "react";
 import { Calendar, Clock, Download, Eye, FileText, Presentation, User } from "lucide-react";
 import { Button, Card } from "../../ui";
 import dayjs from "dayjs";
-import Link from "next/link";
 import { BASE_ASSETS_URL, BASE_URL } from "@/constants";
 
 type props = {

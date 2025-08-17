@@ -54,7 +54,6 @@ const BlogListingSection: FC<props> = ({
     }
 
     const handleSearch = (value: string) => {
-        console.log(value)
         retrieveBlogs(0, value);
     }
 

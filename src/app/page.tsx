@@ -10,7 +10,6 @@ const Home = async () => {
 
     try {
         const { data: { rows } } = await $crud.retrieve('articles?limit=4');
-        console.log(rows)
         latestArticles = rows;
     } catch (error) {
         console.error('Error fetching articles:', error);

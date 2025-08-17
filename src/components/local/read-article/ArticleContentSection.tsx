@@ -31,7 +31,7 @@ const ArticleContentSection: FC<props> = ({
                     {/* Sidebar */}
                     {
                         !!relatedArticles.length &&
-                        <div className="lg:col-span-1">
+                        <div className="col-span-1">
                             <div className="sticky top-24">
                                 <div className="glass rounded-2xl p-6">
                                     <h3 className="text-xl font-bold text-red-600 mb-6 pb-3 border-b border-gray-200">

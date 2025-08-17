@@ -37,12 +37,6 @@ const Blogs = async ({ searchParams }: PageProps) => {
                 totalRecords={totalRecords}
             />
 
-            {/* <div className="lg:col-span-4 mt-12 lg:mt-0">
-                <div className="sticky top-24 space-y-8">
-                    <RelatedPosts />
-                    <BrowseByTagSection />
-                </div>
-            </div> */}
             <ScrollToTopBtn />
         </div>
     );
