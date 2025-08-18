@@ -5,6 +5,7 @@ import Image from "next/image";
 import dayjs from "dayjs";
 import { Calendar, ExternalLink, Share2 } from "lucide-react";
 import { Badge, Button, Card } from "../../ui";
+import { BASE_ASSETS_URL } from "@/constants";
 
 
 const PublicationSection: FC<{
@@ -32,7 +33,8 @@ const PublicationSection: FC<{
                             <div className="relative flex-shrink-0 sm:w-32 lg:w-40">
                                 <div className="relative w-full sm:w-32 lg:w-40 h-48 sm:h-full overflow-hidden rounded-lg">
                                     <Image
-                                        src={publication.coverImage}
+                                        // src={publication.coverImage}
+                                        src={BASE_ASSETS_URL + `/publications/${publication.coverImage}`}
                                         alt={publication.title}
                                         fill
                                         className="object-cover transition-transform group-hover:scale-105"

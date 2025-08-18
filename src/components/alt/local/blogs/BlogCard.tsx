@@ -5,6 +5,7 @@ import { Calendar } from "lucide-react";
 import { Card } from "../../ui";
 import dayjs from "dayjs";
 import Link from "next/link";
+import { BASE_ASSETS_URL } from "@/constants";
 
 type props = {
     data: BlogInterface
@@ -23,7 +24,8 @@ const BlogCard: FC<props> = ({
                 {/* Book Cover */}
                 <div className="hidden sm:block sm:relative sm:flex-shrink-0">
                     <img
-                        src='https://picsum.photos/400/600?random=844'
+                        // src='https://picsum.photos/400/600?random=844'
+                        src={BASE_ASSETS_URL + `/articles/${data.coverImage}`}
                         alt='Blog'
                         className="w-32 h-[120px] object-cover rounded-lg transition-transform group-hover:scale-105"
                         loading='lazy'

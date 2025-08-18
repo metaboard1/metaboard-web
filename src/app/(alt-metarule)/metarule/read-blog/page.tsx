@@ -1,5 +1,5 @@
 import { ArticleHeroSection, ScrollToTopBtn } from '@/components/global';
-import { ArticleContentSection, ExploreMoreSection, ArticleScrollProgress } from '@/components/local/read-article';
+import { ArticleContentSection, ArticleScrollProgress } from '@/components/local/read-article';
 import { $crud } from '@/factory/crudFactory';
 
 type PageProps = {
@@ -41,6 +41,7 @@ const Read = async ({ searchParams }: PageProps) => {
                 relatedArticles={relatedBlogsArr}
                 articleHtml={blogs.contentHtml}
                 articleCss={blogs.contentCss}
+                renderForBlog
             />
 
 

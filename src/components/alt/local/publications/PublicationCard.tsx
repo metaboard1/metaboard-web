@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogTitle, DialogTrigger, } from '../../ui';
 import dayjs from "dayjs";
 import Link from "next/link";
 import Image from "next/image";
+import { BASE_ASSETS_URL } from "@/constants";
 
 type props = {
     data: PublicationInterface;
@@ -22,6 +23,7 @@ const PublicationCard: FC<props> = ({
                     <img
                         // src={BASE_ASSETS_URL + `/publications/${data.coverImage}`}
                         // src={data.coverImage}
+                        src={BASE_ASSETS_URL + `/publications/${data.coverImage}`}
                         alt='publication'
                         className="w-full h-64 object-cover transition-transform group-hover:scale-105"
                         loading='lazy'
@@ -84,8 +86,7 @@ const PublicationCard: FC<props> = ({
                                         <div className="space-y-4">
                                             <div className="relative w-full h-[300px]">
                                                 <Image
-                                                    //   src={BASE_ASSETS_URL + `/publications/${data.coverImage}`}
-                                                    src={data.coverImage}
+                                                    src={BASE_ASSETS_URL + `/publications/${data.coverImage}`}
                                                     alt="publication"
                                                     fill
                                                     className="object-cover rounded-lg"

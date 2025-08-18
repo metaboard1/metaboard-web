@@ -7,12 +7,14 @@ type props = {
     articleHtml: string;
     articleCss: string;
     relatedArticles: RelatedArticleInterface[];
+    renderForBlog?: boolean;
 }
 
 const ArticleContentSection: FC<props> = ({
     articleHtml,
     articleCss,
-    relatedArticles
+    relatedArticles,
+    renderForBlog
 }) => {
     return (<>
         <section className="py-12 gradient-primary">
@@ -41,7 +43,7 @@ const ArticleContentSection: FC<props> = ({
                                         {relatedArticles.map((relatedArticle: RelatedArticleInterface) => (
                                             <Link
                                                 key={relatedArticle.id}
-                                                href={`/read-article?id=${relatedArticle.id}`}
+                                                href={`${renderForBlog ? '/metarule/read-blog' : '/read-article'}?id=${relatedArticle.id}`}
                                                 className="group block"
                                             >
                                                 <div className="flex space-x-3 glass-hover hover:bg-gray-50 rounded-lg p-3 transition-all duration-300">
