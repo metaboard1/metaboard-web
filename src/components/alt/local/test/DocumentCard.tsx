@@ -20,7 +20,7 @@ const DocumentCard: FC<props> = ({
         return inMb > 0 ? `${inMb} mb` : `${inKb} kb`
     }
 
-    const onPreview = () => window.open(data.file?.split('.')?.[1] === 'pdf' ? BASE_ASSETS_URL + `/documents/${data.file}` : `https://docs.google.com/gview?url=https://api.metaboard.in/uploads/documents/file-c3eb8e282edc3838d9f4634a71bddf7817554514284871.pptx`, "_blank", "noopener,noreferrer");
+    const onPreview = () => window.open(data.file?.split('.')?.[1] === 'pdf' ? BASE_ASSETS_URL + `/documents/${data.file}` : `https://docs.google.com/gview?url=https://api.metaboard.in/uploads/documents/${data.file}`, "_blank", "noopener,noreferrer");
 
     const handleDownload = () => {
         const link = document.createElement("a");
