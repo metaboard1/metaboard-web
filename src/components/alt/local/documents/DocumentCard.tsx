@@ -1,11 +1,10 @@
 'use client';
 
 import { type FC } from "react";
-import { Calendar, Clock, Download, Eye, FileText, Presentation, User } from "lucide-react";
+import { Calendar, Clock, Download, Eye, FileText, Presentation } from "lucide-react";
 import { Button, Card } from "../../ui";
+import { BASE_ASSETS_URL } from "@/constants";
 import dayjs from "dayjs";
-import Link from "next/link";
-import { BASE_ASSETS_URL, BASE_URL } from "@/constants";
 
 type props = {
     data: DocumentInterface
@@ -21,7 +20,17 @@ const DocumentCard: FC<props> = ({
         return inMb > 0 ? `${inMb} mb` : `${inKb} kb`
     }
 
-    const onPreview = () => window.open(data.file?.split('.')?.[1] === 'pdf' ? BASE_ASSETS_URL + `/documents/${data.file}` : `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(BASE_ASSETS_URL + '/documents/presentation.pptx')}`, "_blank", "noopener,noreferrer");
+    const onPreview = () => window.open(`https://docs.google.com/gview?url=https://api.metaboard.in/uploads/documents/${data.file}`, "_blank", "noopener,noreferrer");
+
+    const handleDownload = () => {
+        const link = document.createElement("a");
+        link.href = `${BASE_ASSETS_URL}/documents/${data.file}`;
+        link.setAttribute("download", data.file);
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+    };
+
 
     return (<>
         <Card className="glass-card overflow-hidden glass-hover group p-6">
@@ -78,17 +87,9 @@ const DocumentCard: FC<props> = ({
                     <Eye className="w-4 h-4 mr-2" />
                     Preview
                 </Button>
-                <Button variant="outline" size="sm" className="flex-1">
-                    <a
-                        href={`${BASE_URL}/uploads/documents/${data.file}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        download
-                        className="w-full flex justify-center items-center"
-                    >
-                        <Download className="w-4 h-4 mr-2" />
-                        Download
-                    </a>
+                <Button variant="outline" size="sm" className="flex-1" onClick={handleDownload}>
+                    <Download className="w-4 h-4 mr-2" />
+                    Download
                 </Button>
             </div>
         </Card>

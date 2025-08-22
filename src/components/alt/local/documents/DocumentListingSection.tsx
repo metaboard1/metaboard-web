@@ -1,21 +1,20 @@
 'use client';
 
 import { type FC } from "react";
-import { $crud } from "@/factory/crudFactory";
-import { Pagination } from "@/components/ui";
+import { Pagination, Pagination2 } from "@/components/ui";
 import { FilterSection } from "../../global";
 import DocumentCard from "./DocumentCard";
 import { useRouter } from "next/navigation";
 
 type props = {
-    preloadDocuments: DocumentInterface[];
+    documentsData: DocumentInterface[];
     recordsCount: number;
     currentPage: number;
     query: string;
 }
 
 const DocumentListingSection: FC<props> = ({
-    preloadDocuments = [],
+    documentsData = [],
     recordsCount = 0,
     currentPage = 0,
     query
@@ -24,11 +23,11 @@ const DocumentListingSection: FC<props> = ({
     const router = useRouter();
 
     const handlePageChange = (updatedPage: number) => {
-        router.push(`/test/${updatedPage}?q=${encodeURIComponent(query)}`);
+        router.push(`/metarule/documents/${updatedPage}/${encodeURIComponent(query)}#st`);
     }
 
     const handleSearch = (value: string) => {
-        router.push(`/test/0?q=${encodeURIComponent(value)}`);
+        router.push(`/metarule/documents/0/${encodeURIComponent(value)}#st`);
     }
 
     return (<>
@@ -43,15 +42,17 @@ const DocumentListingSection: FC<props> = ({
             <section>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                     {
-                        preloadDocuments.map((e) => <DocumentCard key={e.id} data={e} />)
+                        documentsData.map((e, index) => <DocumentCard key={index} data={e} />)
                     }
                 </div>
             </section>
-            <Pagination
+            <Pagination2
                 totalRecords={recordsCount}
                 limit={12}
                 currentPage={currentPage}
                 onPageChange={handlePageChange}
+                query={query}
+                navigationPath="metarule/documents"
             />
         </div>
 

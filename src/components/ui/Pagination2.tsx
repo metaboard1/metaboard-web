@@ -43,7 +43,7 @@ const Pagination2: FC<props> = ({
                
                 {
                     new Array(totalPages).fill(null).map((e, i) => <Link
-                        href={`/${navigationPath}/${i}`}
+                        href={`/${navigationPath}/${i}#st`}
                         key={i}
                         type="button"
                         className={`min-h-8 min-w-8 flex justify-center items-center py-1.5 px-2.5 text-sm rounded-full focus:outline-hidden  disabled:opacity-50 disabled:pointer-events-none

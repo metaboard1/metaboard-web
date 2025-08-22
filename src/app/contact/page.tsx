@@ -30,9 +30,6 @@ const ContactUs = () => {
 
                                 <div className="mb-6">
                                     <h5 className="font-bold text-lg mb-2">Metaboard®</h5>
-                                    <p className="text-red-100 text-sm leading-relaxed">
-                                        Metarion Knowledge Solutions Private Limited
-                                    </p>
                                 </div>
 
                                 <div className="space-y-5">
@@ -48,6 +45,8 @@ const ContactUs = () => {
                                                 Main Office
                                             </h5>
                                             <p className="text-red-100 text-sm leading-relaxed">
+                                                Metarion Knowledge Solutions Private Limited 
+                                                <br/>
                                                 Level 2, Elegance, Mathura Road, Jasola,
                                                 <br />
                                                 New Delhi – 110025, India
@@ -106,11 +105,13 @@ const ContactUs = () => {
                                         <div>
                                             <h5 className="font-medium mb-1 text-sm">R&D Centre</h5>
                                             <p className="text-red-100 text-sm leading-relaxed">
-                                                'Metaboard'
+                                                Metaboard Research & Development Centre
+                                                <br/>
+                                                ‘Metaboard’
                                                 <br />
                                                 Village – Karnera, Ballabhgarh
                                                 <br />
-                                                Faridabad – 121004 Haryana, India
+                                                Faridabad – 121004 Haryana, India 
                                             </p>
                                         </div>
                                     </div>

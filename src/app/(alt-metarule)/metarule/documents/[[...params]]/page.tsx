@@ -3,7 +3,7 @@ export const dynamic = 'force-static';
 export const dynamicParams = true;
 
 import { HeroSection } from "@/components/alt/global";
-import { DocumentListingSection } from "@/components/alt/local/test";
+import { DocumentListingSection } from "@/components/alt/local/documents";
 import { ScrollToTopBtn } from "@/components/global";
 import { $crud } from "@/factory/crudFactory";
 import dayjs from "dayjs";

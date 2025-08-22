@@ -48,7 +48,7 @@ const HeroSection: FC<HeroSectionTypes> = ({
                             <span className="text-primary">{content[page].spanTitle}</span>
                         </div>
 
-                        <p className="text-base sm:text-xl text-muted-foreground leading-relaxed">
+                        <p className="text-base sm:text-xl text-muted-foreground leading-relaxed" id="st">
                             {content[page].description}
                         </p>
                         {/* <div className="flex flex-col gap-4 sm:flex-row">

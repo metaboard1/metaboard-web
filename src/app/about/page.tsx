@@ -158,7 +158,7 @@ const AboutUs = () => {
         technical: [
             {
                 id: 1,
-                name: "Michael Chen",
+                name: "Aditi Mendiratta",
                 role: "Chief Technology Officer",
                 image:
                     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
@@ -200,44 +200,31 @@ const AboutUs = () => {
         legal: [
             {
                 id: 5,
-                name: "Sarah Mitchell",
-                role: "Founder & CEO",
-                image:
-                    "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
+                name: "Aditi Mendiratta",
+                role: "Advocate, Corporate & Technology Law",
+                image: "/assets/images/aditi_profile.webp",
                 bio: "Visionary leader with 15+ years in digital transformation and legal technology. Former Fortune 500 executive turned entrepreneur, passionate about bridging law and technology.",
                 linkedin: "#",
                 twitter: "#",
             },
             {
                 id: 6,
-                name: "David Thompson",
-                role: "VP of Business Development",
-                image:
-                    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+                name: "M. Sushant Murthy",
+                role: "Advocate, Intellectual Property & Technology Law",
+                image: "/assets/images/sushant_profile.webp",
                 bio: "Strategic partnership expert with deep understanding of legal industry requirements. Proven track record in scaling legal tech businesses and building lasting client relationships.",
                 linkedin: "#",
                 twitter: "#",
             },
             {
                 id: 7,
-                name: "Lisa Wang",
-                role: "Legal Technology Consultant",
-                image:
-                    "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300&h=300&fit=crop&crop=face",
+                name: "Navya Chopra",
+                role: "Legal Researcher & Writer, Intellectual Property & 	Technology Law",
+                image: "/assets/images/navya_profile.webp",
                 bio: "Former practicing attorney turned legal tech specialist. Expert in compliance, legal process optimization, and technology adoption in legal practices.",
                 linkedin: "#",
                 twitter: "#",
-            },
-            {
-                id: 8,
-                name: "Robert Martinez",
-                role: "Head of Legal Operations",
-                image:
-                    "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=face",
-                bio: "Legal operations expert with 12+ years in process improvement, legal project management, and technology implementation for law firms and corporate legal departments.",
-                linkedin: "#",
-                twitter: "#",
-            },
+            }
         ],
     };
 
@@ -446,24 +433,12 @@ const AboutUs = () => {
                 note=""
             />
 
-     
-            <div className="py-8 bg-gray-50">
-                <div className="container mx-auto px-6">
-                    <div className="flex items-center justify-center">
-                        <div className="flex-1 border-t border-gray-300"></div>
-                        <div className="mx-6 flex items-center gap-2">
-                            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                            <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                        </div>
-                        <div className="flex-1 border-t border-gray-300"></div>
-                    </div>
-                </div>
-            </div>
+
+
             {/* about us section */}
             <section id="aboutUs" className="py-20 bg-gray-50">
                 <div className="container mx-auto px-6">
-                    <div className="max-w-6xl mx-auto">
+                    <div className="mx-auto">
                         <div className="text-center mb-16">
                             <h2 className={"text-4xl md:text-5xl font-bold text-black mb-6 "}>
                                 About <span className="text-gradient">MetaBoard®</span>
@@ -559,23 +534,11 @@ const AboutUs = () => {
                     </div>
                 </div>
             </section>
-            <div className="py-8 bg-gray-50">
-                <div className="container mx-auto px-6">
-                    <div className="flex items-center justify-center">
-                        <div className="flex-1 border-t border-gray-300"></div>
-                        <div className="mx-6 flex items-center gap-2">
-                            <div className="w-2 h-2 bg-red-500 "></div>
-                            <div className="w-3 h-3 bg-red-500 "></div>
-                            <div className="w-2 h-2 bg-red-500 "></div>
-                        </div>
-                        <div className="flex-1 border-t border-gray-300"></div>
-                    </div>
-                </div>
-            </div>
+
             {/* who are we? */}
             <section className="py-20 bg-white">
                 <div className="container mx-auto px-6">
-                    <div className="max-w-6xl mx-auto">
+                    <div className="mx-auto">
                         <div className="text-center mb-16">
                             <h2 className={"text-4xl md:text-5xl font-bold text-black mb-6 "}>
                                 Who <span className="text-gradient">We Are</span>
@@ -684,22 +647,6 @@ const AboutUs = () => {
                 </div>
             </section>
 
-            {/* Breadcrumb */}
-
-            <div className="py-8 bg-gray-50">
-                <div className="container mx-auto px-6">
-                    <div className="flex items-center justify-center">
-                        <div className="flex-1 border-t border-gray-300"></div>
-                        <div className="mx-6 flex items-center gap-2">
-                            <div className="w-5 h-2 bg-red-500 rounded-xl"></div>
-                            <div className="w-7 h-3 bg-red-500 rounded-lg"></div>
-                            <div className="w-5 h-2 bg-red-500 rounded-full"></div>
-                        </div>
-                        <div className="flex-1 border-t border-gray-300"></div>
-                    </div>
-                </div>
-            </div>
-
             {/* Team Profiles */}
             <section id="team" className="py-20 bg-gray-50">
                 <div className="container mx-auto px-6">
@@ -708,7 +655,7 @@ const AboutUs = () => {
                             Our <span className="text-gradient">Team</span>
                         </h2>
                         <p
-                            className={`text-xl text-gray-600 max-w-2xl mx-auto ${playfairDisplay.className}`}
+                            className="text-xl text-gray-600 max-w-2xl mx-auto"
                         >
                             Meet the experts driving innovation in digital transformation and
                             legal technology.
@@ -720,157 +667,9 @@ const AboutUs = () => {
                         </div>
                     </div>
 
-                    {/* Technical Team */}
-                    <div className="mb-16">
-                        <div className="text-center mb-12">
-                            <h3 className={"text-4xl md:text-5xl font-bold text-black mb-4"}>
-                                Technical <span className="text-gradient">Team</span>
-                            </h3>
-                            <p className="text-gray-600 max-w-2xl mx-auto">
-                                Our technology experts who bring your digital vision to life.
-                            </p>
-                        </div>
-
-                        <div className="relative max-w-7xl mx-auto">
-                            <Swiper
-                                modules={[Navigation, Pagination, Autoplay]}
-                                spaceBetween={0}
-                                slidesPerView={1}
-                                navigation={{
-                                    nextEl: ".swiper-button-next-tech",
-                                    prevEl: ".swiper-button-prev-tech",
-                                }}
-                                pagination={{
-                                    clickable: true,
-                                    bulletClass: "swiper-pagination-bullet-custom",
-                                    bulletActiveClass: "swiper-pagination-bullet-active-custom",
-                                }}
-                                autoplay={{
-                                    delay: 5000,
-                                    disableOnInteraction: false,
-                                }}
-                                breakpoints={{
-                                    640: {
-                                        slidesPerView: 2,
-                                    },
-                                    1024: {
-                                        slidesPerView: 4,
-                                    },
-                                }}
-                                className="team-carousel"
-                            >
-                                {teamMembers.technical.map((member) => (
-                                    <SwiperSlide key={member.id}>
-                                        <div
-                                            className="relative rounded-2xl shadow-sm border-1 border-red-600 hover:shadow-md transition-all duration-300 h-80 overflow-hidden max-w-72 mx-auto group bg-cover bg-center"
-                                            // eslint-disable-next-line react/forbid-dom-props
-                                            style={{ backgroundImage: `url(${member.image})` }}
-                                        >
-                                            {/* Bio Overlay - Shows on hover */}
-                                            <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center flex-col justify-center p-4 pointer-events-none group-hover:pointer-events-auto">
-                                                <div className="text-center text-white">
-                                                    <h3 className={"text-lg font-bold mb-2"}>
-                                                        {member.name}
-                                                    </h3>
-                                                    <p className="text-sm text-gray-300 mb-3">
-                                                        {member.role}
-                                                    </p>
-                                                    <p className="text-sm leading-relaxed">
-                                                        {member.bio}
-                                                    </p>
-                                                </div>
-                                                <div className="flex justify-center mt-4 gap-3 z-10">
-                                                    <a
-                                                        href="#"
-                                                        className="w-10 h-10 bg-transparent rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors shadow-lg cursor-pointer"
-                                                        aria-label={`${member.name} LinkedIn`}
-                                                        onClick={(e) => e.stopPropagation()}
-                                                    >
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            width="18"
-                                                            height="18"
-                                                            viewBox="0 0 24 24"
-                                                            fill="none"
-                                                            stroke="currentColor"
-                                                            strokeWidth="2"
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                            className="text-blue-600"
-                                                        >
-                                                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                                                            <rect width="4" height="12" x="2" y="9" />
-                                                            <circle cx="4" cy="4" r="2" />
-                                                        </svg>
-                                                    </a>
-                                                    <a
-                                                        href="#"
-                                                        className="w-10 h-10 bg-transparent rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors shadow-lg cursor-pointer"
-                                                        aria-label={`${member.name} X/Twitter`}
-                                                        onClick={(e) => e.stopPropagation()}
-                                                    >
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            width="18"
-                                                            height="18"
-                                                            viewBox="0 0 24 24"
-                                                            fill="currentColor"
-                                                            className="text-white"
-                                                        >
-                                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                                                        </svg>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                            {/* Member Info - Small overlay container at bottom */}
-                                            <div className="absolute bottom-0 left-0 right-0 bg-white/95 border-1 border-red-600 mx-2 mb-2 p-2 rounded-lg group-hover:opacity-0 transition-opacity duration-300">
-                                                <div className="text-center">
-                                                    <h3
-                                                        className={"text-base font-bold text-red-600 mb-1"}
-                                                    >
-                                                        {member.name}
-                                                    </h3>
-                                                    <p className="text-gray-600 text-sm mb-2">
-                                                        {member.role}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </SwiperSlide>
-                                ))}
-                            </Swiper>
-
-                            {/* Custom Navigation Buttons for Technical Team */}
-                            <button
-                                className="swiper-button-prev-tech absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-red-600 hover:shadow-xl transition-all duration-300"
-                                aria-label="Previous technical team member"
-                                title="Previous technical team member"
-                            >
-                                <ChevronLeft size={24} />
-                            </button>
-                            <button
-                                className="swiper-button-next-tech absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-red-600 hover:shadow-xl transition-all duration-300"
-                                aria-label="Next technical team member"
-                                title="Next technical team member"
-                            >
-                                <ChevronRight size={24} />
-                            </button>
-                        </div>
-                    </div>
+                    
 
                     {/* Legal Team */}
-                    <div>
-                        <div className="text-center mb-12">
-                            <h3 className={"text-4xl md:5xl font-bold text-black mb-4"}>
-                                Legal <span className="text-gradient">Team</span>
-                            </h3>
-                            <p className="text-gray-600 max-w-2xl mx-auto">
-                                Legal experts who understand the intersection of law and
-                                technology.
-                            </p>
-                        </div>
-
                         <div className="relative max-w-7xl mx-auto">
                             <Swiper
                                 modules={[Navigation, Pagination, Autoplay]}
@@ -894,7 +693,7 @@ const AboutUs = () => {
                                         slidesPerView: 2,
                                     },
                                     1024: {
-                                        slidesPerView: 4,
+                                        slidesPerView: 3,
                                     },
                                 }}
                                 className="team-carousel"
@@ -903,7 +702,6 @@ const AboutUs = () => {
                                     <SwiperSlide key={member.id}>
                                         <div
                                             className="relative rounded-2xl shadow-sm border-1 border-blue-600 hover:shadow-md transition-all duration-300 h-80 overflow-hidden max-w-72 mx-auto group bg-cover bg-center"
-                                            // eslint-disable-next-line react/forbid-dom-props
                                             style={{ backgroundImage: `url(${member.image})` }}
                                         >
                                             {/* Bio Overlay - Shows on hover */}
@@ -997,7 +795,6 @@ const AboutUs = () => {
                                 <ChevronRight size={24} />
                             </button>
                         </div>
-                    </div>
 
                     {/* Custom Styles for Swiper */}
                     <style jsx global>{`
@@ -1030,25 +827,12 @@ const AboutUs = () => {
                 </div>
             </section>
 
-            {/* Section Separator */}
-            <div className="py-8 bg-white">
-                <div className="container mx-auto px-6">
-                    <div className="flex items-center justify-center">
-                        <div className="flex-1 border-t border-gray-300"></div>
-                        <div className="mx-6 flex items-center gap-2">
-                            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                            <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                        </div>
-                        <div className="flex-1 border-t border-gray-300"></div>
-                    </div>
-                </div>
-            </div>
+
 
             {/* vision and mission section */}
             <section className="py-20 bg-gray-50">
                 <div className="container mx-auto px-6">
-                    <div className="max-w-6xl mx-auto">
+                    <div className="mx-auto">
                         <div className="text-center mb-16">
                             <h2 className={"text-4xl md:text-5xl font-bold text-black mb-6 "}>
                                 Our Mission & <span className="text-gradient">Vision</span>
@@ -1151,7 +935,7 @@ const AboutUs = () => {
             </section>
 
             {/* Call to Action Section */}
-            <section className="py-20 bg-gradient-to-br from-red-500 to-red-600">
+            <section className="py-20 bg-primary">
                 <div className="container mx-auto px-6">
                     <div className="max-w-4xl mx-auto text-center">
                         <h2 className={"text-4xl md:text-5xl font-bold text-white mb-6"}>
@@ -1184,7 +968,7 @@ const AboutUs = () => {
             </section>
 
             {/* Scroll to Top Button */}
-            <ScrollToTopBtn/>
+            <ScrollToTopBtn />
             {/* <button
                 onClick={scrollToTop}
                 className="fixed bottom-8 right-8 z-50 w-12 h-12 bg-red-600 hover:bg-red-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"

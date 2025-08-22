@@ -36,24 +36,27 @@ const Footer = () => {
                         </p>
 
                         <div className="flex gap-4">
-                            <a
-                                href="#"
+                            <Link
+                                href="https://www.linkedin.com/company/metaboard%C2%AE/"
+                                target="_blank"
                                 className="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300"
                             >
                                 <Linkedin size={18} />
-                            </a>
-                            <a
-                                href="#"
+                            </Link>
+                            <Link
+                                href="https://x.com/MetaBoardDotCom"
+                                target="_blank"
                                 className="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300"
                             >
                                 <Twitter size={18} />
-                            </a>
-                            <a
-                                href="#"
+                            </Link>
+                            <Link
+                                href="https://www.instagram.com/_metaboard?igsh=MWRtOTJ5dWRmODQzbA%3D%3D"
+                                target="_blank"
                                 className="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300"
                             >
                                 <Instagram size={18} />
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
@@ -96,18 +99,18 @@ const Footer = () => {
                         <div className="space-y-3 mb-6">
                             <div className="flex items-center gap-3 text-gray-400">
                                 <Mail size={16} className="text-red-500" />
-                                <span>hello@metaboard.com</span>
+                                <span>info@metaboard.com</span>
                             </div>
                             <div className="flex items-center gap-3 text-gray-400">
                                 <Phone size={16} className="text-red-500" />
-                                <span>+1 (555) 123-4567</span>
+                                <span>+91 11 6635 1542</span>
                             </div>
                             <div className="flex items-center gap-3 text-gray-400">
                                 <MapPin size={16} className="text-red-500" />
-                                <span>San Francisco, CA</span>
+                                <span>New Delhi, India</span>
                             </div>
                         </div>
-{/* 
+                        {/* 
                         <div>
                             <p className="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates.</p>
                             <div className="w-full flex flex-col sm:flex-row gap-2 sm:gap-4">
