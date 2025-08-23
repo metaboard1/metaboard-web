@@ -20,14 +20,16 @@ const BlogCard: FC<props> = ({
 
     return (<>
         <Card className="glass-card overflow-hidden glass-hover group">
-            <div className="flex gap-6 p-6">
+            {/* <div className="flex gap-6 p-6"> */}
+            <div className="flex gap-6 p-3 md:p-6">
                 {/* Book Cover */}
-                <div className="hidden sm:block sm:relative sm:flex-shrink-0">
+                <div className="sm:block sm:relative sm:flex-shrink-0">
                     <img
-                        // src='https://picsum.photos/400/600?random=844'
-                        src={BASE_ASSETS_URL + `/articles/${data.coverImage}`}
+                        src='https://picsum.photos/400/600?random=844'
+                        // src={BASE_ASSETS_URL + `/articles/${data.coverImage}`}
                         alt='Blog'
-                        className="w-32 h-[120px] object-cover rounded-lg transition-transform group-hover:scale-105"
+                        className="w-[100px] h-[110px] md:w-32 md:h-[120px] object-cover rounded-lg transition-transform group-hover:scale-105"
+                        // className="w-32 h-[120px] object-cover rounded-lg transition-transform group-hover:scale-105"
                         loading='lazy'
                     />
                 </div>
@@ -35,9 +37,9 @@ const BlogCard: FC<props> = ({
                 {/* Content */}
                 <div className="flex-1 space-y-2">
                     <Link
-                        href={`read-blog?id=${data.id}`}
+                        href={`/metarule/read-blog?id=${data.id}`}
                     >
-                        <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                        <h3 className="text-lg md:text-xl font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2">
                             {data.title}
                         </h3>
                         <p className="text-sm text-muted-foreground font-medium hidden sm:block">
@@ -59,7 +61,7 @@ const BlogCard: FC<props> = ({
                         <div className="flex items-center gap-1">
                             <span>•</span>
                             <Calendar className="w-3 h-3" />
-                            {dayjs(data.publishedAt).format('DD MM YYYY')}
+                            {dayjs(data.publishedAt).format('DD MMM YYYY')}
                         </div>
                     </div>
 

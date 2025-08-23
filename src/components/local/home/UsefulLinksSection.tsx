@@ -22,7 +22,7 @@ const UsefulLinksSection = () => {
         {
             title: "External Partners",
             links: [
-                { name: "Scriboard", href: "#", icon: ExternalLink },
+                { name: "Scriboard", href: "https://scriboard.com", icon: ExternalLink },
                 { name: "Legal Innovation Lab", href: "#", icon: ExternalLink },
                 { name: "Bar Association", href: "#", icon: ExternalLink }
             ]

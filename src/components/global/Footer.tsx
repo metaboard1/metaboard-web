@@ -14,8 +14,6 @@ const Footer = () => {
     const legalLinks = [
         { name: 'Privacy Policy', href: '/privacy' },
         { name: 'Terms of Service', href: '/terms' },
-        { name: 'Cookie Policy', href: '#' },
-        { name: 'Legal Notice', href: '#' }
     ];
 
     return (
@@ -31,7 +29,7 @@ const Footer = () => {
                             />
                         </div>
                         <p className="text-gray-400 leading-relaxed mb-6">
-                            The technical and educational arm of Scriboard, empowering legal professionals
+                            The technical arm of Scriboard, empowering legal professionals
                             with cutting-edge technology and innovative educational resources.
                         </p>
 
@@ -97,36 +95,23 @@ const Footer = () => {
                         <h3 className="text-xl font-semibold mb-6">Stay Connected</h3>
 
                         <div className="space-y-3 mb-6">
-                            <div className="flex items-center gap-3 text-gray-400">
+                            <a className="flex items-center gap-3 text-gray-400" href='mailto:info@metaboard.com'>
                                 <Mail size={16} className="text-red-500" />
                                 <span>info@metaboard.com</span>
-                            </div>
-                            <div className="flex items-center gap-3 text-gray-400">
+                            </a>
+                            <a className="flex items-center gap-3 text-gray-400" href='tel:+911166351542'>
                                 <Phone size={16} className="text-red-500" />
                                 <span>+91 11 6635 1542</span>
-                            </div>
-                            <div className="flex items-center gap-3 text-gray-400">
+                            </a>
+                            <a
+                                className="flex items-center gap-3 text-gray-400"
+                                href='https://maps.app.goo.gl/5Nmvot2CUkyP6TAE8'
+                                target='_blank'
+                            >
                                 <MapPin size={16} className="text-red-500" />
                                 <span>New Delhi, India</span>
-                            </div>
+                            </a>
                         </div>
-                        {/* 
-                        <div>
-                            <p className="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates.</p>
-                            <div className="w-full flex flex-col sm:flex-row gap-2 sm:gap-4">
-                                <input
-                                    type="email"
-                                    placeholder="Enter your email"
-                                    className="flex-1 glass bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors w-full"
-                                />
-                                <button
-                                    className="bg-primary hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors duration-300 flex items-center justify-center sm:w-auto w-full"
-                                >
-                                    <ArrowRight size={16} />
-                                </button>
-                            </div>
-
-                        </div> */}
                     </div>
                 </div>
             </div>
@@ -135,7 +120,7 @@ const Footer = () => {
                 <div className="container mx-auto px-6 py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <p className="text-gray-400 text-sm">
-                            © 2024 Metaboard. All rights reserved. A division of Scriboard Legal Services.
+                            © 2025 Metaboard. All rights reserved. A division of Scriboard Legal Services.
                         </p>
                         <p className="text-gray-500 text-sm mt-2 md:mt-0">
                             Built with precision and innovation.

@@ -12,10 +12,8 @@ const OurVisionSection = () => {
                     </h2>
 
                     <div className="glass-panel p-8 rounded-2xl backdrop-blur-sm bg-white/5 border border-white/10">
-                        <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-6">
-                            To bridge the gap between traditional legal practice and cutting-edge technology,
-                            empowering the next generation of legal professionals with the tools, knowledge,
-                            and community they need to thrive in an increasingly digital world.
+                        <p className="text-xl md:text-xl text-gray-300 leading-relaxed mb-6">
+                            Metaboard® aims to become a global leader in legal education, providing high-quality training to aspiring professionals and students. It inspires and empowers learners to become leaders in the field. Metaboard® aims to push traditional boundaries and foster new thinking, incorporating technology and law advancements. It cultivates a global community of legal theory-aware professionals.
                         </p>
 
                         <div className="w-24 h-1 bg-primary mx-auto"></div>

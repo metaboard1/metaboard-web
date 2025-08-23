@@ -1,426 +1,26 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import {
-    Monitor,
     Users,
-    ArrowRight,
     BookOpen,
-    Zap,
-    ArrowLeft,
-    ChevronDown,
-    ChevronUp,
     ChevronLeft,
     ChevronRight,
-    Star,
     Cog,
     Lightbulb,
-    Award,
-    Clock,
-    TrendingUp,
-    User,
-    Building2,
+    Award
 } from "lucide-react";
 import Link from "next/link";
-import { Header, Footer, HeroSection, ScrollToTopBtn } from "@/components/global";
+import { HeroSection, ScrollToTopBtn } from "@/components/global";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Button } from "@/components/ui";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { teamMembers } from "@/appData";
 
-// Google Fonts
-import { Playfair_Display, Raleway, Inter } from "next/font/google";
-
-const playfairDisplay = Playfair_Display({
-    subsets: ["latin"],
-    display: "swap",
-});
-
-const raleway = Raleway({
-    subsets: ["latin"],
-    display: "swap",
-});
-
-const inter = Inter({
-    subsets: ["latin"],
-    display: "swap",
-});
-
-// import Header from "@components/local/services/header";
-// import { Link } from 'react-router-dom';
-// import Header from '../components/Header';
-// import Footer from '../components/Footer';
 
 const AboutUs = () => {
-    const [counts, setCounts] = useState({
-        clients: 0,
-        projects: 0,
-        years: 0,
-        satisfaction: 0,
-    });
-    const [isVisible, setIsVisible] = useState(false);
-    const [typewriterText, setTypewriterText] = useState("");
-    const [showCursor, setShowCursor] = useState(true);
-    const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-    const [contactStep, setContactStep] = useState(1);
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        company: "",
-        service: "",
-        budget: "",
-        timeline: "",
-        message: "",
-    });
-    const counterRef = useRef<HTMLDivElement>(null);
-
-    const fullText = "About Metaboard";
-
-    // Typewriter effect
-    useEffect(() => {
-        let index = 0;
-        const timer = setInterval(() => {
-            if (index <= fullText.length) {
-                setTypewriterText(fullText.slice(0, index));
-                index++;
-            } else {
-                clearInterval(timer);
-                setShowCursor(false);
-            }
-        }, 150);
-
-        return () => clearInterval(timer);
-    }, []);
-
-    // Cursor blinking effect
-    useEffect(() => {
-        if (showCursor) {
-            const cursorTimer = setInterval(() => {
-                setShowCursor((prev) => !prev);
-            }, 500);
-            return () => clearInterval(cursorTimer);
-        }
-    }, [showCursor]);
-
-    // Animated counter hook
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting && !isVisible) {
-                    setIsVisible(true);
-                    animateCounters();
-                }
-            },
-            { threshold: 0.5 }
-        );
-
-        if (counterRef.current) {
-            observer.observe(counterRef.current);
-        }
-
-        return () => observer.disconnect();
-    }, [isVisible]);
-
-    const animateCounters = () => {
-        const targets = {
-            clients: 500,
-            projects: 1200,
-            years: 15,
-            satisfaction: 98,
-        };
-        const duration = 2000;
-        const steps = 60;
-        const stepDuration = duration / steps;
-
-        let step = 0;
-        const timer = setInterval(() => {
-            step++;
-            const progress = step / steps;
-            const easeOut = 1 - Math.pow(1 - progress, 3);
-
-            setCounts({
-                clients: Math.floor(targets.clients * easeOut),
-                projects: Math.floor(targets.projects * easeOut),
-                years: Math.floor(targets.years * easeOut),
-                satisfaction: Math.floor(targets.satisfaction * easeOut),
-            });
-
-            if (step >= steps) {
-                clearInterval(timer);
-                setCounts(targets);
-            }
-        }, stepDuration);
-    };
-
-    const teamMembers = {
-        technical: [
-            {
-                id: 1,
-                name: "Aditi Mendiratta",
-                role: "Chief Technology Officer",
-                image:
-                    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-                bio: "Tech innovator with expertise in AI, cloud architecture, and scalable systems. Previously led engineering teams at major tech companies including Google and Microsoft.",
-                linkedin: "#",
-                twitter: "#",
-            },
-            {
-                id: 2,
-                name: "Emily Rodriguez",
-                role: "Head of Design & UX",
-                image:
-                    "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
-                bio: "Award-winning designer specializing in user-centered design and digital experiences. Advocates for accessible and inclusive design practices with 10+ years experience.",
-                linkedin: "#",
-                twitter: "#",
-            },
-            {
-                id: 3,
-                name: "Alex Kumar",
-                role: "Lead Data Scientist",
-                image:
-                    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=face",
-                bio: "Data science expert with focus on machine learning, analytics, and AI-driven insights. Transforms complex data into actionable business intelligence.",
-                linkedin: "#",
-                twitter: "#",
-            },
-            {
-                id: 4,
-                name: "James Wilson",
-                role: "Senior Full-Stack Developer",
-                image:
-                    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-                bio: "Expert full-stack developer with 8+ years experience in React, Node.js, and cloud technologies. Passionate about building scalable, high-performance applications.",
-                linkedin: "#",
-                twitter: "#",
-            },
-        ],
-        legal: [
-            {
-                id: 5,
-                name: "Aditi Mendiratta",
-                role: "Advocate, Corporate & Technology Law",
-                image: "/assets/images/aditi_profile.webp",
-                bio: "Visionary leader with 15+ years in digital transformation and legal technology. Former Fortune 500 executive turned entrepreneur, passionate about bridging law and technology.",
-                linkedin: "#",
-                twitter: "#",
-            },
-            {
-                id: 6,
-                name: "M. Sushant Murthy",
-                role: "Advocate, Intellectual Property & Technology Law",
-                image: "/assets/images/sushant_profile.webp",
-                bio: "Strategic partnership expert with deep understanding of legal industry requirements. Proven track record in scaling legal tech businesses and building lasting client relationships.",
-                linkedin: "#",
-                twitter: "#",
-            },
-            {
-                id: 7,
-                name: "Navya Chopra",
-                role: "Legal Researcher & Writer, Intellectual Property & 	Technology Law",
-                image: "/assets/images/navya_profile.webp",
-                bio: "Former practicing attorney turned legal tech specialist. Expert in compliance, legal process optimization, and technology adoption in legal practices.",
-                linkedin: "#",
-                twitter: "#",
-            }
-        ],
-    };
-
-    const milestones = [
-        {
-            year: "2009",
-            title: "Company Founded",
-            description:
-                "Started as a small team of passionate developers with a vision to transform businesses through technology.",
-        },
-        {
-            year: "2012",
-            title: "First Major Client",
-            description:
-                "Secured our first enterprise client, establishing our reputation for delivering exceptional digital solutions.",
-        },
-        {
-            year: "2015",
-            title: "Team Expansion",
-            description:
-                "Grew to 25+ professionals and expanded our service offerings to include comprehensive digital transformation.",
-        },
-        {
-            year: "2018",
-            title: "Global Recognition",
-            description:
-                "Received industry awards for innovation and was recognized as a top digital transformation partner.",
-        },
-        {
-            year: "2021",
-            title: "100+ Successful Projects",
-            description:
-                "Milestone achievement of 100+ successful project deliveries across various industries.",
-        },
-        {
-            year: "2024",
-            title: "AI Innovation Lab",
-            description:
-                "Launched dedicated AI research lab to explore cutting-edge solutions for future business challenges.",
-        },
-    ];
-
-    const coreValues = [
-        {
-            icon: Users,
-            title: "Client-Centric",
-            description:
-                "Your success drives everything we do. We prioritize understanding unique needs and exceeding expectations.",
-        },
-        {
-            icon: Zap,
-            title: "Innovation",
-            description:
-                "We embrace emerging technologies and creative approaches to solve complex challenges.",
-        },
-        {
-            icon: Award,
-            title: "Excellence",
-            description:
-                "We maintain the highest standards in code quality, design, and client service.",
-        },
-        {
-            icon: BookOpen,
-            title: "Growth",
-            description:
-                "Continuous learning and adaptation keep us at the forefront of technology trends.",
-        },
-        {
-            icon: TrendingUp,
-            title: "Impact",
-            description:
-                "We measure success by the positive impact we create for our clients and communities.",
-        },
-        {
-            icon: Clock,
-            title: "Reliability",
-            description:
-                "Consistent delivery and dependable partnerships built on trust and transparency.",
-        },
-    ];
-
-    const testimonials = [
-        {
-            id: 1,
-            name: "Jennifer Adams",
-            role: "CEO",
-            company: "TechStart Solutions",
-            image:
-                "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
-            content:
-                "Metaboard's innovative approach transformed our digital presence completely. Their team delivered exceptional results that exceeded our expectations and drove remarkable growth.",
-            rating: 5,
-        },
-        {
-            id: 2,
-            name: "Robert Kim",
-            role: "Operations Director",
-            company: "Global Dynamics Inc",
-            image:
-                "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-            content:
-                "Working with Metaboard was a game-changer. Their expertise in digital transformation and strategic insights helped us scale efficiently and stay ahead of the competition.",
-            rating: 5,
-        },
-        {
-            id: 3,
-            name: "Maria Gonzalez",
-            role: "Marketing VP",
-            company: "Innovation Hub",
-            image:
-                "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-            content:
-                "The collaborative approach and attention to detail from the Metaboard team is unmatched. They truly understand business needs and deliver solutions that make a real impact.",
-            rating: 5,
-        },
-    ];
-
-    const stats = [
-        { label: "Happy Clients", value: "clients", icon: Users, suffix: "+" },
-        {
-            label: "Projects Delivered",
-            value: "projects",
-            icon: Award,
-            suffix: "+",
-        },
-        { label: "Years of Excellence", value: "years", icon: Clock, suffix: "" },
-        {
-            label: "Client Satisfaction",
-            value: "satisfaction",
-            icon: TrendingUp,
-            suffix: "%",
-        },
-    ];
-
-    const faqs = [
-        {
-            id: 1,
-            question: "What makes Metaboard different from other digital agencies?",
-            answer:
-                "We combine deep technical expertise with strategic business insights to deliver comprehensive digital solutions. Our team's diverse backgrounds and collaborative approach ensure that every project is tailored to your unique needs and goals.",
-        },
-        {
-            id: 2,
-            question: "How do you ensure the quality of your deliverables?",
-            answer:
-                "Quality is at the core of everything we do. We follow rigorous testing protocols, maintain comprehensive documentation, and implement continuous feedback loops with our clients throughout the project lifecycle to ensure exceptional results.",
-        },
-        {
-            id: 3,
-            question: "Do you work with companies of all sizes?",
-            answer:
-                "Absolutely! We've successfully partnered with startups, mid-sized businesses, and enterprise organizations. Our scalable approach and flexible service offerings allow us to adapt to the unique needs and budget requirements of each client.",
-        },
-        {
-            id: 4,
-            question: "What is your typical project timeline?",
-            answer:
-                "Project timelines vary based on scope and complexity. Simple projects may take 2-4 weeks, while comprehensive digital transformations can span 3-6 months. We provide detailed project timelines and milestone tracking during our initial consultation.",
-        },
-        {
-            id: 5,
-            question: "Do you provide ongoing support after project completion?",
-            answer:
-                "Yes, we offer comprehensive post-launch support including maintenance, updates, monitoring, and optimization services. We believe in long-term partnerships and are committed to your continued success.",
-        },
-        {
-            id: 6,
-            question: "What technologies do you specialize in?",
-            answer:
-                "Our technical team specializes in modern web technologies including React, Next.js, Node.js, Python, cloud platforms (AWS, Azure, GCP), and emerging technologies like AI/ML integration. We stay current with industry trends to provide cutting-edge solutions.",
-        },
-    ];
-
-    const toggleFaq = (faqId: number) => {
-        setExpandedFaq(expandedFaq === faqId ? null : faqId);
-    };
-
-    const handleInputChange = (
-        e: React.ChangeEvent<
-            HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-        >
-    ) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const nextStep = () => {
-        if (contactStep < 3) setContactStep(contactStep + 1);
-    };
-
-    const prevStep = () => {
-        if (contactStep > 1) setContactStep(contactStep - 1);
-    };
-
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    };
 
     return (
         <div className="min-h-screen">
@@ -667,134 +267,134 @@ const AboutUs = () => {
                         </div>
                     </div>
 
-                    
+
 
                     {/* Legal Team */}
-                        <div className="relative max-w-7xl mx-auto">
-                            <Swiper
-                                modules={[Navigation, Pagination, Autoplay]}
-                                spaceBetween={0}
-                                slidesPerView={1}
-                                navigation={{
-                                    nextEl: ".swiper-button-next-legal",
-                                    prevEl: ".swiper-button-prev-legal",
-                                }}
-                                pagination={{
-                                    clickable: true,
-                                    bulletClass: "swiper-pagination-bullet-custom",
-                                    bulletActiveClass: "swiper-pagination-bullet-active-custom",
-                                }}
-                                autoplay={{
-                                    delay: 5500,
-                                    disableOnInteraction: false,
-                                }}
-                                breakpoints={{
-                                    640: {
-                                        slidesPerView: 2,
-                                    },
-                                    1024: {
-                                        slidesPerView: 3,
-                                    },
-                                }}
-                                className="team-carousel"
-                            >
-                                {teamMembers.legal.map((member) => (
-                                    <SwiperSlide key={member.id}>
-                                        <div
-                                            className="relative rounded-2xl shadow-sm border-1 border-blue-600 hover:shadow-md transition-all duration-300 h-80 overflow-hidden max-w-72 mx-auto group bg-cover bg-center"
-                                            style={{ backgroundImage: `url(${member.image})` }}
-                                        >
-                                            {/* Bio Overlay - Shows on hover */}
-                                            <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center flex-col justify-center p-4 pointer-events-none group-hover:pointer-events-auto">
-                                                <div className="text-center text-white">
-                                                    <h3 className={"text-lg font-bold mb-2"}>
-                                                        {member.name}
-                                                    </h3>
-                                                    <p className="text-sm text-gray-300 mb-3">
-                                                        {member.role}
-                                                    </p>
-                                                    <p className="text-sm leading-relaxed">
-                                                        {member.bio}
-                                                    </p>
-                                                </div>
-                                                <div className="flex justify-center mt-4 gap-3 z-10">
-                                                    <a
-                                                        href="#"
-                                                        className="w-10 h-10 bg-transparent rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors shadow-lg cursor-pointer"
-                                                        aria-label={`${member.name} LinkedIn`}
-                                                        onClick={(e) => e.stopPropagation()}
-                                                    >
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            width="18"
-                                                            height="18"
-                                                            viewBox="0 0 24 24"
-                                                            fill="none"
-                                                            stroke="currentColor"
-                                                            strokeWidth="2"
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                            className="text-blue-600"
-                                                        >
-                                                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                                                            <rect width="4" height="12" x="2" y="9" />
-                                                            <circle cx="4" cy="4" r="2" />
-                                                        </svg>
-                                                    </a>
-                                                    <a
-                                                        href="#"
-                                                        className="w-10 h-10 bg-transparent rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors shadow-lg cursor-pointer"
-                                                        aria-label={`${member.name} X/Twitter`}
-                                                        onClick={(e) => e.stopPropagation()}
-                                                    >
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            width="18"
-                                                            height="18"
-                                                            viewBox="0 0 24 24"
-                                                            fill="currentColor"
-                                                            className="text-white"
-                                                        >
-                                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                                                        </svg>
-                                                    </a>
-                                                </div>
+                    <div className="relative max-w-7xl mx-auto">
+                        <Swiper
+                            modules={[Navigation, Pagination, Autoplay]}
+                            spaceBetween={0}
+                            slidesPerView={1}
+                            navigation={{
+                                nextEl: ".swiper-button-next-legal",
+                                prevEl: ".swiper-button-prev-legal",
+                            }}
+                            pagination={{
+                                clickable: true,
+                                bulletClass: "swiper-pagination-bullet-custom",
+                                bulletActiveClass: "swiper-pagination-bullet-active-custom",
+                            }}
+                            autoplay={{
+                                delay: 5500,
+                                disableOnInteraction: false,
+                            }}
+                            breakpoints={{
+                                640: {
+                                    slidesPerView: 2,
+                                },
+                                1024: {
+                                    slidesPerView: 3,
+                                },
+                            }}
+                            className="team-carousel"
+                        >
+                            {teamMembers.map((member) => (
+                                <SwiperSlide key={member.id}>
+                                    <div
+                                        className="relative rounded-2xl shadow-sm border-1 border-blue-600 hover:shadow-md transition-all duration-300 h-80 overflow-hidden mx-auto group bg-cover bg-center"
+                                        style={{ backgroundImage: `url(${member.image})`, height: '400px', width: '300px' }}
+                                    >
+                                        {/* Bio Overlay - Shows on hover */}
+                                        <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center flex-col justify-center p-4 pointer-events-none group-hover:pointer-events-auto">
+                                            <div className="text-center text-white">
+                                                <h3 className={"text-lg font-bold mb-2"}>
+                                                    {member.name}
+                                                </h3>
+                                                <p className="text-sm text-gray-300 mb-3">
+                                                    {member.role}
+                                                </p>
+                                                <p className="text-sm leading-relaxed">
+                                                    {member.bio}
+                                                </p>
                                             </div>
-
-                                            {/* Member Info - Small overlay container at bottom */}
-                                            <div className="absolute bottom-0 left-0 right-0 bg-white/95 border-1 border-blue-600 mx-2 mb-2 p-2 rounded-lg group-hover:opacity-0 transition-opacity duration-300">
-                                                <div className="text-center">
-                                                    <h3
-                                                        className={"text-base font-bold text-blue-600 mb-1"}
+                                            <div className="flex justify-center mt-4 gap-3 z-10">
+                                                <a
+                                                    href="#"
+                                                    className="w-10 h-10 bg-transparent rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors shadow-lg cursor-pointer"
+                                                    aria-label={`${member.name} LinkedIn`}
+                                                    onClick={(e) => e.stopPropagation()}
+                                                >
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="18"
+                                                        height="18"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        strokeWidth="2"
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                        className="text-blue-600"
                                                     >
-                                                        {member.name}
-                                                    </h3>
-                                                    <p className="text-gray-600 text-sm mb-2">
-                                                        {member.role}
-                                                    </p>
-                                                </div>
+                                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                                        <rect width="4" height="12" x="2" y="9" />
+                                                        <circle cx="4" cy="4" r="2" />
+                                                    </svg>
+                                                </a>
+                                                <a
+                                                    href="#"
+                                                    className="w-10 h-10 bg-transparent rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors shadow-lg cursor-pointer"
+                                                    aria-label={`${member.name} X/Twitter`}
+                                                    onClick={(e) => e.stopPropagation()}
+                                                >
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="18"
+                                                        height="18"
+                                                        viewBox="0 0 24 24"
+                                                        fill="currentColor"
+                                                        className="text-white"
+                                                    >
+                                                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                                    </svg>
+                                                </a>
                                             </div>
                                         </div>
-                                    </SwiperSlide>
-                                ))}
-                            </Swiper>
 
-                            {/* Custom Navigation Buttons for Legal Team */}
-                            <button
-                                className="swiper-button-prev-legal absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-blue-600 hover:shadow-xl transition-all duration-300"
-                                aria-label="Previous legal team member"
-                                title="Previous legal team member"
-                            >
-                                <ChevronLeft size={24} />
-                            </button>
-                            <button
-                                className="swiper-button-next-legal absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-blue-600 hover:shadow-xl transition-all duration-300"
-                                aria-label="Next legal team member"
-                                title="Next legal team member"
-                            >
-                                <ChevronRight size={24} />
-                            </button>
-                        </div>
+                                        {/* Member Info - Small overlay container at bottom */}
+                                        <div className="absolute bottom-0 left-0 right-0 bg-white/95 border-1 border-blue-600 mx-2 mb-2 p-2 rounded-lg group-hover:opacity-0 transition-opacity duration-300">
+                                            <div className="text-center">
+                                                <h3
+                                                    className={"text-base font-bold text-blue-600 mb-1"}
+                                                >
+                                                    {member.name}
+                                                </h3>
+                                                <p className="text-gray-600 text-sm mb-2">
+                                                    {member.role}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+
+                        {/* Custom Navigation Buttons for Legal Team */}
+                        <button
+                            className="swiper-button-prev-legal hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-blue-600 hover:shadow-xl transition-all duration-300"
+                            aria-label="Previous legal team member"
+                            title="Previous legal team member"
+                        >
+                            <ChevronLeft size={24} />
+                        </button>
+                        <button 
+                            className="swiper-button-next-legal  hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-blue-600 hover:shadow-xl transition-all duration-300"
+                            aria-label="Next legal team member"
+                            title="Next legal team member"
+                        >
+                            <ChevronRight size={24} />
+                        </button>
+                    </div>
 
                     {/* Custom Styles for Swiper */}
                     <style jsx global>{`
