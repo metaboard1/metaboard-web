@@ -1,10 +1,11 @@
 'use client';
 
-import { type FC } from "react";
+import { useRef, type FC } from "react";
 import { Pagination, Pagination2 } from "@/components/ui";
 import { FilterSection } from "../../global";
 import DocumentCard from "./DocumentCard";
 import { useRouter } from "next/navigation";
+import { Loader } from "@/components/global";
 
 type props = {
     documentsData: DocumentInterface[];
@@ -20,17 +21,28 @@ const DocumentListingSection: FC<props> = ({
     query
 }) => {
 
+    const loaderRef = useRef<HTMLDivElement | null>(null);
     const router = useRouter();
 
+    const startLoader = () => {
+        if (loaderRef.current) {
+            loaderRef.current.classList.remove('hidden');
+            loaderRef.current.classList.add('flex');
+        }
+    }
     const handlePageChange = (updatedPage: number) => {
+        startLoader();
         router.push(`/metarule/documents/${updatedPage}/${encodeURIComponent(query)}#st`);
     }
 
     const handleSearch = (value: string) => {
+        startLoader();
         router.push(`/metarule/documents/0/${encodeURIComponent(value)}#st`);
     }
 
     return (<>
+        <Loader ref={loaderRef} />
+
         <div id="blogListSection" className="container px-4 sm:px-6 lg:px-8 py-12 space-y-10">
             {/* Controls */}
             <FilterSection

@@ -2,7 +2,7 @@ export const dynamic = 'force-dynamic';
 
 import { HeroSection } from '@/components/alt/global';
 import { BlogListingSection } from '@/components/alt/local/blogs';
-import { ScrollToTopBtn } from '@/components/global';
+import { Loader, ScrollToTopBtn } from '@/components/global';
 import { $crud } from '@/factory/crudFactory';
 
 

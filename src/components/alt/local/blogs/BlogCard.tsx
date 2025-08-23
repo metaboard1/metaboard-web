@@ -5,7 +5,6 @@ import { Calendar } from "lucide-react";
 import { Card } from "../../ui";
 import dayjs from "dayjs";
 import Link from "next/link";
-import { BASE_ASSETS_URL } from "@/constants";
 
 type props = {
     data: BlogInterface
@@ -15,12 +14,8 @@ const BlogCard: FC<props> = ({
     data
 }) => {
 
-    // const handleShare = () => share(data.title, data.description, `${window.location.origin}/${window.location.pathname.split('/')[1]}/read-blog?id=${data.id}`);
-
-
     return (<>
         <Card className="glass-card overflow-hidden glass-hover group">
-            {/* <div className="flex gap-6 p-6"> */}
             <div className="flex gap-6 p-3 md:p-6">
                 {/* Book Cover */}
                 <div className="sm:block sm:relative sm:flex-shrink-0">
@@ -29,7 +24,6 @@ const BlogCard: FC<props> = ({
                         // src={BASE_ASSETS_URL + `/articles/${data.coverImage}`}
                         alt='Blog'
                         className="w-[100px] h-[110px] md:w-32 md:h-[120px] object-cover rounded-lg transition-transform group-hover:scale-105"
-                        // className="w-32 h-[120px] object-cover rounded-lg transition-transform group-hover:scale-105"
                         loading='lazy'
                     />
                 </div>

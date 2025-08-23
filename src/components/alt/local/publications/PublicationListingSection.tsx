@@ -1,10 +1,11 @@
 'use client';
 
-import { type FC } from "react";
+import { useRef, type FC } from "react";
 import PublicationCard from "./PublicationCard";
 import { Pagination2 } from "@/components/ui";
 import { FilterSection } from "../../global";
 import { useRouter } from "next/navigation";
+import { Loader } from "@/components/global";
 
 type props = {
     publicationList: PublicationInterface[];
@@ -21,17 +22,29 @@ const PublicationListingSection: FC<props> = ({
     query
 }) => {
 
+    const loaderRef = useRef<HTMLDivElement | null>(null);
     const router = useRouter();
 
+    const startLoader = () => {
+        if (loaderRef.current) {
+            loaderRef.current.classList.remove('hidden');
+            loaderRef.current.classList.add('flex');
+        }
+    }
+
     const handlePageChange = (updatedPage: number) => {
+        startLoader();
         router.push(`/metarule/publications/${updatedPage}/${encodeURIComponent(query)}#hero-para`);
     }
 
     const handleSearch = (value: string) => {
+        startLoader();
         router.push(`/metarule/publications/0/${encodeURIComponent(value)}#hero-para`);
     }
 
     return (<>
+    
+        <Loader ref={loaderRef} />
 
         <div id="publicationListSection" className="container px-4 sm:px-6 lg:px-8 py-12 space-y-10">
             {/* Controls */}

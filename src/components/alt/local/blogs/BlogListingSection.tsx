@@ -1,10 +1,11 @@
 'use client';
 
-import { type FC } from "react";
+import { useRef, type FC } from "react";
 import { Pagination2 } from "@/components/ui";
 import { FilterSection } from "../../global";
 import BlogCard from "./BlogCard";
 import { useRouter } from "next/navigation";
+import { Loader } from "@/components/global";
 
 type props = {
     blogsList: BlogInterface[];
@@ -21,17 +22,28 @@ const BlogListingSection: FC<props> = ({
     query
 }) => {
 
+    const loaderRef = useRef<HTMLDivElement | null>(null);
     const router = useRouter();
 
+    const startLoader = () => {
+        if (loaderRef.current) {
+            loaderRef.current.classList.remove('hidden');
+            loaderRef.current.classList.add('flex');
+        }
+    }
     const handlePageChange = (updatedPage: number) => {
-        router.push(`/metarule/blogs/${updatedPage}/${encodeURIComponent(query)}#hero-para`);
+        startLoader();
+        router.push(`/metarule/blogs/${updatedPage}/${encodeURIComponent(query)}#st`);
     }
 
     const handleSearch = (value: string) => {
-        router.push(`/metarule/blogs/0/${encodeURIComponent(value)}#hero-para`);
+        startLoader();
+        router.push(`/metarule/blogs/0/${encodeURIComponent(value)}#st`);
     }
 
     return (<>
+    
+        <Loader ref={loaderRef} />
 
         <div id="blogListSection" className="container px-4 sm:px-6 lg:px-8 py-12 space-y-10">
             {/* Controls */}

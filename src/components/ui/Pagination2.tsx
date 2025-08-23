@@ -23,9 +23,9 @@ const Pagination2: FC<props> = ({
 
     const totalPages = Math.ceil(totalRecords / limit);
 
-    const handlePageChange = (updatedPage: number) => {
-        onPageChange(updatedPage);
-    }
+    // const handlePageChange = (updatedPage: number) => {
+    //     onPageChange(updatedPage);
+    // }
 
     return (<>
         <div className="flex items-center justify-center flex-wrap gap-x-1" aria-label="Pagination">
@@ -40,15 +40,15 @@ const Pagination2: FC<props> = ({
                 <span className="sr-only">Previous</span>
             </button>
             <div className="flex items-center gap-x-1">
-               
+
                 {
                     new Array(totalPages).fill(null).map((e, i) => <Link
                         href={`/${navigationPath}/${i}#st`}
                         key={i}
-                        type="button"
+                        // onClick={() => onPageChange(0, false)}
                         className={`min-h-8 min-w-8 flex justify-center items-center py-1.5 px-2.5 text-sm rounded-full focus:outline-hidden  disabled:opacity-50 disabled:pointer-events-none
                                     ${i === currentPage ? 'bg-primary text-white' : 'text-gray-800'}`}
-                        // onClick={() => handlePageChange(i)}
+                    // onClick={() => handlePageChange(i)}
                     >
                         {i + 1}
                     </Link>
