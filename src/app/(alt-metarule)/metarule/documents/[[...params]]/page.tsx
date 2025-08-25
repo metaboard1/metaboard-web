@@ -38,7 +38,6 @@ const Documents = async ({
             <HeroSection
                 page='document'
             />
-            <p>Generated at: {dayjs().format('hh-m-s')}</p>
             {/* Article Content */}
             <DocumentListingSection
                 documentsData={documents}

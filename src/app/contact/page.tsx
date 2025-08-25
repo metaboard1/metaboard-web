@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { type FC } from "react";
 import { Mail, Phone, MapPin, NotepadText, Home } from "lucide-react";
 import { HeroSection, ScrollToTopBtn } from "@/components/global";
 import { ContactForm } from "@/components/local/contact";
 
 
-const ContactUs = () => {
+const ContactUs: FC = () => {
 
     return (<>
         <div className="min-h-screen">
@@ -45,8 +45,8 @@ const ContactUs = () => {
                                                 Main Office
                                             </h5>
                                             <p className="text-red-100 text-sm leading-relaxed">
-                                                Metarion Knowledge Solutions Private Limited 
-                                                <br/>
+                                                Metarion Knowledge Solutions Private Limited
+                                                <br />
                                                 Level 2, Elegance, Mathura Road, Jasola,
                                                 <br />
                                                 New Delhi – 110025, India
@@ -106,12 +106,12 @@ const ContactUs = () => {
                                             <h5 className="font-medium mb-1 text-sm">R&D Centre</h5>
                                             <p className="text-red-100 text-sm leading-relaxed">
                                                 Metaboard Research & Development Centre
-                                                <br/>
+                                                <br />
                                                 ‘Metaboard’
                                                 <br />
                                                 Village – Karnera, Ballabhgarh
                                                 <br />
-                                                Faridabad – 121004 Haryana, India 
+                                                Faridabad – 121004 Haryana, India
                                             </p>
                                         </div>
                                     </div>

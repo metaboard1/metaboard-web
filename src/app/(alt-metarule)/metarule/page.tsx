@@ -7,8 +7,8 @@ import {
     BrowseByTagSection,
     HeroSection,
     LatestBlogsSection,
+    NewDocumentsFloatingCard,
     PublicationSection,
-    RelatedPosts,
 } from "@/components/alt/local/home";
 import { $crud } from "@/factory/crudFactory";
 import { BookOpen, FileText } from "lucide-react";
@@ -17,15 +17,19 @@ const MetaRule = async () => {
 
     let recentPublications: any[] = [];
     let recentBlogs: any[] = [];
+    let documentsList: any[] = [];
 
     try {
         const { data: { rows: publications } } = await $crud.retrieve('metarule/publications?limit=2');
         const { data: { rows: blogs } } = await $crud.retrieve('metarule/blogs?limit=3');
+        const { data: { rows: documents } } = await $crud.retrieve('metarule/documents?limit=5');
         recentPublications = publications;
         recentBlogs = blogs;
+        documentsList = documents;
     } catch (error) {
         console.error('Error fetching article:', error);
     }
+
 
 
     return (<>
@@ -96,7 +100,9 @@ const MetaRule = async () => {
 
                 <div className="lg:col-span-1 col-span-3 mt-12  mb-12 lg:mt-0">
                     <div className="sticky top-24 space-y-8">
-                        <RelatedPosts />
+                        <NewDocumentsFloatingCard
+                            documentsList={documentsList}
+                        />
                         <BrowseByTagSection />
                     </div>
                 </div>

@@ -1,26 +1,21 @@
 'use client';
 
-import {  ChevronDown, ChevronUp, Globe, Linkedin, Mail, TwitterIcon } from "lucide-react";
-import { Button, Card,Badge } from "../../ui"
+import { ChevronDown, ChevronUp, Linkedin, Mail, TwitterIcon } from "lucide-react";
+import { Button, Card } from "../../ui"
 import { useState } from "react";
+import Link from "next/link";
 
 
 
 
 const AuthorProfile = () => {
+
     const [isExpanded, setIsExpanded] = useState(false);
+
     const socialLinks = [
-        { icon: Linkedin, href: '#', label: 'LinkedIn' },
-        { icon: TwitterIcon, href: '#', label: 'Twitter' },
-        { icon: Globe, href: '#', label: 'Website' },
-        { icon: Mail, href: '#', label: 'Email' },
-    ];
-    const expertise = [
-        'Legal Technology',
-        'AI & Machine Learning',
-        'Digital Transformation',
-        'Practice Management',
-        'Regulatory Compliance'
+        { icon: Linkedin, href: 'https://www.linkedin.com/in/rodneydryder', label: 'LinkedIn' },
+        { icon: TwitterIcon, href: 'https://x.com/Rodney_D_Ryder', label: 'Twitter' },
+        { icon: Mail, href: 'mailto:rodney@scribboard.com', label: 'Email' },
     ];
 
 
@@ -31,7 +26,7 @@ const AuthorProfile = () => {
                 <div className="flex-shrink-0">
                     <div className="relative group">
                         <img
-                            src={'/assets/images/author-profile.jpg'}
+                            src={'/assets/images/rodney_d_ryder.webp'}
                             alt="Dr. Sarah Mitchell"
                             className="w-32 h-32 lg:w-40 lg:h-40 rounded-2xl object-cover border-2 border-glass transition-transform group-hover:scale-105"
                         />
@@ -42,39 +37,28 @@ const AuthorProfile = () => {
                 {/* Profile Info */}
                 <div className="flex-1 space-y-4">
                     <div>
-                        <h2 className="text-2xl font-bold text-foreground mb-1">Dr. Sarah Mitchell</h2>
-                        <p className="text-lg text-glass mb-2">Founder & Chief Technology Officer</p>
-                        <p className="text-muted-foreground">Leading innovation at the intersection of law and technology</p>
+                        <h2 className="text-2xl font-bold text-foreground mb-1">Mr. Rodney D Ryder</h2>
+                        <p className="text-lg text-glass mb-2">Founding Partner</p>
+                        <p className="text-muted-foreground">Exceptional Lawyer in Technology, Data Privacy, Intellectual Property, and New Media Laws</p>
                     </div>
 
                     {/* Social Links */}
                     <div className="flex gap-3">
                         {socialLinks.map((social) => (
-                            <Button
-                                key={social.label}
-                                variant="secondary"
-                                size="sm"
-                                className="glass-hover border-glass"
+                            <Link
+                                href={social.href}
+                                target="_blank"
                             >
-                                <a href={social.href} aria-label={social.label}>
+                                <Button
+                                    key={social.label}
+                                    variant="secondary"
+                                    size="sm"
+                                    className="glass-hover border-glass"
+                                >
                                     <social.icon className="w-4 h-4" />
-                                </a>
-                            </Button>
+                                </Button>
+                            </Link>
                         ))}
-                    </div>
-
-                    {/* Expertise Tags */}
-                    <div className="flex flex-wrap gap-2">
-                        {expertise.slice(0, 3).map((skill) => (
-                            <Badge key={skill} variant="outline" className="text-xs">
-                                {skill}
-                            </Badge>
-                        ))}
-                        {!isExpanded && expertise.length > 3 && (
-                            <Badge variant="outline" className="text-xs border-glass">
-                                +{expertise.length - 3} more
-                            </Badge>
-                        )}
                     </div>
 
                     {/* Expand/Collapse Button */}
@@ -102,36 +86,18 @@ const AuthorProfile = () => {
             {/* Expanded Bio */}
             {isExpanded && (
                 <div className="mt-6 pt-6 border-t border-glass space-y-4 animate-in slide-in-from-top-2">
-                    <div>
-                        <h3 className="text-lg font-semibold text-foreground mb-3">Biography</h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                            Dr. Sarah Mitchell is a pioneering figure in legal technology with over 15 years of experience bridging
-                            the gap between traditional legal practice and cutting-edge technology. She holds a J.D. from Harvard Law
-                            School and a Ph.D. in Computer Science from MIT, making her uniquely qualified to navigate the complex
-                            intersection of law and technology.
-                        </p>
-                    </div>
 
-                    <div>
-                        <h3 className="text-lg font-semibold text-foreground mb-3">All Expertise Areas</h3>
-                        <div className="flex flex-wrap gap-2">
-                            {expertise.map((skill) => (
-                                <Badge key={skill} variant="outline" className="text-xs">
-                                    {skill}
-                                </Badge>
-                            ))}
-                        </div>
-                    </div>
+                    <p className="text-muted-foreground leading-relaxed text-sm text-justify">
+                        • Founding Partner of Scriboard, a full-service commercial law firm specializing in technology, new media, and intellectual property laws.<br />
+                        • Author of Guide to Cyber Laws: the Information Technology Act, 2000, E-Commerce, Data Protection and the Internet, the first section-wise analysis of the Indian Information Technology Act, 2000.<br />
+                        • Advisor to the Ministry of Communications and Information Technology, Government of India on the implementation of the Information Technology Act, 2000.<br />
+                        • Counsels a wide range of clients from start-ups to Fortune 100, representing them in litigation regarding technology law, data security, compliance with law enforcement, and intellectual property strategy.<br />
+                        • Regularly interviewed and widely quoted by Indian and International media on technology, intellectual property, and new media laws.<br />
+                        • Nominated as a 'Leading Lawyer' in intellectual property, technology, communications and media law by Asia Law, Who'sWhoLegal, Asia Legal 500, amongst other International publications.<br />
+                        • Acknowledged as an authoritative work on domain name disputes by the Hon’ble Supreme Court of India.<br />
+                        • Adjunct Professor / Visiting Faculty to various institutions, including the Campus Law Centre, Faculty of Law, University of Delhi, CBI Academy, Indian Institute of Management, Lucknow, Indian Institute of Technology, NALSAR, Hyderabad, the National Law School of India University, and the National Law University, Jodhpur.<br />
+                    </p>
 
-                    <div>
-                        <h3 className="text-lg font-semibold text-foreground mb-3">Recent Achievements</h3>
-                        <ul className="text-muted-foreground space-y-2">
-                            <li>• Named "Legal Innovator of the Year" by Legal Tech Weekly (2024)</li>
-                            <li>• Keynote speaker at the Global Legal Technology Summit</li>
-                            <li>• Published 50+ articles on AI applications in legal practice</li>
-                            <li>• Advisory board member for the American Bar Association's Tech Committee</li>
-                        </ul>
-                    </div>
                 </div>
             )}
         </Card>

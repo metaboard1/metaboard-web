@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { ArticleHeroSection, ScrollToTopBtn } from '@/components/global';
 import { ArticleContentSection, ArticleScrollProgress } from '@/components/local/read-article';
 import { $crud } from '@/factory/crudFactory';
@@ -6,7 +8,6 @@ type PageProps = {
     searchParams: Promise<Record<string, string | string[]>>;
 };
 
-export const dynamic = 'force-dynamic';
 
 const Read = async ({ searchParams }: PageProps) => {
 

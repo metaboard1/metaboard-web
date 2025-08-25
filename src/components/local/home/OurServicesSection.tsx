@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, Plus, Minus } from 'lucide-react';
-import { ourServicesData } from '@/appData';
+import { servicesData } from '@/appData';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import '../../../styles/swiper.css';
 import { Button } from '@/components/ui';
+import Link from 'next/link';
 
 const OurServicesSection = () => {
     const [expandedCards, setExpandedCards] = useState<number[]>([]);
@@ -62,13 +63,13 @@ const OurServicesSection = () => {
 
                         <Swiper
                             onSwiper={setSwiperInstance}
-                            modules={[Navigation, Autoplay, Pagination]}
+                            modules={[Navigation, Pagination]}
                             navigation={{ prevEl: prevBtnRef.current, nextEl: nextBtnRef.current }}
                             spaceBetween={20}
-                            autoplay={{
-                                delay: 3000,
-                                disableOnInteraction: true,
-                            }}
+                            // autoplay={{
+                            //     delay: 3000,
+                            //     disableOnInteraction: true,
+                            // }}
                             slidesPerView={3}
                             pagination={{
                                 el: '.custom-pagination',
@@ -81,7 +82,7 @@ const OurServicesSection = () => {
                                 1024: { slidesPerView: 3 },
                             }}
                         >
-                            {ourServicesData.map((service) => {
+                            {servicesData.map((service) => {
                                 const Icon = service.icon;
                                 const isExpanded = expandedCards.includes(service.id);
 
@@ -137,9 +138,13 @@ const OurServicesSection = () => {
                                                 <button className="flex-1 border border-red-600 text-red-600 hover:bg-primary hover:text-white px-4 py-2 rounded-lg font-medium transition-all duration-300">
                                                     Learn More
                                                 </button>
-                                                <button className="flex-1 bg-primary hover:bg-red-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 ripple-effect">
+                                                <Link
+                                                    href='/contact'
+                                                    className='flex-1 bg-primary hover:bg-red-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 ripple-effect text-center'
+                                                >
                                                     Enquire Now
-                                                </button>
+                                                </Link>
+
                                             </div>
                                         </div>
                                     </SwiperSlide>

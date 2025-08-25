@@ -35,8 +35,8 @@ const ArticleContentSection: FC<props> = ({
                         !!relatedArticles.length &&
                         <div className="col-span-1">
                             <div className="sticky top-24">
-                                <div className="glass rounded-2xl p-6">
-                                    <h3 className="text-xl font-bold text-red-600 mb-6 pb-3 border-b border-gray-200">
+                                <div className="rounded-2xl p-6 border-[2px] border-primary">
+                                    <h3 className="text-xl font-bold text-primary mb-6 pb-3 border-b border-gray-200">
                                         Related Reads
                                     </h3>
                                     <div className="space-y-4">
@@ -46,7 +46,7 @@ const ArticleContentSection: FC<props> = ({
                                                 href={`${renderForBlog ? '/metarule/read-blog' : '/read-article'}?id=${relatedArticle.id}`}
                                                 className="group block"
                                             >
-                                                <div className="flex space-x-3 glass-hover hover:bg-gray-50 rounded-lg p-3 transition-all duration-300">
+                                                <div className="flex space-x-3  rounded-lg p-3 ">
                                                     <img
                                                         src={`${BASE_ASSETS_URL}/articles/${relatedArticle.coverImage}`}
                                                         alt={relatedArticle.title}

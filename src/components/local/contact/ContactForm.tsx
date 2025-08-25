@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui";
 import { $crud } from "@/factory/crudFactory";
 import { Loader } from "@/components/global";
+import { servicesData } from "@/appData";
 
 interface FormData {
     name: string;
@@ -11,18 +12,7 @@ interface FormData {
     service: string;
     message: string;
 }
-const services = [
-    {
-        id: 1,
-        title: "Legal Document Automation",
-        slug: "legal-document-automation",
-    },
-    { id: 2, title: "Contract Analysis", slug: "contract-analysis" },
-    { id: 3, title: "Legal Research Platform", slug: "legal-research-platform" },
-    { id: 4, title: "Compliance Management", slug: "compliance-management" },
-    { id: 5, title: "Case Management System", slug: "case-management-system" },
-    { id: 6, title: "Custom Legal Solutions", slug: "custom-legal-solutions" },
-];
+
 
 const ContactForm: FC = () => {
 
@@ -129,8 +119,8 @@ const ContactForm: FC = () => {
                             required
                         >
                             <option value="">Select a service</option>
-                            {services.map((service) => (
-                                <option key={service.id} value={service.slug}>
+                            {servicesData.map((service) => (
+                                <option key={service.id} value={service.title}>
                                     {service.title}
                                 </option>
                             ))}

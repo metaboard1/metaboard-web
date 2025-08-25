@@ -1,2 +1,2 @@
-export { default as ourServicesData } from './ourServicesData';
-export {  teamMembers } from './aboutData';
+export { default as servicesData } from './servicesData';
+export { teamMembers } from './aboutData';
