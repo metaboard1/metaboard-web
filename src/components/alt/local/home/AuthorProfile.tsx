@@ -6,8 +6,6 @@ import { useState } from "react";
 import Link from "next/link";
 
 
-
-
 const AuthorProfile = () => {
 
     const [isExpanded, setIsExpanded] = useState(false);
@@ -38,8 +36,8 @@ const AuthorProfile = () => {
                 <div className="flex-1 space-y-4">
                     <div>
                         <h2 className="text-2xl font-bold text-foreground mb-1">Mr. Rodney D Ryder</h2>
-                        <p className="text-lg text-glass mb-2">Founding Partner</p>
-                        <p className="text-muted-foreground">Exceptional Lawyer in Technology, Data Privacy, Intellectual Property, and New Media Laws</p>
+                        <p className="text-sm sm:text-md text-glass mb-2">Founding Partner</p>
+                        <p className="text-sm sm:text-md text-muted-foreground">Exceptional Lawyer in Technology, Data Privacy, Intellectual Property, and New Media Laws</p>
                     </div>
 
                     {/* Social Links */}

@@ -39,14 +39,14 @@ const MetaRule = async () => {
             <div className="grid grid-cols-3 container">
                 <div className="lg:col-span-2 col-span-3">
 
-                    <section className="container pb-12 lg:pb-20 text-gray-900 overflow-hidden">
+                    <section className="pb-12 lg:pb-20 text-gray-900 md:mr-5">
                         {/* Section Header */}
                         <div className="text-center mb-12">
                             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                                 About the{" "}
                                 <span className="underline decoration-primary"> Founder</span>
                             </h2>
-                            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                            <p className="text-md sm:text-lg text-gray-600 mx-auto">
                                 Meet the visionary behind MetaRule's legal technology
                                 innovations
                             </p>
@@ -61,9 +61,9 @@ const MetaRule = async () => {
 
                     {/* Main Content */}
 
-                    <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+                    <div className=" mx-auto md:mr-5">
                         {/* Main Content Column */}
-                        <div className="w-full space-y-12 lg:space-y-16">
+                        <div className="w-full space-y-12 lg:space-y-16 ">
 
                             <section className="mb-12">
                                 <div className="flex items-center gap-3 mb-6">
