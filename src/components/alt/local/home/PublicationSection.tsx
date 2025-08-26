@@ -34,7 +34,7 @@ const PublicationSection: FC<{
                                 <div className="relative w-full sm:w-32 lg:w-40 h-48 sm:h-full overflow-hidden rounded-lg">
                                     <Image
                                         // src={publication.coverImage}
-                                        src={BASE_ASSETS_URL + `/publications/${publication.coverImage}`}
+                                        src={publication.coverUrl}
                                         alt={publication.title}
                                         fill
                                         className="object-cover transition-transform group-hover:scale-105"

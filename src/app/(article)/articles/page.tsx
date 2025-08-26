@@ -21,7 +21,7 @@ const Articles = async () => {
     ];
 
     try {
-        const { data: { rows, featuredArticle: fArticle, count } } = await $crud.get('retrieve/web/articles');
+        const { data: { rows, featuredArticle: fArticle, count } } = await $crud.retrieve('articles');
         featuredArticle = fArticle
         articles = rows;
         totalArticles = count;

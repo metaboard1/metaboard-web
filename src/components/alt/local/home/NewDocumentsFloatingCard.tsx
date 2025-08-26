@@ -17,10 +17,10 @@ const NewDocumentsFloatingCard: FC<{ documentsList: DocumentInterface[]; }> = ({
             </div>
 
             <div className="space-y-4">
-                {documentsList.map((document) => (
+                {documentsList.map((document, index) => (
                     <Link
                         href={`/metarule/documents/0/${encodeURIComponent(document.title)}#st`}
-                        key={document.id}
+                        key={index}
                         className="group cursor-pointer p-3 rounded-lg transition-all"
                     >
                         <div className="flex justify-between">

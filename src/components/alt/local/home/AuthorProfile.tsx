@@ -42,8 +42,9 @@ const AuthorProfile = () => {
 
                     {/* Social Links */}
                     <div className="flex gap-3">
-                        {socialLinks.map((social) => (
+                        {socialLinks.map((social, index) => 
                             <Link
+                                key={index}
                                 href={social.href}
                                 target="_blank"
                             >
@@ -56,7 +57,7 @@ const AuthorProfile = () => {
                                     <social.icon className="w-4 h-4" />
                                 </Button>
                             </Link>
-                        ))}
+                        )}
                     </div>
 
                     {/* Expand/Collapse Button */}

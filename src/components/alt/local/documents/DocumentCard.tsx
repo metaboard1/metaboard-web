@@ -20,11 +20,11 @@ const DocumentCard: FC<props> = ({
         return inMb > 0 ? `${inMb} mb` : `${inKb} kb`
     }
 
-    const onPreview = () => window.open(`https://docs.google.com/gview?url=https://api.metaboard.in/uploads/documents/${data.file}`, "_blank", "noopener,noreferrer");
+    const onPreview = () => window.open(`https://docs.google.com/gview?url=${data.fileUrl}`, "_blank", "noopener,noreferrer");
 
     const handleDownload = () => {
         const link = document.createElement("a");
-        link.href = `${BASE_ASSETS_URL}/documents/${data.file}`;
+        link.href = data.fileUrl;
         link.setAttribute("download", data.file);
         document.body.appendChild(link);
         link.click();

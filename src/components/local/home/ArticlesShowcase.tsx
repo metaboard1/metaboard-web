@@ -31,11 +31,10 @@ const ArticlesShowcase = ({ articles }: props) => {
                         >
                             <div className="relative overflow-hidden">
                                 <img
-                                    src={BASE_ASSETS_URL + `/articles/${article.coverImage}`}
+                                    src={article.coverUrl}
                                     alt={article.title}
                                     className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                                 />
-
                             </div>
 
                             <div className="p-6 flex flex-col justify-between">

@@ -48,7 +48,7 @@ const ArticleContentSection: FC<props> = ({
                                             >
                                                 <div className="flex space-x-3  rounded-lg p-3 ">
                                                     <img
-                                                        src={`${BASE_ASSETS_URL}/articles/${relatedArticle.coverImage}`}
+                                                        src={`${relatedArticle.coverUrl}`}
                                                         alt={relatedArticle.title}
                                                         className="w-16 h-16 object-cover rounded-lg"
                                                         loading="lazy"

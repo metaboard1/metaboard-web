@@ -61,14 +61,14 @@ const MetaRule = async () => {
 
                     {/* Main Content */}
 
-                    <div className=" mx-auto md:mr-5">
+                    <div className=" mx-auto md:mr-5 mb-10">
                         {/* Main Content Column */}
                         <div className="w-full space-y-12 lg:space-y-16 ">
 
                             <section className="mb-12">
                                 <div className="flex items-center gap-3 mb-6">
                                     <BookOpen className="w-6 h-6 text-primary" />
-                                    <h2 className="text-2xl font-bold">Published Works</h2>
+                                    <h2 className="text-2xl lg:text-3xl font-bold">Published Works</h2>
                                 </div>
                                 <PublicationSection
                                     publicationsData={recentPublications}
@@ -87,7 +87,7 @@ const MetaRule = async () => {
                                 <div className="flex items-center gap-3 mb-6 lg:mb-8">
                                     <FileText className="w-6 h-6 text-primary" />
                                     <h2 className="text-2xl lg:text-3xl font-bold">
-                                        Latest Articles
+                                        Latest Blogs
                                     </h2>
                                 </div>
                                 <LatestBlogsSection

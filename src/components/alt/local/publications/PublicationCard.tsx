@@ -21,9 +21,7 @@ const PublicationCard: FC<props> = ({
                 {/* Book Cover */}
                 <div className="relative">
                     <img
-                        // src={BASE_ASSETS_URL + `/publications/${data.coverImage}`}
-                        // src={data.coverImage}
-                        src={BASE_ASSETS_URL + `/publications/${data.coverImage}`}
+                        src={`${data?.coverUrl}`}
                         alt='publication'
                         className="w-full h-64 object-cover transition-transform group-hover:scale-105"
                         loading='lazy'
@@ -86,7 +84,7 @@ const PublicationCard: FC<props> = ({
                                         <div className="space-y-4">
                                             <div className="relative w-full h-[300px]">
                                                 <Image
-                                                    src={BASE_ASSETS_URL + `/publications/${data.coverImage}`}
+                                                    src={`${data.coverUrl}`}
                                                     alt="publication"
                                                     fill
                                                     className="object-cover rounded-lg"

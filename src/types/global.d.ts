@@ -4,12 +4,14 @@ interface ArticleInterface {
     description: string;
     author: string;
     coverImage: string;
+    coverUrl: string;
     publishedAt: string;
 }
 interface RelatedArticleInterface {
     id: number;
     title: string;
     coverImage: string;
+    coverUrl: string;
     publishedAt: string;
     tags: string[];
 }
@@ -35,6 +37,7 @@ interface PublicationInterface {
     publisher: string;
     price: number;
     coverImage: string;
+    coverUrl: string;
     storeLinks:Object;
 }
 
@@ -44,6 +47,7 @@ interface DocumentInterface {
     description: string;
     estimateReadTime: number;
     file: string;
+    fileUrl: string;
     fileSize: number;
     publishedAt: string;
 }

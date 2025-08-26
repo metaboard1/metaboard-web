@@ -20,8 +20,7 @@ const BlogCard: FC<props> = ({
                 {/* Book Cover */}
                 <div className="sm:block sm:relative sm:flex-shrink-0">
                     <img
-                        src='https://picsum.photos/400/600?random=844'
-                        // src={BASE_ASSETS_URL + `/articles/${data.coverImage}`}
+                        src={`${data.coverUrl}`}
                         alt='Blog'
                         className="w-[100px] h-[110px] md:w-32 md:h-[120px] object-cover rounded-lg transition-transform group-hover:scale-105"
                         loading='lazy'
