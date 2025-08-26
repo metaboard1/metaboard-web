@@ -80,9 +80,6 @@ const ArticleCardsSection: FC<props> = ({ preloadedArticles, totalArticles, limi
                                 <Link href={`/read-article/?id=${article.id}`} className="block">
                                     <div className="md:flex">
                                         <div className="md:w-1/3">
-                                        {
-                                            console.log(article.coverUrl, "===========")
-                                        }
                                             <img
                                                 src={article.coverUrl}
                                                 alt={article.title}

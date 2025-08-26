@@ -269,7 +269,7 @@ const PrivacyPolicy = () => {
 
                         {/* Quick Actions */}
                         <div className="text-center">
-                            <div className="bg-gradient-to-r from-red-600 to-rose-600 rounded-xl p-8 text-white">
+                            <div className="bg-primary rounded-xl p-8 text-white">
                                 <h3 className="text-2xl mb-4">
                                     Questions About Your Privacy?
                                 </h3>

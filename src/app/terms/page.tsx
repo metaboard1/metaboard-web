@@ -364,7 +364,7 @@ const TermsOfService = () => {
 
                             {/* Quick Actions */}
                             <div className="mt-12 text-center">
-                                <div className="bg-gradient-to-r from-red-600 to-rose-600 rounded-xl p-8 text-white">
+                                <div className="bg-primary rounded-xl p-8 text-white">
                                     <h3 className="text-2xl mb-4">Need Clarification?</h3>
                                     <p className="text-red-100 mb-6">
                                         Our team is here to help you understand our terms and answer

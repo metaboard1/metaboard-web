@@ -8,9 +8,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 
 const Services = () => {
+
+    const route = useRouter();
 
     return (
         <div className='min-h-screen bg-white'>
@@ -94,17 +97,19 @@ const Services = () => {
                                         >
                                             Upcoming
                                         </Button>
-                                        <Link
+                                        {/* <Link
                                             href='/contact'
                                             style={{ flex: 1 }}
+                                        > */}
+                                        <Button
+                                            style={{ flex: 1 }}
+                                            onClick={() => route.push('/contact')}
+                                            // className="w-full"
+                                            variant='outline'
                                         >
-                                            <Button
-                                                className="w-full"
-                                                variant='outline'
-                                            >
-                                                Enquire Now
-                                            </Button>
-                                        </Link>
+                                            Enquire Now
+                                        </Button>
+                                        {/* </Link> */}
 
                                     </div>
                                 </div>
