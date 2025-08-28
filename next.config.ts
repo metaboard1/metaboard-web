@@ -15,6 +15,14 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "metaboard-assets.s3.ap-south-1.amazonaws.com",
       },
+       {
+        protocol: "https",
+        hostname: "metaboard.in",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+      },
     ],
   },
 };
