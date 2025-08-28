@@ -18,7 +18,7 @@ const ArticlesShowcase = ({ articles }: props) => {
                     <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
                         Latest <span className="text-gradient">Articles</span>
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-lg sm:text-xl text-gray-600">
                         Stay ahead with our cutting-edge insights on legal technology, education, and innovation.
                     </p>
                 </div>

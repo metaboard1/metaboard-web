@@ -6,6 +6,7 @@ import { Pagination2 } from "@/components/ui";
 import { FilterSection } from "../../global";
 import { useRouter } from "next/navigation";
 import { Loader } from "@/components/global";
+import Image from "next/image";
 
 type props = {
     publicationList: PublicationInterface[];
@@ -43,7 +44,7 @@ const PublicationListingSection: FC<props> = ({
     }
 
     return (<>
-    
+
         <Loader ref={loaderRef} />
 
         <div id="publicationListSection" className="container px-4 sm:px-6 lg:px-8 py-12 space-y-10">
@@ -55,11 +56,25 @@ const PublicationListingSection: FC<props> = ({
                 defaultSearch={query}
             />
             <section>
-                <div className={true ? 'grid md:grid-cols-2 lg:grid-cols-3 gap-6' : 'space-y-6'}>
-                    {
-                        publicationList.map((e) => <PublicationCard key={e.id} data={e} />)
-                    }
-                </div>
+                {
+                    publicationList.length ?
+                        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
+                            {
+                                publicationList.map((e, index) => <PublicationCard key={e.id} data={e} />)
+                            }
+                        </div>
+                        :
+                        <div className="flex flex-col items-center gap-5 py-5">
+                            <Image
+                                alt="no-data-found"
+                                src='/assets/images/no_list_found.webp'
+                                height={200}
+                                width={200}
+                            />
+                            <span className="text-md font-bold">No data found!</span>
+                        </div>
+                }
+
             </section>
             <Pagination2
                 totalRecords={recordsCount}

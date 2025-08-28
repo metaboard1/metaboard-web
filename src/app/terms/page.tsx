@@ -379,7 +379,7 @@ const TermsOfService = () => {
                                             Email Support
                                         </Link>
                                         <Link
-                                            href="/aboutUs"
+                                            href="/about"
                                             className="inline-flex items-center justify-center px-6 py-3 bg-red-700 text-white rounded-lg hover:bg-red-800 transition-colors duration-200"
                                         >
                                             Learn About Us

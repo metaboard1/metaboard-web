@@ -40,7 +40,7 @@ const AdvisoryBoardSection = () => {
                     <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
                         Advisory <span className="text-gradient">Board</span>
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-lg md:text-xl text-gray-600">
                         Distinguished leaders guiding our mission to transform legal education and practice.
                     </p>
                 </div>

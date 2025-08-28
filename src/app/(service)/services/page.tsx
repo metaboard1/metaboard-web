@@ -34,7 +34,7 @@ const Services = () => {
                             Our <span className="text-gradient">Offerings</span>
                         </h2>
                         <p
-                            className={`text-xl text-gray-600 mx-auto `}
+                            className="text-lg sm:text-xl text-gray-600"
                         >
                             Comprehensive services designed to transform your practice.
                         </p>

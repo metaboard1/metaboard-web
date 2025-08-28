@@ -92,10 +92,10 @@ const ArticleCardsSection: FC<props> = ({ preloadedArticles, totalArticles, limi
                                             <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors">
                                                 {article.title} #{article.id}
                                             </h3>
-                                            <p className="text-gray-600 mb-4 leading-relaxed">
+                                            <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
                                                 {article.description}
                                             </p>
-                                            <div className="flex items-center justify-between text-sm text-gray-500">
+                                            <div className="flex items-center justify-between flex-wrap gap-2 text-sm text-gray-500">
                                                 <span>By {article.author}</span>
                                                 <span>{dayjs(article.publishedAt).format("DD MMMM YYYY")}</span>
                                             </div>

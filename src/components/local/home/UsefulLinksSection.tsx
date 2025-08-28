@@ -36,7 +36,7 @@ const UsefulLinksSection = () => {
                     <h2 className="text-4xl md:text-5xl font-bold mb-4">
                         Useful <span className="text-red-500">Links</span>
                     </h2>
-                    <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-lg md:text-xl text-gray-400">
                         Essential resources and connections for the modern legal professional.
                     </p>
                 </div>

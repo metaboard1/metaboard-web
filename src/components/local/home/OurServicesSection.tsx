@@ -51,7 +51,7 @@ const OurServicesSection = () => {
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
                         Services We <span className="text-gradient">Provide</span>
                     </h2>
-                    <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                    <p className="text-lg md:text-xl text-gray-300">
                         Comprehensive legal technology solutions and professional services for modern law firms.
                     </p>
                 </div>

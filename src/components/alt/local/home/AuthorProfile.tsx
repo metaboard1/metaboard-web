@@ -24,7 +24,7 @@ const AuthorProfile = () => {
                 <div className="flex-shrink-0">
                     <div className="relative group">
                         <img
-                            src={'/assets/images/rodney_d_ryder.webp'}
+                            src='/assets/images/rodney_d_ryder.webp'
                             alt="Dr. Sarah Mitchell"
                             className="w-32 h-32 lg:w-40 lg:h-40 rounded-2xl object-cover border-2 border-glass transition-transform group-hover:scale-105"
                         />
@@ -62,10 +62,9 @@ const AuthorProfile = () => {
 
                     {/* Expand/Collapse Button */}
                     <Button
-                        variant="ghost"
+                        variant="link"
                         size="sm"
                         onClick={() => setIsExpanded(!isExpanded)}
-                        className="text-muted-foreground hover:text-foreground w-fit"
                     >
                         {isExpanded ? (
                             <>

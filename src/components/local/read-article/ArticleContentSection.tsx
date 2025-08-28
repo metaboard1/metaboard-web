@@ -1,7 +1,6 @@
 import { type FC } from "react";
 import Link from "next/link";
 import dayjs from "dayjs";
-import { BASE_ASSETS_URL } from "@/constants";
 
 type props = {
     articleHtml: string;
