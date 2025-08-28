@@ -6,7 +6,6 @@ import { FilterSection } from "../../global";
 import BlogCard from "./BlogCard";
 import { useRouter } from "next/navigation";
 import { Loader } from "@/components/global";
-import Image from "next/image";
 
 type props = {
     blogsList: BlogInterface[];
@@ -62,7 +61,7 @@ const BlogListingSection: FC<props> = ({
                             blogsList.map((e) => <BlogCard key={e.id} data={e} />)
                             :
                             <div className="flex flex-col items-center gap-5 py-5">
-                                <Image
+                                <img
                                     alt="no-data-found"
                                     src='/assets/images/no_list_found.webp'
                                     height={200}

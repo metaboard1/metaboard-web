@@ -6,7 +6,6 @@ import { FilterSection } from "../../global";
 import DocumentCard from "./DocumentCard";
 import { useRouter } from "next/navigation";
 import { Loader } from "@/components/global";
-import Image from "next/image";
 
 type props = {
     documentsData: DocumentInterface[];
@@ -62,7 +61,7 @@ const DocumentListingSection: FC<props> = ({
                         </div>
                         :
                         <div className="flex flex-col items-center gap-5 py-5">
-                            <Image
+                            <img
                                 alt="no-data-found"
                                 src='/assets/images/no_list_found.webp'
                                 height={200}
