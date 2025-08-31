@@ -22,7 +22,7 @@ const HeroSection: FC = () => {
                 <p className="text-xl md:text-2xl text-gray-200 mb-8 font-light leading-relaxed">
                     Empowering lawyers & students with cutting-edge technology & education.
                     <br />
-                    <span className="text-red-400">The technical arm of Scriboard.</span>
+                    <span className="text-red-400">The technical arm of Materion.</span>
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
