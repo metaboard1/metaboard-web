@@ -1,27 +1,25 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState, type FC } from "react"
-// import { BASE_ASSETS_URL } from "@/constants";
+import { useRef, type FC } from "react";
+import { Pagination2 } from "@/components/ui";
+import { useRouter } from "next/navigation";
+import { Loader, SearchBar } from "@/components/global";
 import dayjs from "dayjs";
 import Link from "next/link";
-import { $crud } from "@/factory/crudFactory";
-import { useSearchArticle } from "@/context/SearchArticleContext";
-import { Pagination, Pagination2 } from "@/components/ui";
-import { Loader } from "@/components/global";
-import { useRouter } from "next/navigation";
-
 
 type props = {
     articlesList: ArticleInterface[];
     recordsCount: number;
     currentPage: number;
     query: string;
-    // preloadedArticles: ArticleInterface[];
-    // totalArticles: number;
-    // limit: number;
 }
 
-const ArticleCardsSection: FC<props> = ({ articlesList, recordsCount, currentPage, query }) => {
+const ArticleListingSection: FC<props> = ({
+    articlesList = [],
+    recordsCount = 0,
+    currentPage = 0,
+    query
+}) => {
 
     const loaderRef = useRef<HTMLDivElement | null>(null);
     const router = useRouter();
@@ -42,57 +40,30 @@ const ArticleCardsSection: FC<props> = ({ articlesList, recordsCount, currentPag
         router.push(`/articles/0/${encodeURIComponent(value)}#st`);
     }
 
-    // const [articleListData, setArticleListData] = useState<{
-    //     data: ArticleInterface[],
-    //     page: number;
-    // }>({
-    //     data: preloadedArticles,
-    //     page: 0
-    // });
-    // const [isLoading, setIsLoading] = useState(false);
-
-    // const { search, setData } = useSearchArticle();
-
-    // useEffect(() => {
-    //     retrieveArticles(0, search);
-    // }, [search]);
-
-
-    // const retrieveArticles = useCallback(async (defaultPage: number, defaultSearch: string) => {
-    //     try {
-    //         setIsLoading(true);
-    //         const { data: { rows } } = await $crud.retrieve(`articles?page=${defaultPage}&search=${defaultSearch}`);
-
-    //         setArticleListData((prev) => ({
-    //             page: defaultPage,
-    //             data: rows
-    //         }));
-    //         if (search) {
-    //             setData(rows);
-    //         }
-    //         window.scrollTo({ top: 0, behavior: 'smooth' });
-    //     } catch (e) {
-    //         console.error(e);
-    //     } finally {
-    //         setIsLoading(false);
-    //     }
-    // }, [search]);
-
-
-    // const handlePageChange = (updatedPage: number) => {
-    //     setArticleListData((prev) => ({
-    //         ...prev,
-    //         page: updatedPage,
-    //     }));
-    //     retrieveArticles(updatedPage, search);
-    // }
     return (<>
-        {/* <div className="md:col-span-2"> */}
-        {/* <Loader
-            isVisible={isLoading}
-        /> */}
         <Loader ref={loaderRef} />
+
         <div className="flex flex-col gap-10">
+            <div className="space-y-5">
+                <SearchBar
+                    onSearch={handleSearch}
+                    defaultValue={query}
+                />
+                {
+                    query &&
+                    <div className="flex items-center space-x-2 text-sm flex-wrap gap-2">
+                        <span className="text-gray-600 font-bold">Search results for:</span>
+                        <span className="bg-red-100 text-red-800 px-2 py-1 rounded text-xs font-medium flex items-center max-w-32 sm:max-w-48 md:max-w-64 lg:max-w-80">
+                            <span className="truncate">{decodeURIComponent(query ?? '')}</span>
+                            <button className="ml-2 text-red-600 hover:text-red-800 flex-shrink-0" onClick={() => handleSearch('')}>
+                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </span>
+                    </div>
+                }
+            </div>
 
             {
                 articlesList.length ?
@@ -135,12 +106,6 @@ const ArticleCardsSection: FC<props> = ({ articlesList, recordsCount, currentPag
                         No results found
                     </h3>
             }
-            {/* <Pagination
-                totalRecords={totalArticles}
-                limit={limit}
-                currentPage={articleListData.page}
-                onPageChange={handlePageChange}
-            /> */}
             <Pagination2
                 totalRecords={recordsCount}
                 limit={10}
@@ -151,7 +116,7 @@ const ArticleCardsSection: FC<props> = ({ articlesList, recordsCount, currentPag
             />
 
         </div>
-    </>)
-}
 
-export default ArticleCardsSection;
+    </>);
+}
+export default ArticleListingSection;

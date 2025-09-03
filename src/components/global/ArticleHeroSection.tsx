@@ -27,7 +27,7 @@ const ArticleHeroSection: FC<props> = ({ data, showReadBtn }) => {
         <section className="relative overflow-hidden py-10 sm:py-20">
             <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${data?.coverUrl})` }}
+                style={{ backgroundImage: `url(${data?.coverUrl})`, filter: 'brightness(0.3)' }}
             >
                 <div className="absolute inset-0 glass bg-black/50"></div>
             </div>

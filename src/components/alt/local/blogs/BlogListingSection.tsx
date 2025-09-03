@@ -75,7 +75,7 @@ const BlogListingSection: FC<props> = ({
             </section>
             <Pagination2
                 totalRecords={recordsCount}
-                limit={10}
+                limit={12}
                 currentPage={currentPage}
                 onPageChange={handlePageChange}
                 query={query}

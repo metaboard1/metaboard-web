@@ -47,8 +47,7 @@ const MetaRule = async () => {
                                 <span className="underline decoration-primary"> Founder</span>
                             </h2>
                             <p className="text-md sm:text-lg text-gray-600 mx-auto">
-                                Meet the visionary behind MetaRule's legal technology
-                                innovations
+                                Meet the visionary behind MetaRule's legal and technology innovations
                             </p>
                         </div>
 

@@ -39,7 +39,7 @@ const ArticlesShowcase = ({ articles }: props) => {
 
                             <div className="p-6 flex flex-col justify-between">
                                 <div>
-                                    <h3 className="text-xl font-bold text-black mb-3 group-hover:text-red-600 transition-colors">
+                                    <h3 className="text-xl font-bold text-black mb-3 group-hover:text-red-600 transition-colors line-clamp-2">
                                         {article.title}
                                     </h3>
 
@@ -54,7 +54,7 @@ const ArticlesShowcase = ({ articles }: props) => {
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <Calendar size={16} />
-                                            <span>{dayjs(article.publishedAt).format("DD MM YYYY")}</span>
+                                            <span>{dayjs(article.publishedAt).format("DD MMM YYYY")}</span>
                                         </div>
                                     </div>
                                 </div>

@@ -1,8 +1,10 @@
-export const dynamic = 'force-dynamic';
+export const revalidate = 120;
+export const dynamic = 'force-static';
+export const dynamicParams = true;
 
 import { HeroSection } from '@/components/alt/global';
 import { BlogListingSection } from '@/components/alt/local/blogs';
-import { Loader, ScrollToTopBtn } from '@/components/global';
+import { ScrollToTopBtn } from '@/components/global';
 import { $crud } from '@/factory/crudFactory';
 
 

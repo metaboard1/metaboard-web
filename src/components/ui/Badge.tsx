@@ -1,12 +1,12 @@
-import { FC, type ReactNode } from "react";
+import { FC, type HTMLAttributes, type ReactNode } from "react";
 
-type BadgeProp = {
+type BadgeProp = HTMLAttributes<HTMLDivElement> & {
     className: string;
     variant?: 'default' | 'secondary' | 'destructive' | 'outline';
     children?: ReactNode;
 }
 
-const Badge: FC<BadgeProp> = ({ className, variant = 'default', children }) => {
+const Badge: FC<BadgeProp> = ({ className, variant = 'default', children, ...rest }) => {
 
     const variantStyles = {
         default: "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
@@ -17,6 +17,7 @@ const Badge: FC<BadgeProp> = ({ className, variant = 'default', children }) => {
     return (
         <div
             className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${variantStyles[variant]} ${className}`}
+            {...rest}
         >
             {children}
         </div>

@@ -87,12 +87,13 @@ const Header: FC<props> = ({
         setExpandedMobileItem(null);
     };
 
+    console.log(pathname.split('/')[1])
     const navLinksTextColor = pathname.split('/')[1] !== '' ? 'text-gray-700' : 'text-gray-300';
 
-    return (
+    return (    
         <>
             <header
-                className={`${(pathname !== '/read-article' && pathname !== '/metarule/read-blog' && pathname !== '/articles')
+                className={`${(pathname !== '/read-article' && pathname !== '/metarule/read-blog' && pathname.split('/')[1] !== 'articles')
                     ? 'fixed'
                     : 'overflow-hidden lg:overflow-visible'} top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass' : ''}`}
             >
