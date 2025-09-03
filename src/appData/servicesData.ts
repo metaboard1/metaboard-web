@@ -12,11 +12,11 @@ export default [
     },
     {
         id: 2,
-        title: "Educational Programs, Material and Courses",
+        title: "Educational Programs and Courses",
         description: "Comprehensive legal compliance reviews",
         status: "Provided",
         icon: GraduationCap,
-        details: "Metaboard® provides comprehensive online educational content and courses focused on Technology, AI, Intellectual Property, and Data Laws. Our platform delivers meticulously structured material designed for a diverse audience, including students, professionals, and government officials. Our curriculum is designed to bridge foundational theoretical knowledge with practical application.",
+        details: "MetaBoard® provides comprehensive online educational content and courses focused on Technology, AI, Intellectual Property, and Data Laws. Our platform delivers meticulously structured material designed for a diverse audience, including students, professionals, and government officials. Our curriculum is designed to bridge foundational theoretical knowledge with practical application.",
         features: []
     },
     {
@@ -34,7 +34,7 @@ export default [
         description: "Streamlined legal document generation",
         status: "Provided",
         icon: FileText,
-        details: "Metaboard® hosts an extensive repository of specialised legal material on Technology, AI, Intellectual Property, and Data Laws. This includes scholarly articles, case studies, and research papers dedicated to serving as a valuable tool for individuals seeking to deepen their understanding, conduct research, or stay informed on the latest developments in these fields.",
+        details: "MetaBoard® hosts an extensive repository of specialised legal material on Technology, AI, Intellectual Property, and Data Laws. This includes scholarly articles, case studies, and research papers dedicated to serving as a valuable tool for individuals seeking to deepen their understanding, conduct research, or stay informed on the latest developments in these fields.",
         features: []
     },
     {
@@ -48,7 +48,7 @@ export default [
     },
     {
         id: 6,
-        title: "Webinars, Expert Discussions and Workshops",
+        title: "Webinars & Expert Workshops",
         description: "Remote collaboration solutions",
         status: "Upcoming",
         icon: Users,

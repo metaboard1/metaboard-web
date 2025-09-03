@@ -1,7 +1,8 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github, ArrowRight, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Github, ArrowRight, Instagram, X } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Footer = () => {
     const quickLinks = [
@@ -24,12 +25,12 @@ const Footer = () => {
                         <div className="flex items-center space-x-3 mb-6">
                             <img
                                 src="/assets/images/logo-light.webp"
-                                alt="Metaboard Logo"
+                                alt="MetaBoard Logo"
                                 className="h-8 w-auto"
                             />
                         </div>
                         <p className="text-gray-400 leading-relaxed mb-6">
-                            The technical arm of Scriboard, empowering legal professionals
+                            empowering legal professionals
                             with cutting-edge technology and innovative educational resources.
                         </p>
 
@@ -46,7 +47,29 @@ const Footer = () => {
                                 target="_blank"
                                 className="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300"
                             >
-                                <Twitter size={18} />
+                                {/* <X size={18} /> */}
+                                {/* <Image
+                                    src="/x-logo.svg"
+                                    alt="MetaBoard Logo"
+                                    className="h-8 w-auto"
+                                    width={5}
+                                    height={5}
+                                /> */}
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    // width={size}
+                                    // height={size}
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="#fff"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    aria-hidden="true"
+                                    // {...props}
+                                >
+                                    <path d="M18 6L6 18M6 6l12 12" />
+                                </svg>
                             </Link>
                             <Link
                                 href="https://www.instagram.com/_metaboard?igsh=MWRtOTJ5dWRmODQzbA%3D%3D"
@@ -120,7 +143,7 @@ const Footer = () => {
                 <div className="container mx-auto px-6 py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <p className="text-gray-400 text-sm">
-                            © 2025 Metaboard. All rights reserved. A division of Scriboard Legal Services.
+                            © 2025 MetaBoard. All rights reserved. A division of Metarion Knowledge Solutions Private Limited.
                         </p>
                         <p className="text-gray-500 text-sm mt-2 md:mt-0">
                             Built with precision and innovation.

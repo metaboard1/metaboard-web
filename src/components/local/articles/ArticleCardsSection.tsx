@@ -90,7 +90,7 @@ const ArticleCardsSection: FC<props> = ({ preloadedArticles, totalArticles, limi
                                             <div className="mb-3">
                                             </div>
                                             <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors">
-                                                {article.title} #{article.id}
+                                                {article.title}
                                             </h3>
                                             <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
                                                 {article.description}

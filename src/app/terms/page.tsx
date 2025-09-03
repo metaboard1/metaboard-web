@@ -13,7 +13,7 @@ const TermsOfService = () => {
                 <HeroSection
                     heading="Terms of"
                     headingSpan="Use"
-                    description="Please read these terms carefully before using our services. By accessing Metaboard®, you agree to be bound by these terms and conditions."
+                    description="Please read these terms carefully before using our services. By accessing MetaBoard®, you agree to be bound by these terms and conditions."
                     note="Last Updated: December 2024 | Effective Date: Immediately upon publication"
                 />
 
@@ -25,9 +25,9 @@ const TermsOfService = () => {
                                 <div className="space-y-8">
                                     <div>
                                         <p className="text-gray-700 mb-4">
-                                            Welcome to Metaboard®. These Terms of Use ["Terms"] govern
+                                            Welcome to MetaBoard®. These Terms of Use ["Terms"] govern
                                             your access to and use of our website [www.metaboard.com]
-                                            ["Website"], Metaboard® and www.metaboard.com is a
+                                            ["Website"], MetaBoard® and www.metaboard.com is a
                                             subsidiary of Metarion Knowledge Solutions Private Limited
                                             [Metarion®].
                                         </p>
@@ -88,23 +88,23 @@ const TermsOfService = () => {
 
                                     <div>
                                         <h2 className="text-2xl text-gray-900 mb-4">
-                                            Incorrect Use of Metarion® and Metaboard® Trademarks
+                                            Incorrect Use of Metarion® and MetaBoard® Trademarks
                                         </h2>
                                         <p className="text-gray-700 mb-4">
                                             Do not omit a footnote/attribution for the Metarion® or
-                                            Metaboard® trademark. Do not alter the approved Metarion®
-                                            or Metaboard® trademark. Do not create any new logo for
-                                            Metarion® or Metaboard®. Do not incorporate any Metarion®
-                                            or Metaboard® product names into your company's product
-                                            names. Do not incorporate any Metarion® or Metaboard®
+                                            MetaBoard® trademark. Do not alter the approved Metarion®
+                                            or MetaBoard® trademark. Do not create any new logo for
+                                            Metarion® or MetaBoard®. Do not incorporate any Metarion®
+                                            or MetaBoard® product names into your company's product
+                                            names. Do not incorporate any Metarion® or MetaBoard®
                                             product names into the root domain of any website owned by
                                             your company. Do not misspell or use lowercase letters
-                                            when using the name Metarion® or Metaboard® in text. Do
-                                            not connect your company name with Metarion® or Metaboard®
-                                            product names. Do not use the Metarion® or Metaboard®
+                                            when using the name Metarion® or MetaBoard® in text. Do
+                                            not connect your company name with Metarion® or MetaBoard®
+                                            product names. Do not use the Metarion® or MetaBoard®
                                             trademark name for a product or service as a noun, or in
                                             the plural form. Do not misspell or incorrectly capitalise
-                                            the Metarion® or Metaboard® trademark.
+                                            the Metarion® or MetaBoard® trademark.
                                         </p>
                                     </div>
 
@@ -247,7 +247,7 @@ const TermsOfService = () => {
                                             By subscribing to updates on www.metaboard.com, you
                                             consent to the collection and use of your email address
                                             solely for the purpose of receiving periodic updates,
-                                            announcements, and newsletters from Metaboard®. Your email
+                                            announcements, and newsletters from MetaBoard®. Your email
                                             address will not be shared with any third party and will
                                             be processed in accordance with our Privacy Policy and
                                             applicable Indian data protection laws.
@@ -260,7 +260,7 @@ const TermsOfService = () => {
                                         </h2>
                                         <p className="text-gray-700 mb-4">
                                             Currently, all content on www.metaboard.com is free to
-                                            access. Metaboard® may, in the future, introduce paid
+                                            access. MetaBoard® may, in the future, introduce paid
                                             services such as online courses or premium content. Any
                                             such services will be governed by additional terms and
                                             payment-related provisions, which will be made available
@@ -321,10 +321,10 @@ const TermsOfService = () => {
                                             Further, the content of the website [www.metaboard.com]
                                             are for informational purposes only and for the reader's
                                             personal non-commercial use. The views expressed are not
-                                            the personal views of Metaboard® or Metarion® Knowledge
+                                            the personal views of MetaBoard® or Metarion® Knowledge
                                             Solutions Pvt. Ltd. and do not constitute legal advice.
                                             The contents are intended, but not guaranteed, to be
-                                            correct, complete, or up to date. Metaboard® disclaims all
+                                            correct, complete, or up to date. MetaBoard® disclaims all
                                             liability to any person for any loss or damage caused by
                                             errors or omissions, whether arising from negligence,
                                             accident or any other cause.

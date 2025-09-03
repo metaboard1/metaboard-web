@@ -51,7 +51,7 @@ const AboutUs = () => {
                         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-100">
                             <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
                                 <p className="text-xl mb-6 text-gray-800 font-medium">
-                                    <span className="text-red-600 font-bold">Metaboard®</span> is
+                                    <span className="text-red-600 font-bold">MetaBoard®</span> is
                                     a pioneering platform dedicated to enriching minds and
                                     fostering expertise in the dynamic realms of law. Specializing
                                     in Technology, AI, Intellectual Property, and Data Laws, we
@@ -68,7 +68,7 @@ const AboutUs = () => {
 
                                 <p className="mb-6">
                                     Beyond online resources,{" "}
-                                    <span className="text-red-600 font-semibold">Metaboard®</span>{" "}
+                                    <span className="text-red-600 font-semibold">MetaBoard®</span>{" "}
                                     takes pride in delivering bespoke corporate training
                                     workshops, tailored to meet the specific needs of various
                                     entities. These interactive sessions are conducted offline,
@@ -84,7 +84,7 @@ const AboutUs = () => {
                                 </p>
 
                                 <p className="text-lg font-medium text-gray-800">
-                                    At <span className="text-red-600 font-bold">Metaboard</span>,
+                                    At <span className="text-red-600 font-bold">MetaBoard</span>,
                                     we believe in empowering each individual with knowledge that's
                                     not just comprehensive but also relevant in today's rapidly
                                     evolving legal landscape.
@@ -151,7 +151,7 @@ const AboutUs = () => {
                         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-100">
                             <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
                                 <p className="text-xl mb-6 text-gray-800 font-medium">
-                                    <span className="text-red-600 font-bold">Metaboard®</span> was
+                                    <span className="text-red-600 font-bold">MetaBoard®</span> was
                                     founded in 2004 by{" "}
                                     <span className="text-red-600 font-bold">
                                         Mr. Rodney D. Ryder
@@ -187,7 +187,7 @@ const AboutUs = () => {
 
                                 <p className="mb-6">
                                     The inspiration behind{" "}
-                                    <span className="text-red-600 font-semibold">Metaboard®</span>{" "}
+                                    <span className="text-red-600 font-semibold">MetaBoard®</span>{" "}
                                     stems from Mr. Ryder's ambition to bridge the gap in legal
                                     education, particularly in technology and intellectual
                                     property law. His vision is to democratize access to
@@ -197,7 +197,7 @@ const AboutUs = () => {
 
                                 <p className="text-lg font-medium text-gray-800">
                                     With{" "}
-                                    <span className="text-red-600 font-bold">Metaboard®</span>,
+                                    <span className="text-red-600 font-bold">MetaBoard®</span>,
                                     Mr. Ryder brings his wealth of knowledge and experience to the
                                     forefront, offering a platform that nurtures and empowers
                                     budding legal minds, professionals, and government officials
@@ -458,7 +458,7 @@ const AboutUs = () => {
                                     <p className="mb-4">
                                         At{" "}
                                         <span className="text-red-600 font-semibold">
-                                            Metaboard®
+                                            MetaBoard®
                                         </span>
                                         , our mission is to redefine the landscape of legal
                                         education. We are committed to providing quality legal
@@ -479,7 +479,7 @@ const AboutUs = () => {
                                         applications. By fostering an environment of continuous
                                         learning and professional development,{" "}
                                         <span className="text-red-600 font-semibold">
-                                            Metaboard®
+                                            MetaBoard®
                                         </span>{" "}
                                         aims to empower a new generation of legal professionals who
                                         are ready to tackle the challenges of the modern legal
@@ -503,7 +503,7 @@ const AboutUs = () => {
                                     <p className="mb-4">
                                         Our vision at{" "}
                                         <span className="text-red-600 font-semibold">
-                                            Metaboard®
+                                            MetaBoard®
                                         </span>{" "}
                                         is to become a beacon of legal education globally. We aspire
                                         to create a world where every aspiring legal professional,
@@ -516,7 +516,7 @@ const AboutUs = () => {
                                     <p className="text-gray-800 font-medium">
                                         Looking to the future, we envision{" "}
                                         <span className="text-red-600 font-semibold">
-                                            Metaboard®
+                                            MetaBoard®
                                         </span>{" "}
                                         as a platform where the boundaries of traditional legal
                                         education are pushed, and new ways of thinking are fostered.

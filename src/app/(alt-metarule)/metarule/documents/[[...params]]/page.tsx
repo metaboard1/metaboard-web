@@ -6,8 +6,6 @@ import { HeroSection } from "@/components/alt/global";
 import { DocumentListingSection } from "@/components/alt/local/documents";
 import { ScrollToTopBtn } from "@/components/global";
 import { $crud } from "@/factory/crudFactory";
-import dayjs from "dayjs";
-
 
 
 const Documents = async ({
@@ -36,7 +34,7 @@ const Documents = async ({
         <div>
             {/* Article Hero */}
             <HeroSection
-                page='document'
+                page='MetaRule Insights'
             />
             {/* Article Content */}
             <DocumentListingSection

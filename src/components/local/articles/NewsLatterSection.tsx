@@ -7,7 +7,7 @@ const NewsLatterSection: FC = () => {
         <section className="bg-black py-16">
             <div className="container mx-auto px-6 text-center">
                 <h3 className="text-3xl font-bold text-white mb-4">
-                    Stay Informed with Metaboard
+                    Stay Informed with MetaBoard
                 </h3>
                 <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
                     Get the latest insights on legal technology, education, and industry trends delivered to your inbox.

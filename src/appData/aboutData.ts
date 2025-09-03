@@ -23,7 +23,7 @@ export const teamMembers = [
         name: "Navya Chopra",
         role: "Legal Researcher & Writer",
         image: "/assets/images/navya_profile.webp",
-        bio: "Legal researcher and writer at Metaboard, specializing in intellectual property rights, technology law, data protection, and privacy law, providing counsel to Fortune 500 companies and organizations.",
+        bio: "Legal researcher and writer at MetaBoard, specializing in intellectual property rights, technology law, data protection, and privacy law, providing counsel to Fortune 500 companies and organizations.",
         linkedin: "https://www.linkedin.com/in/navyachopra1602",
         twitter: "#",
     }

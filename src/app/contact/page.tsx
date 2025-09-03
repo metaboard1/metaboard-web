@@ -13,7 +13,7 @@ const ContactUs: FC = () => {
             <HeroSection
                 heading="Contact"
                 headingSpan="Us"
-                description="Ready to transform your legal practice? Get in touch with our team to discuss how Metaboard® can help streamline your legal operations with cutting-edge technology solutions."
+                description="Ready to transform your legal practice? Get in touch with our team to discuss how MetaBoard® can help streamline your legal operations with cutting-edge technology solutions."
                 note="We're here to help you navigate the future of legal technology. Reach out to us for consultations, support, or to learn more about our services."
             />
 
@@ -29,7 +29,7 @@ const ContactUs: FC = () => {
                             <div className="h-full flex flex-col justify-center">
 
                                 <div className="mb-6">
-                                    <h5 className="font-bold text-lg mb-2">Metaboard®</h5>
+                                    <h5 className="font-bold text-lg mb-2">MetaBoard®</h5>
                                 </div>
 
                                 <div className="space-y-5">
@@ -105,9 +105,9 @@ const ContactUs: FC = () => {
                                         <div>
                                             <h5 className="font-medium mb-1 text-sm">R&D Centre</h5>
                                             <p className="text-red-100 text-sm leading-relaxed">
-                                                Metaboard Research & Development Centre
+                                                MetaBoard Research & Development Centre
                                                 <br />
-                                                ‘Metaboard’
+                                                ‘MetaBoard’
                                                 <br />
                                                 Village – Karnera, Ballabhgarh
                                                 <br />
@@ -117,11 +117,11 @@ const ContactUs: FC = () => {
                                     </div>
                                 </div>
 
-                                <div className="mt-6 pt-4 border-t border-white/20">
+                                {/* <div className="mt-6 pt-4 border-t border-white/20">
                                     <p className="text-red-100 text-xs">
                                         We typically respond within 24 hours during business days.
                                     </p>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
 

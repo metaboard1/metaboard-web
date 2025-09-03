@@ -22,7 +22,7 @@ const Home = async () => {
             />
             <OurVisionSection />
             <OurServicesSection />
-            <AdvisoryBoardSection />
+            {/* <AdvisoryBoardSection /> */}
             <UsefulLinksSection />
             <ScrollToTopBtn />
         </div>

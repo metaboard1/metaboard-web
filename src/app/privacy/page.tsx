@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
             <HeroSection
                 heading="Privacy"
                 headingSpan="Policy"
-                description='This Privacy Policy sets out how we at Metaboard®, a subsidiary of Metarion Knowledge Solutions Private Limited [Metarion®], collect, use, share, and safeguard your [hereinafter referred to as "Data Principal"] information through www.metaboard.com.'
+                description='This Privacy Policy sets out how we at MetaBoard®, a subsidiary of Metarion Knowledge Solutions Private Limited [Metarion®], collect, use, share, and safeguard your [hereinafter referred to as "Data Principal"] information through www.metaboard.com.'
                 note="We respect your privacy and are committed to protecting your personal data in line with the Digital Personal Data Protection Act, 2023, and other applicable laws."
             />
             {/* Privacy Policy Content */}
@@ -72,7 +72,7 @@ const PrivacyPolicy = () => {
                                         By interacting with this website, the Data Principal
                                         consents to the use of their information in accordance
                                         with this Privacy Policy. The Data Principal agrees that
-                                        Metaboard does not require any further or additional
+                                        MetaBoard does not require any further or additional
                                         consent to process their information for legal compliance
                                         or to exercise specific rights under law.
                                     </p>
@@ -178,7 +178,7 @@ const PrivacyPolicy = () => {
                                         information may be retained for legal or operational
                                         purposes, or stored in secure backups where immediate
                                         deletion isn't technically feasible. By requesting
-                                        deletion, the Data Principal acknowledges that Metaboard®
+                                        deletion, the Data Principal acknowledges that MetaBoard®
                                         may not be able to continue offering services and waives
                                         any claims arising from such consequences.
                                     </p>
@@ -192,7 +192,7 @@ const PrivacyPolicy = () => {
                                         Data Principals may withdraw consent at any time by
                                         contacting us. However, this may impact our ability to
                                         offer services. By withdrawing consent, the Data Principal
-                                        agrees that Metaboard® shall not be held liable for any
+                                        agrees that MetaBoard® shall not be held liable for any
                                         resulting service disruptions.
                                     </p>
                                 </div>

@@ -427,7 +427,7 @@ const ServiceDetail = () => {
               <div className="flex justify-center gap-8 mt-8 pt-8 border-t border-white/10">
                 <div className="flex items-center gap-2 text-gray-300">
                   <Mail size={20} />
-                  <span>hello@metaboard.com</span>
+                  <span>hello@metaBoard.com</span>
                 </div>
                 <div className="flex items-center gap-2 text-gray-300">
                   <Phone size={20} />

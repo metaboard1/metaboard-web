@@ -54,9 +54,9 @@ const Articles = async () => {
                             </div>
 
                             {/* Latest Headlines Sidebar */}
-                            <LatestHeadlinesSection
+                            {/* <LatestHeadlinesSection
                                 headlinesData={latestHeadlines}
-                            />
+                            /> */}
                         </div>
                     </div>
                 </section>

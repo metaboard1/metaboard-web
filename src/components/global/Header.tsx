@@ -42,10 +42,10 @@ const Header: FC<props> = ({
 
     const navItems = [
         { name: 'Home', href: '/', children: [] },
-        { name: 'Knowledge centre', href: '', children: [{ name: 'Articles', href: '/articles' }] },
-        { name: 'MetaRule', href: '/metarule', children: [{ name: 'Home', href: '/metarule' }, { name: 'Blogs', href: '/metarule/blogs' }, { name: 'Publications', href: '/metarule/publications' }, { name: 'Documents', href: '/metarule/documents' }] },
+        { name: 'Knowledge Centre', href: '', children: [{ name: 'Articles', href: '/articles' }] },
+        { name: 'MetaRule', href: '/metarule', children: [{ name: 'Home', href: '/metarule' }, { name: 'Blogs', href: '/metarule/blogs' }, { name: 'Publications', href: '/metarule/publications' }, { name: 'MetaRule Insights', href: '/metarule/documents' }] },
+        { name: 'Know Us', href: '', children: [{ name: 'About Us', href: '/about' }, { name: 'Contact Us', href: '/contact' }] },
         { name: 'Services', href: '/services', children: [] },
-        { name: 'Know us', href: '', children: [{ name: 'About us', href: '/about' }, { name: 'Contact us', href: '/contact' }] },
     ];
 
     // Don't render dynamic content until mounted
@@ -146,15 +146,15 @@ const Header: FC<props> = ({
                                                                                     className="group flex items-center gap-3 rounded-lg p-3 text-sm font-medium no-underline outline-none transition-all duration-200 hover:bg-red-500/10 hover:border-red-500/20 border border-transparent backdrop-blur-sm"
                                                                                     href={href}
                                                                                 >
-                                                                                    <div className="flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-red-500/20 to-red-600/20 group-hover:from-red-500/30 group-hover:to-red-600/30 transition-all duration-200">
+                                                                                    {/* <div className="flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-red-500/20 to-red-600/20 group-hover:from-red-500/30 group-hover:to-red-600/30 transition-all duration-200">
                                                                                         <div className="h-3 w-3 rounded-sm bg-red-500 group-hover:bg-red-400 transition-colors duration-200"></div>
-                                                                                    </div>
+                                                                                    </div> */}
                                                                                     <div className="flex flex-col">
                                                                                         <div className={`${isMetaruleSection ? 'text-black' : 'text-white'} group-hover:text-red-400 font-semibold transition-colors duration-200`}>
                                                                                             {name}
                                                                                         </div>
                                                                                         <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors duration-200">
-                                                                                            Explore {name.toLowerCase()}
+                                                                                            Explore {name}
                                                                                         </div>
                                                                                     </div>
                                                                                 </a>

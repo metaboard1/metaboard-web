@@ -2,7 +2,7 @@ import { type FC } from "react";
 import { Badge } from "@/components/ui";
 
 type HeroSectionTypes = {
-    page: 'publications' | 'home' | 'blog' | 'document'
+    page: 'publications' | 'home' | 'blog' | 'MetaRule Insights'
 }
 
 const HeroSection: FC<HeroSectionTypes> = ({
@@ -27,10 +27,10 @@ const HeroSection: FC<HeroSectionTypes> = ({
             spanTitle: 'Excellence',
             description: 'Dive into a curated collection of impactful books, thought-provoking narratives, and insightful works that inspire, inform, and spark meaningful conversations.'
         },
-        document: {
+        'MetaRule Insights': {
             badgeText: 'MetaRule Insights',
-            cardTitle: 'Documents That Matter and',
-            spanTitle: 'Insights That Inspire',
+            cardTitle: 'Insights',
+            spanTitle: 'That Inspire',
             description: 'Discover meaningful documents and fresh perspectives that spark curiosity, ignite inspiration, and offer deeper understanding of the digital world around us.'
         },
     }
@@ -38,9 +38,9 @@ const HeroSection: FC<HeroSectionTypes> = ({
         <section className="flex items-center py-20 mt-[50px] sm:h-auto overflow-hidden">
             <div className="container px-4 sm:px-6 lg:px-8">
                     <div className="sm:p-8 rounded-2xl sm:max-w-3xl">
-                        <Badge className="mb-4 bg-primary text-primary-foreground">
+                        {/* <Badge className="mb-4 bg-primary text-primary-foreground">
                             {content[page].badgeText}
-                        </Badge>
+                        </Badge> */}
                         <div className="text-3xl sm:text-5xl font-bold text-foreground mb-6 leading-tight">
                             <h1>
                                 {content[page].cardTitle}{'\n'}

@@ -91,7 +91,7 @@ const OurServicesSection = () => {
                                         <div
                                             onMouseEnter={() => swiperInstance.autoplay.stop()}
                                             onMouseLeave={() => swiperInstance.autoplay.start()}
-                                            className="glass-hover bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:bg-white/10 hover:border-red-600/30 hover:scale-105 relative group"
+                                            className="glass-hover bg-white/5 backdrop-blur-md border-2 border-white/10 rounded-2xl p-6 transition-all duration-300 hover:bg-white/10 hover:border-red-600/30 hover:scale-105 relative group"
                                         >
                                             <div className="flex justify-center mb-6 mt-8">
                                                 <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center group-hover:bg-primary transition-colors duration-300">

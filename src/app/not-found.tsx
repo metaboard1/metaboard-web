@@ -53,7 +53,7 @@ const NotFound = () => {
                     {/* Additional Help Text */}
                     <div className="mt-16">
                         <p className="text-white/70 text-sm md:text-base">
-                            Need assistance? Contact our support team or browse our knowledge centre for legal education resources.
+                            Need assistance? Contact our support team or browse our knowledge Centre for legal education resources.
                         </p>
                     </div>
                 </div>

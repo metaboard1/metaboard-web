@@ -47,7 +47,7 @@ const DocumentListingSection: FC<props> = ({
         <div id="blogListSection" className="container px-4 sm:px-6 lg:px-8 py-12 space-y-10">
             {/* Controls */}
             <FilterSection
-                filterTitle='Document'
+                filterTitle='Insight'
                 totalRecords={recordsCount}
                 onSearch={handleSearch}
                 defaultSearch={query}

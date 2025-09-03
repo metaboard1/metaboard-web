@@ -18,7 +18,7 @@ const Header: FC = () => {
                     <Link href="/" className="flex items-center">
                         <img
                             src="/assets/images/logo.png"
-                            alt="Metaboard Logo"
+                            alt="MetaBoard Logo"
                             className="h-8 w-auto"
                         />
                     </Link>
