@@ -38,7 +38,7 @@ interface PublicationInterface {
     price: number;
     coverImage: string;
     coverUrl: string;
-    storeLinks:Object;
+    storeLink: string;
 }
 
 interface DocumentInterface {

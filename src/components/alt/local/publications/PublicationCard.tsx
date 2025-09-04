@@ -73,8 +73,8 @@ const PublicationCard: FC<props> = ({
                                     </Button>
                                 </DialogTrigger>
                                 <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto bg-background/95">
-                                    <DialogHeader>
-                                        <DialogTitle className="font-bold text-foreground">
+                                    <DialogHeader className="py-2 flex items-center">
+                                        <DialogTitle className="font-bold text-2xl text-foreground mr-7 line-clamp-1">
                                             {data.title}
                                         </DialogTitle>
                                     </DialogHeader>
@@ -98,6 +98,14 @@ const PublicationCard: FC<props> = ({
                                             </div>
                                             <div className="flex gap-2 flex-wrap">
                                                 {
+                                                    data.storeLink && <Link className="" href={data.storeLink} target="_blank">
+                                                        <Button>
+                                                            <ExternalLink className="w-4 h-4 mr-2" />
+                                                            Store Link
+                                                        </Button>
+                                                    </Link>
+                                                }
+                                                {/* {
                                                     Object.entries(data.storeLinks).filter(([_, value]) => value).map(([key, value]) =>
                                                         <Link className="" href={value} target="_blank">
                                                             <Button>
@@ -105,7 +113,7 @@ const PublicationCard: FC<props> = ({
                                                                 {key.charAt(0).toUpperCase() + key.substring(1, key.length)}
                                                             </Button>
                                                         </Link>)
-                                                }
+                                                } */}
                                                 <Button variant="outline" className="border-glass">
                                                     <Share2 className="w-4 h-4" />
                                                 </Button>
