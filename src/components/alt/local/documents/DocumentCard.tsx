@@ -87,10 +87,10 @@ const DocumentCard: FC<props> = ({
                     <Eye className="w-4 h-4 mr-2" />
                     Preview
                 </Button>
-                <Button variant="outline" size="sm" className="flex-1" onClick={handleDownload}>
+                {/* <Button variant="outline" size="sm" className="flex-1" onClick={handleDownload}>
                     <Download className="w-4 h-4 mr-2" />
                     Download
-                </Button>
+                </Button> */}
             </div>
         </Card>
 

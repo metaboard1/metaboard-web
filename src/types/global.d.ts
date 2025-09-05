@@ -39,6 +39,7 @@ interface PublicationInterface {
     coverImage: string;
     coverUrl: string;
     storeLink: string;
+    authors: string;
 }
 
 interface DocumentInterface {

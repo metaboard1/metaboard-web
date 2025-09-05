@@ -100,13 +100,13 @@ const FilterSection: FC<props> = ({
                                 # {tag.name}
                             </Badge>)
                         }
-                        <Badge
+                        {/* <Badge
                             variant='outline'
                             className='cursor-pointer'
                             onClick={() => onSearch('')}
                         >
                             Show all
-                        </Badge>
+                        </Badge> */}
                     </div>
                 }
             </div>

@@ -26,19 +26,6 @@ const PublicationCard: FC<props> = ({
                         className="w-full h-64 object-cover transition-transform group-hover:scale-105"
                         loading='lazy'
                     />
-                    <div className="absolute top-3 left-3">
-                        {/* <Badge
-                            variant={publication.status === 'New Release' ? 'default' : 'secondary'}
-                            className="glass text-xs"
-                        >
-                            {publication.status}
-                        </Badge> */}
-                    </div>
-                    <div className="absolute top-3 right-3">
-                        {/* <Badge variant="outline" className="text-xs border-glass">
-                            {publication.type}
-                        </Badge> */}
-                    </div>
                 </div>
 
                 {/* Content */}
@@ -131,30 +118,24 @@ const PublicationCard: FC<props> = ({
                                             <div>
                                                 <h4 className="text-lg font-semibold mb-2">Author</h4>
                                                 <div className="space-y-4">
-                                                    <div className="flex gap-4">
-                                                        {/* <Avatar className="w-12 h-12">
-                                            <AvatarImage src={author.image} alt={author.name} />
-                                            <AvatarFallback>{author.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                                          </Avatar> */}
-                                                        <div className="flex-1">
-                                                            <h5 className="font-medium text-foreground">Dr. Sarah Mitchell</h5>
-                                                            <p className="text-sm text-primary">Legal Tech Research Director</p>
-                                                            <p className="text-sm text-muted-foreground mt-1">Dr. Sarah Mitchell is a leading expert in legal technology with over 15 years of experience in law firm innovation. She holds a JD from Harvard Law School and a PhD in Computer Science from MIT.</p>
-                                                        </div>
-                                                    </div>
+                                                    <ul className="list-disc text-sm text-muted-foreground ml-4">
+                                                        {
+                                                            data.authors.split(',').map((e, i) => <li>{e}</li>)
+                                                        }
+                                                    </ul>
                                                 </div>
                                             </div>
-                                            <div className="flex gap-4">
+                                            {/* <div className="flex gap-4">
 
-                                                {/* <Button variant="outline" className="border-glass ">
+                                                <Button variant="outline" className="border-glass ">
                                                     <Download className="w-4 h-4 mr-2" />
                                                     Sample Chapter
-                                                </Button> */}
+                                                </Button>
                                                 <Button variant="outline" className="border-glass">
                                                     <User className="w-4 h-4 mr-2" />
                                                     Contact Author
                                                 </Button>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                 </DialogContent>
