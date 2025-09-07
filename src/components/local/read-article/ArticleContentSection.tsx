@@ -22,7 +22,7 @@ const ArticleContentSection: FC<props> = ({
                     {/* Main Content */}
                     <div className={`${relatedArticles.length ? 'lg:col-span-2' : 'lg:col-span-3'}`}>
 
-                        <div className="article-content text-white">
+                        <div className="article-content text-white text-lg">
                             <style dangerouslySetInnerHTML={{ __html: articleCss }} />
                             <div dangerouslySetInnerHTML={{ __html: articleHtml }} />
                         </div>

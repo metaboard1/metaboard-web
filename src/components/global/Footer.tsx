@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github, ArrowRight, Instagram, X } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Instagram } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -48,29 +48,12 @@ const Footer = () => {
                                 target="_blank"
                                 className="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300"
                             >
-                                {/* <X size={18} /> */}
-                                {/* <Image
-                                    src="/x-logo.svg"
+                                <Image
+                                    src="/assets/svg/x-logo.svg"
                                     alt="MetaBoard Logo"
-                                    className="h-8 w-auto"
-                                    width={5}
-                                    height={5}
-                                /> */}
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    // width={size}
-                                    // height={size}
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="#fff"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    aria-hidden="true"
-                                    // {...props}
-                                >
-                                    <path d="M18 6L6 18M6 6l12 12" />
-                                </svg>
+                                    width={15}
+                                    height={15}
+                                />
                             </Link>
                             <Link
                                 href="https://www.instagram.com/_metaboard?igsh=MWRtOTJ5dWRmODQzbA%3D%3D"

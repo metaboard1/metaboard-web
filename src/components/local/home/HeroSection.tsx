@@ -19,7 +19,7 @@ const HeroSection: FC = () => {
                     <span className="text-gradient">MetaBoard</span>
                 </h1>
 
-                <p className="text-xl md:text-2xl text-gray-200 mb-8 font-light leading-relaxed">
+                <p className="text-lg md:text-2xl text-gray-200 mb-8 font-light leading-relaxed">
                     Empowering lawyers & students with cutting-edge technology & education.
                     <br />
                     <span className="text-red-400">The technical arm of Metarion.</span>
@@ -29,7 +29,7 @@ const HeroSection: FC = () => {
 
                     <Link
                         href='/services'
-                        className="group bg-primary hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 ripple-effect flex items-center gap-2"
+                        className="group bg-primary hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold text-md md:text-lg transition-all duration-300 ripple-effect flex items-center gap-2"
                     >
                         <BookOpen size={20} />
                         Explore Services
@@ -38,7 +38,7 @@ const HeroSection: FC = () => {
 
                     <Link
                         href='#services'
-                        className="glass-hover text-white px-8 py-4 rounded-full font-semibold text-lg border border-white/20 flex items-center gap-2"
+                        className="glass-hover text-white px-8 py-4 rounded-full font-semibold text-md md:text-lg  border border-white/20 flex items-center gap-2"
                     >
                         Learn More
                     </Link>

@@ -334,14 +334,14 @@ const AboutUs = () => {
                                                         strokeWidth="2"
                                                         strokeLinecap="round"
                                                         strokeLinejoin="round"
-                                                        className="text-blue-600"
+                                                        className="text-white"
                                                     >
                                                         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                                                         <rect width="4" height="12" x="2" y="9" />
                                                         <circle cx="4" cy="4" r="2" />
                                                     </svg>
                                                 </a>
-                                                <a
+                                                {/* <a
                                                     href="#"
                                                     className="w-10 h-10 bg-transparent rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors shadow-lg cursor-pointer"
                                                     aria-label={`${member.name} X/Twitter`}
@@ -357,7 +357,7 @@ const AboutUs = () => {
                                                     >
                                                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                                                     </svg>
-                                                </a>
+                                                </a> */}
                                             </div>
                                         </div>
 
