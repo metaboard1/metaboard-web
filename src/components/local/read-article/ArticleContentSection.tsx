@@ -28,8 +28,6 @@ const ArticleContentSection: FC<props> = ({
                         </div>
 
                     </div>
-
-                    {/* Sidebar */}
                     {
                         !!relatedArticles.length &&
                         <div className="col-span-1">

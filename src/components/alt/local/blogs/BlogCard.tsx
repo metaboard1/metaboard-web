@@ -35,8 +35,8 @@ const BlogCard: FC<props> = ({
                         <h3 className="text-lg md:text-xl font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2">
                             {data.title}
                         </h3>
-                        <p className="text-sm text-muted-foreground font-medium hidden line-clamp-3 sm:block ">
-                            {data.description}
+                        <p className="text-sm text-muted-foreground font-medium  line-clamp-3 ">
+                            {data.description}  {data.description}
                         </p>
                     </Link>
 

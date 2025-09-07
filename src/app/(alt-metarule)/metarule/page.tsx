@@ -43,11 +43,11 @@ const MetaRule = async () => {
                         {/* Section Header */}
                         <div className="text-center mb-12">
                             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                                About the{" "}
-                                <span className="underline decoration-primary"> Founder</span>
+                                MetaRule™
+                                {/* <span className="underline decoration-primary"> Founder</span> */}
                             </h2>
                             <p className="text-md sm:text-lg text-gray-600 mx-auto">
-                                Meet the visionary behind MetaRule's legal and technology innovations
+                                a rule that describes how other rules should be used (as in AI) formula, rule - (mathematics) a standard procedure for solving a class of mathematical problems; <br/> "he determined the upper bound with Descartes' rule of signs"; <br/>"he gave us a general formula for attacking polynomials" A rule governing the content, form, or application of other rules.
                             </p>
                         </div>
 
@@ -109,8 +109,7 @@ const MetaRule = async () => {
             </div>
 
         </div>
-    </>
-    );
+    </>);
 };
 
 export default MetaRule;

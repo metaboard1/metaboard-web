@@ -34,6 +34,16 @@ const HeroSection: FC = () => {
                     </cite>
                 </blockquote>
             </div>
+              <div className="text-center absolute bottom-20 right-0 left-0">
+                <div className="inline-flex flex-col items-center text-gray-400 group">
+                    {/* <span className="text-sm font-medium mb-2">
+                        Scroll for more details!
+                    </span> */}
+                    <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+                        <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-bounce"></div>
+                    </div>
+                </div>
+            </div>
         </section>
     );
 }

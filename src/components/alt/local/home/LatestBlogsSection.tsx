@@ -47,13 +47,13 @@ const LatestBlogsSection: FC<{
                             <div className="p-6">
                                 <div className="space-y-3">
                                     <div>
-                                        <div className="flex gap-2">
+                                        {/* <div className="flex gap-2 flex-wrap">
                                             {
-                                                blog.tags.map((e, i) => <Badge key={i} variant="outline" className="mb-2 text-xs">
+                                                blog.tags.slice(0,3).map((e, i) => <Badge key={i} variant="outline" className="mb-2 text-xs">
                                                     # {e}
                                                 </Badge>)
                                             }
-                                        </div>
+                                        </div> */}
 
                                         <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
                                             {blog.title}

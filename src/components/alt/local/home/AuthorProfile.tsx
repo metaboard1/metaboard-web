@@ -4,7 +4,7 @@ import { ChevronDown, ChevronUp, Linkedin, Mail, TwitterIcon } from "lucide-reac
 import { Button, Card } from "../../ui"
 import { useState } from "react";
 import Link from "next/link";
-
+import TwitterSVG from '../../../../assets/svg/XLogo';
 
 const AuthorProfile = () => {
 
@@ -12,7 +12,7 @@ const AuthorProfile = () => {
 
     const socialLinks = [
         { icon: Linkedin, href: 'https://www.linkedin.com/in/rodneydryder', label: 'LinkedIn' },
-        { icon: TwitterIcon, href: 'https://x.com/Rodney_D_Ryder', label: 'Twitter' },
+        { icon: TwitterSVG, href: 'https://x.com/Rodney_D_Ryder', label: 'Twitter' },
         { icon: Mail, href: 'mailto:rodney@scribboard.com', label: 'Email' },
     ];
 
@@ -35,8 +35,8 @@ const AuthorProfile = () => {
                 {/* Profile Info */}
                 <div className="flex-1 space-y-4">
                     <div>
-                        <h2 className="text-2xl font-bold text-foreground mb-1">Mr. Rodney D Ryder</h2>
-                        <p className="text-sm sm:text-md text-glass mb-2">Founding Partner</p>
+                        <h2 className="text-2xl font-bold text-foreground mb-1">Rodney D Ryder</h2>
+                        <p className="text-sm sm:text-md text-glass mb-2">Founding Partner, Scriboard [Advocates and Legal Consultants]</p>
                         <p className="text-sm sm:text-md text-muted-foreground">Exceptional Lawyer in Technology, Data Privacy, Intellectual Property, and New Media Laws</p>
                     </div>
 

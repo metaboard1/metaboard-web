@@ -4,12 +4,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, Plus, Minus } from 'lucide-react';
 import { servicesData } from '@/appData';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import '../../../styles/swiper.css';
-import { Button } from '@/components/ui';
 import Link from 'next/link';
 
 const OurServicesSection = () => {
@@ -41,7 +40,6 @@ const OurServicesSection = () => {
                 : [...prev, serviceId]
         );
     };
-
 
     return (
         <section id="services" className="py-20 bg-black relative overflow-hidden">
@@ -91,7 +89,7 @@ const OurServicesSection = () => {
                                         <div
                                             onMouseEnter={() => swiperInstance.autoplay.stop()}
                                             onMouseLeave={() => swiperInstance.autoplay.start()}
-                                            className="glass-hover bg-white/5 backdrop-blur-md border-2 border-white/10 rounded-2xl p-6 transition-all duration-300 hover:bg-white/10 hover:border-red-600/30 hover:scale-105 relative group"
+                                            className="glass-hover bg-white/5 backdrop-blur-md border-2 border-white/10 rounded-2xl p-6 transition-all duration-300 hover:bg-white/10 hover:border-red-600/30 relative group"
                                         >
                                             <div className="flex justify-center mb-6 mt-8">
                                                 <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center group-hover:bg-primary transition-colors duration-300">

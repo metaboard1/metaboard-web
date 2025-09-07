@@ -52,7 +52,7 @@ const HeroSection: FC = () => {
                     <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
                 </div>
             </div> */}
-              <div className="text-center absolute bottom-20 right-0 left-0">
+            <div className="text-center absolute bottom-20 right-0 left-0">
                 <div className="inline-flex flex-col items-center text-gray-400 group">
                     {/* <span className="text-sm font-medium mb-2">
                         Scroll for more details!
