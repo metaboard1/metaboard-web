@@ -127,7 +127,7 @@ const Footer = () => {
                 <div className="container mx-auto px-6 py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <p className="text-gray-400 text-sm">
-                            © 2025 MetaBoard. All rights reserved. A division of Metarion Knowledge Solutions Private Limited.
+                            © 2025 MetaBoard. All rights reserved. Metarion Knowledge Solutions Private Limited.
                         </p>
                         <p className="text-gray-500 text-sm mt-2 md:mt-0">
                             Built with precision and innovation.

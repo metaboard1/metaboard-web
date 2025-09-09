@@ -14,15 +14,15 @@ const HeroSection: FC = () => {
 
             {/* Content */}
             <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-                <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-                    Welcome to{' '}
-                    <span className="text-gradient">MetaBoard</span>
+                <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold text-white mb-6 leading-tight">
+                    {/* Welcome to{' '} */}
+                    MetaBoard
+                    <sup className="text-3xl md:text-4xl lg:text-6xl">®</sup>
+                    {/* <span className="text-gradient">MetaBoard</span> */}
                 </h1>
 
                 <p className="text-lg md:text-2xl text-gray-200 mb-8 font-light leading-relaxed">
-                    Empowering lawyers & students with cutting-edge technology & education.
-                    <br />
-                    <span className="text-red-400">The technical arm of Metarion.</span>
+                    A transformative platform for learning, development and training, bridging the gaps between law, technology, and artificial intelligence to empower individuals across all fields.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
