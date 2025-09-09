@@ -29,7 +29,7 @@ interface BlogInterface {
 interface PublicationInterface {
     id: number;
     title: string;
-    subTitle: string;
+    // subTitle: string;
     description: string;
     isbn: string;
     pages: number;

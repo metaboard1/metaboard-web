@@ -1,11 +1,10 @@
 import { type FC } from "react";
-import { Calendar, Download, ExternalLink, Share2, User } from "lucide-react";
-import { Badge, Button, Card, DialogHeader } from "../../ui";
+import { Calendar, ExternalLink, Share2 } from "lucide-react";
+import { Button, Card, DialogHeader } from "../../ui";
 import { Dialog, DialogContent, DialogTitle, DialogTrigger, } from '../../ui';
 import dayjs from "dayjs";
 import Link from "next/link";
 import Image from "next/image";
-import { BASE_ASSETS_URL } from "@/constants";
 
 type props = {
     data: PublicationInterface;
@@ -31,25 +30,28 @@ const PublicationCard: FC<props> = ({
                 {/* Content */}
                 <div className="p-6">
                     <div className="space-y-4">
-                        <div>
-                            <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                                {data.title}
-                            </h3>
-                            <p className="text-sm text-muted-foreground font-medium line-clamp-1">
+                        <div className="space-y-3">
+                            <div>
+                                <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                                    {data.title}
+                                </h3>
+                                {/* <p className="text-sm text-muted-foreground font-medium line-clamp-1">
                                 {data.subTitle}
+                            </p> */}
+                            </div>
+
+                            <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                                {data.description}
                             </p>
-                        </div>
 
-                        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
-                            {data.description}
-                        </p>
-
-                        <div className="flex items-center justify-between text-xs text-glass">
-                            <div className="flex items-center gap-1">
-                                <Calendar className="w-3 h-3" />
-                                {dayjs(data.publicationDate).format("MM YYYY")}
+                            <div className="flex items-center justify-between text-xs text-glass">
+                                <div className="flex items-center gap-1">
+                                    <Calendar className="w-3 h-3" />
+                                    {dayjs(data.publicationDate).format("MM YYYY")}
+                                </div>
                             </div>
                         </div>
+
 
                         {/* Action Buttons */}
                         <div className="flex gap-2 pt-2">
@@ -60,7 +62,7 @@ const PublicationCard: FC<props> = ({
                                     </Button>
                                 </DialogTrigger>
                                 <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto bg-background/95">
-                                    <DialogHeader className="py-2 flex items-center">
+                                    <DialogHeader className="py-2 flex">
                                         <DialogTitle className="font-bold text-2xl text-foreground mr-7 line-clamp-1">
                                             {data.title}
                                         </DialogTitle>
