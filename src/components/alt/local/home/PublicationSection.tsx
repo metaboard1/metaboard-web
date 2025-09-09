@@ -5,7 +5,6 @@ import Image from "next/image";
 import dayjs from "dayjs";
 import { Calendar, ExternalLink, Share2 } from "lucide-react";
 import { Badge, Button, Card } from "../../ui";
-import { BASE_ASSETS_URL } from "@/constants";
 
 
 const PublicationSection: FC<{
@@ -57,9 +56,9 @@ const PublicationSection: FC<{
                                         <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
                                             {publication.title}
                                         </h3>
-                                        <p className="text-sm text-muted-foreground font-medium">
+                                        {/* <p className="text-sm text-muted-foreground font-medium">
                                             {publication.subTitle}
-                                        </p>
+                                        </p> */}
                                     </div>
 
                                     <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
