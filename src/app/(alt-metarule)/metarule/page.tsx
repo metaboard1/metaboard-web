@@ -2,6 +2,7 @@ export const revalidate = 120;
 export const dynamic = 'force-static';
 export const dynamicParams = true;
 
+import { Metadata } from "next";
 import {
     AuthorProfile,
     BrowseByTagSection,
@@ -12,6 +13,12 @@ import {
 } from "@/components/alt/local/home";
 import { $crud } from "@/factory/crudFactory";
 import { BookOpen, FileText } from "lucide-react";
+
+
+
+export const metadata: Metadata = {
+    title: 'MetaRule',
+};
 
 const MetaRule = async () => {
 
@@ -29,9 +36,6 @@ const MetaRule = async () => {
     } catch (error) {
         console.error('Error fetching article:', error);
     }
-
-
-
     return (<>
         <div>
             {/* Hero Section */}

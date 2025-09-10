@@ -2,11 +2,16 @@ export const revalidate = 120;
 export const dynamic = 'force-static';
 export const dynamicParams = true;
 
+import { Metadata } from 'next';
 import { HeroSection } from '@/components/alt/global';
 import { PublicationListingSection } from '@/components/alt/local/publications';
 import { ScrollToTopBtn } from '@/components/global';
 import { $crud } from '@/factory/crudFactory';
 
+
+export const metadata: Metadata = {
+    title: 'MetaRule | Publications',
+};
 
 const Publications = async ({
     params,

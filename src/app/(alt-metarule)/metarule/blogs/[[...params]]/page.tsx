@@ -6,8 +6,12 @@ import { HeroSection } from '@/components/alt/global';
 import { BlogListingSection } from '@/components/alt/local/blogs';
 import { ScrollToTopBtn } from '@/components/global';
 import { $crud } from '@/factory/crudFactory';
+import { Metadata } from 'next';
 
 
+export const metadata: Metadata = {
+    title: 'MetaRule | Blogs',
+};
 
 const Blogs = async ({
     params,

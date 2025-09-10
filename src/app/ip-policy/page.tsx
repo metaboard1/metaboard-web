@@ -1,9 +1,15 @@
-"use client";
 
 import React from "react";
-import { Shield, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { ScrollToTopBtn, HeroSection } from "@/components/global";
 import Link from "next/link";
+import { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+    title: 'IP Policy',
+};
+
 
 const IpPolicy = () => {
     return (<>
@@ -138,7 +144,7 @@ const IpPolicy = () => {
                                         If you believe that any content on the Metaboard® platform, website, or services infringes your copyright, trademark, or other intellectual property rights, please submit a detailed notice to:
                                     </p>
                                     <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                        <li>info@metaboard.com</li>
+                                        <li>service.metaboard@gmail.com</li>
                                     </ul>
                                 </div>
 

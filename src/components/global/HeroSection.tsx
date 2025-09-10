@@ -41,7 +41,7 @@ const HeroSection: FC<props> = ({  heading, headingSpan, description, note }) =>
                             <div className="flex items-center justify-center space-x-2">
                                 <Mail className="w-4 h-4 text-red-600" />
                                 <span className="text-sm text-gray-600">
-                                    info@metaboard.com
+                                    service.metaboard@gmail.com
                                 </span>
                             </div>
                         </div>

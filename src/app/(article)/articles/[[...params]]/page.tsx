@@ -3,10 +3,16 @@ export const dynamic = 'force-static';
 export const dynamicParams = true;
 
 import React from 'react';
+import { Metadata } from 'next';
 import { ArticleListingSection, BrowseByTagsSection } from '@/components/local/articles';
 import { $crud } from '@/factory/crudFactory';
-import { ArticleHeroSection as FeaturedArticle, Footer, Header, ScrollToTopBtn, SearchBar } from '@/components/global';
+import { ArticleHeroSection as FeaturedArticle, ScrollToTopBtn } from '@/components/global';
 import { SearchArticleProvider } from '@/context/SearchArticleContext';
+
+
+export const metadata: Metadata = {
+    title: 'Articles',
+};
 
 const Articles = async ({
     params,

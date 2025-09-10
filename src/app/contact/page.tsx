@@ -1,10 +1,13 @@
-"use client";
 
+import { Metadata } from 'next';
 import React, { type FC } from "react";
 import { Mail, Phone, MapPin, NotepadText, Home } from "lucide-react";
 import { HeroSection, ScrollToTopBtn } from "@/components/global";
 import { ContactForm } from "@/components/local/contact";
 
+export const metadata: Metadata = {
+    title: 'Contact',
+};
 
 const ContactUs: FC = () => {
 
@@ -64,7 +67,7 @@ const ContactUs: FC = () => {
                                         <div>
                                             <h5 className="font-medium mb-1 text-sm">Email</h5>
                                             <p className="text-red-100 text-sm">
-                                                info@metaboard.com
+                                                service.metaboard@gmail.com
                                             </p>
                                         </div>
                                     </div>

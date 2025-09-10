@@ -1,9 +1,14 @@
-"use client";
 
 import React from "react";
-import { FileText, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { HeroSection, ScrollToTopBtn } from "@/components/global";
 import Link from "next/link";
+import { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+    title: 'Terms of Use',
+};
 
 const TermsOfService = () => {
     return (
@@ -354,7 +359,7 @@ const TermsOfService = () => {
                                             <div className="flex items-center space-x-2">
                                                 <Mail className="w-4 h-4 text-red-600" />
                                                 <span className="text-gray-700">
-                                                    Email: info@metaboard.com
+                                                    Email: service.metaboard@gmail.com
                                                 </span>
                                             </div>
                                         </div>

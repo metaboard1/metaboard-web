@@ -1,9 +1,14 @@
-"use client";
 
 import React from "react";
-import { Shield, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { ScrollToTopBtn, HeroSection } from "@/components/global";
 import Link from "next/link";
+import { Metadata } from "next";
+
+
+export const metadata: Metadata= {
+    title: 'Privacy Policy',
+};
 
 const PrivacyPolicy = () => {
     return (<>
@@ -173,7 +178,7 @@ const PrivacyPolicy = () => {
                                     </h2>
                                     <p className="text-gray-700">
                                         You may request deletion of your personal data by writing
-                                        to us at info@metaboard.com. We will assess and comply
+                                        to us at service.metaboard@gmail.com. We will assess and comply
                                         with such requests in accordance with law. Some
                                         information may be retained for legal or operational
                                         purposes, or stored in secure backups where immediate
@@ -256,7 +261,7 @@ const PrivacyPolicy = () => {
                                         <div className="flex items-center space-x-2 mt-2">
                                             <Mail className="w-4 h-4 text-red-600" />
                                             <span className="text-gray-700">
-                                                Email: info@metaboard.com
+                                                Email: service.metaboard@gmail.com
                                             </span>
                                         </div>
                                     </div>

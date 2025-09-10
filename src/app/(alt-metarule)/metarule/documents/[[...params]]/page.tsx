@@ -6,7 +6,12 @@ import { HeroSection } from "@/components/alt/global";
 import { DocumentListingSection } from "@/components/alt/local/documents";
 import { ScrollToTopBtn } from "@/components/global";
 import { $crud } from "@/factory/crudFactory";
+import { Metadata } from "next";
 
+
+export const metadata: Metadata = {
+    title: 'MetaRule | Insights',
+};
 
 const Documents = async ({
     params,

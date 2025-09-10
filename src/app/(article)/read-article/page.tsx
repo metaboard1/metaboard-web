@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { ArticleHeroSection, ScrollToTopBtn } from '@/components/global';
 import { ArticleContentSection, ExploreMoreSection, ArticleScrollProgress } from '@/components/local/read-article';
 import { $crud } from '@/factory/crudFactory';
@@ -7,6 +8,11 @@ type PageProps = {
 };
 
 export const dynamic = 'force-dynamic';
+
+
+export const metadata: Metadata = {
+    title: 'Article |',
+};
 
 const Read = async ({ searchParams }: PageProps) => {
 

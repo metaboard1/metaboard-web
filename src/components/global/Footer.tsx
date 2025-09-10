@@ -102,9 +102,9 @@ const Footer = () => {
                         <h3 className="text-xl font-semibold mb-6">Stay Connected</h3>
 
                         <div className="space-y-3 mb-6">
-                            <a className="flex items-center gap-3 text-gray-400" href='mailto:info@metaboard.com'>
+                            <a className="flex items-center gap-3 text-gray-400" href='mailto:service.metaboard@gmail.com'>
                                 <Mail size={16} className="text-red-500" />
-                                <span>info@metaboard.com</span>
+                                <span>service.metaboard@gmail.com</span>
                             </a>
                             <a className="flex items-center gap-3 text-gray-400" href='tel:+911166351542'>
                                 <Phone size={16} className="text-red-500" />

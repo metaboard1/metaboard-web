@@ -1,8 +1,13 @@
 export const dynamic = 'force-dynamic';
 
+import { Metadata } from 'next';
 import { $crud } from '@/factory/crudFactory';
 import { ScrollToTopBtn } from '@components/global';
 import { AdvisoryBoardSection, ArticlesShowcase, HeroSection, OurServicesSection, OurVisionSection, UsefulLinksSection } from '@components/local/home';
+
+export const metadata: Metadata = {
+    title: 'MetaBoard',
+};
 
 const Home = async () => {
 
