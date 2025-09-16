@@ -106,7 +106,7 @@ const MetaRule = async () => {
                         <NewDocumentsFloatingCard
                             documentsList={documentsList}
                         />
-                        <BrowseByTagSection />
+                        {/* <BrowseByTagSection /> */}
                     </div>
                 </div>
 

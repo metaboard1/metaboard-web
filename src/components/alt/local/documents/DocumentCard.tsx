@@ -22,14 +22,14 @@ const DocumentCard: FC<props> = ({
 
     const onPreview = () => window.open(`https://docs.google.com/gview?url=${data.fileUrl}`, "_blank", "noopener,noreferrer");
 
-    const handleDownload = () => {
-        const link = document.createElement("a");
-        link.href = data.fileUrl;
-        link.setAttribute("download", data.file);
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
-    };
+    // const handleDownload = () => {
+    //     const link = document.createElement("a");
+    //     link.href = data.fileUrl;
+    //     link.setAttribute("download", data.file);
+    //     document.body.appendChild(link);
+    //     link.click();
+    //     link.remove();
+    // };
 
 
     return (<>
@@ -46,7 +46,7 @@ const DocumentCard: FC<props> = ({
                         </div>
                 }
                 <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-foreground text-lg leading-tight mb-2">
+                    <h3 className="font-semibold text-foreground text-lg leading-tight mb-2 line-clamp-1">
                         {data.title}
                     </h3>
                 </div>

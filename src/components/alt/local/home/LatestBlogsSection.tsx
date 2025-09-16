@@ -14,9 +14,6 @@ const LatestBlogsSection: FC<{
     blogsData
 }) => {
 
-        const handleBookmark = (blogId: number) => {
-            console.log('Bookmarked blog:', blogId);
-        };
 
         // const handleShare = (blog: typeof blogs[0]) => {
         //     if (navigator.share) {
@@ -55,7 +52,7 @@ const LatestBlogsSection: FC<{
                                             }
                                         </div> */}
 
-                                        <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
+                                        <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight line-clamp-1">
                                             {blog.title}
                                         </h3>
                                     </div>

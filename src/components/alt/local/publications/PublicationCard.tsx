@@ -28,8 +28,8 @@ const PublicationCard: FC<props> = ({
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                    <div className="space-y-4">
+                <div className="p-6 ">
+                    <div className="space-y-4 ">
                         <div className="space-y-3">
                             <div>
                                 <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2">
@@ -47,7 +47,7 @@ const PublicationCard: FC<props> = ({
                             <div className="flex items-center justify-between text-xs text-glass">
                                 <div className="flex items-center gap-1">
                                     <Calendar className="w-3 h-3" />
-                                    {dayjs(data.publicationDate).format("MM YYYY")}
+                                    {dayjs(data.publicationDate).format("MMM YYYY")}
                                 </div>
                             </div>
                         </div>

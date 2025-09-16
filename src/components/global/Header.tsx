@@ -42,7 +42,7 @@ const Header: FC<props> = ({
 
     const navItems = [
         { name: 'Home', href: '/', children: [] },
-        { name: 'Knowledge Centre', href: '', children: [{ name: 'Articles', href: '/articles' }] },
+        { name: 'Knowledge Centre', href: '', children: [{ name: 'Articles', href: '/articles' }, { name: 'MetaBoard Pro', href: '/metaboard-pro' }] },
         { name: 'MetaRule™', href: '/metarule', children: [{ name: 'Home', href: '/metarule' }, { name: 'Blogs', href: '/metarule/blogs' }, { name: 'Publications', href: '/metarule/publications' }, { name: 'MetaRule Insights', href: '/metarule/documents' }] },
         { name: 'Know Us', href: '', children: [{ name: 'About Us', href: '/about' }, { name: 'Contact Us', href: '/contact' }] },
         { name: 'Services', href: '/services', children: [] },
