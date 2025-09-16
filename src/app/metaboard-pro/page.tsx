@@ -67,7 +67,7 @@ const MetaBoardPro = () => {
                         </div>
 
                         {/* Quick Actions */}
-                        <div className="text-center">
+                        {/* <div className="text-center">
                             <div className="bg-primary rounded-xl p-8 text-white">
                                 <h3 className="text-2xl mb-4">
                                     Questions About Your Privacy?
@@ -93,7 +93,7 @@ const MetaBoardPro = () => {
                                     </Link>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>
