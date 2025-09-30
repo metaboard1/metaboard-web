@@ -46,7 +46,7 @@ const DocumentCard: FC<props> = ({
                         </div>
                 }
                 <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-foreground text-lg leading-tight mb-2 line-clamp-1">
+                    <h3 className="font-semibold text-foreground text-lg leading-tight mb-2 line-clamp-2">
                         {data.title}
                     </h3>
                 </div>

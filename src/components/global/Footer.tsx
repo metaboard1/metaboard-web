@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Instagram, LinkIcon } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -31,7 +31,7 @@ const Footer = () => {
                             />
                         </div>
                         <p className="text-gray-400 leading-relaxed mb-6">
-                            empowering legal professionals
+                            Empowering legal professionals
                             with cutting-edge technology and innovative educational resources.
                         </p>
 
@@ -102,6 +102,10 @@ const Footer = () => {
                         <h3 className="text-xl font-semibold mb-6">Stay Connected</h3>
 
                         <div className="space-y-3 mb-6">
+                            <a className="flex items-center gap-3 text-gray-400" href='https://scriboard.com' target='_blank'>
+                                <LinkIcon size={16} className="text-red-500" />
+                                <span>Scriboard</span>
+                            </a>
                             <a className="flex items-center gap-3 text-gray-400" href='mailto:service.metaboard@gmail.com'>
                                 <Mail size={16} className="text-red-500" />
                                 <span>service.metaboard@gmail.com</span>

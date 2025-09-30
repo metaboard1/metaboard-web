@@ -18,7 +18,7 @@ const Services = () => {
 
             <HeroSection
                 heading="Our"
-                headingSpan="Services"
+                headingSpan="Offerings"
                 description='We empower your legal tech journey by delivering tailored consulting, expert education, and innovative solutions that drive transformation. Our services help law firms, legal departments, and startups streamline operations, enhance efficiency, and embrace the future of legal technology. With our deep expertise and forward-thinking approach, we ensure you stay ahead in a rapidly evolving industry.'
                 note=""
             />
@@ -26,11 +26,11 @@ const Services = () => {
             <section className="py-20">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
-                        <h2
+                        {/* <h2
                             className={`text-4xl md:text-5xl font-bold text-black mb-4 `}
                         >
                             Our <span className="text-gradient">Offerings</span>
-                        </h2>
+                        </h2> */}
                         <p
                             className="text-lg sm:text-xl text-gray-600"
                         >

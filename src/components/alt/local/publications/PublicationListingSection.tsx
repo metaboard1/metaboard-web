@@ -2,7 +2,7 @@
 
 import { useRef, type FC } from "react";
 import PublicationCard from "./PublicationCard";
-import { Pagination2 } from "@/components/ui";
+import { Pagination } from "@/components/ui";
 import { FilterSection } from "../../global";
 import { useRouter } from "next/navigation";
 import { Loader } from "@/components/global";
@@ -76,7 +76,7 @@ const PublicationListingSection: FC<props> = ({
                 }
 
             </section>
-            <Pagination2
+            <Pagination
                 totalRecords={recordsCount}
                 limit={12}
                 currentPage={currentPage}

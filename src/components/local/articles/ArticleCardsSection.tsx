@@ -1,12 +1,9 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState, type FC } from "react"
-// import { BASE_ASSETS_URL } from "@/constants";
+import { useRef, type FC } from "react"
 import dayjs from "dayjs";
 import Link from "next/link";
-import { $crud } from "@/factory/crudFactory";
-import { useSearchArticle } from "@/context/SearchArticleContext";
-import { Pagination, Pagination2 } from "@/components/ui";
+import { Pagination } from "@/components/ui";
 import { Loader } from "@/components/global";
 import { useRouter } from "next/navigation";
 
@@ -16,9 +13,6 @@ type props = {
     recordsCount: number;
     currentPage: number;
     query: string;
-    // preloadedArticles: ArticleInterface[];
-    // totalArticles: number;
-    // limit: number;
 }
 
 const ArticleCardsSection: FC<props> = ({ articlesList, recordsCount, currentPage, query }) => {
@@ -42,55 +36,7 @@ const ArticleCardsSection: FC<props> = ({ articlesList, recordsCount, currentPag
         router.push(`/articles/0/${encodeURIComponent(value)}#st`);
     }
 
-    // const [articleListData, setArticleListData] = useState<{
-    //     data: ArticleInterface[],
-    //     page: number;
-    // }>({
-    //     data: preloadedArticles,
-    //     page: 0
-    // });
-    // const [isLoading, setIsLoading] = useState(false);
-
-    // const { search, setData } = useSearchArticle();
-
-    // useEffect(() => {
-    //     retrieveArticles(0, search);
-    // }, [search]);
-
-
-    // const retrieveArticles = useCallback(async (defaultPage: number, defaultSearch: string) => {
-    //     try {
-    //         setIsLoading(true);
-    //         const { data: { rows } } = await $crud.retrieve(`articles?page=${defaultPage}&search=${defaultSearch}`);
-
-    //         setArticleListData((prev) => ({
-    //             page: defaultPage,
-    //             data: rows
-    //         }));
-    //         if (search) {
-    //             setData(rows);
-    //         }
-    //         window.scrollTo({ top: 0, behavior: 'smooth' });
-    //     } catch (e) {
-    //         console.error(e);
-    //     } finally {
-    //         setIsLoading(false);
-    //     }
-    // }, [search]);
-
-
-    // const handlePageChange = (updatedPage: number) => {
-    //     setArticleListData((prev) => ({
-    //         ...prev,
-    //         page: updatedPage,
-    //     }));
-    //     retrieveArticles(updatedPage, search);
-    // }
     return (<>
-        {/* <div className="md:col-span-2"> */}
-        {/* <Loader
-            isVisible={isLoading}
-        /> */}
         <Loader ref={loaderRef} />
         <div className="flex flex-col gap-10">
 
@@ -135,13 +81,7 @@ const ArticleCardsSection: FC<props> = ({ articlesList, recordsCount, currentPag
                         No results found
                     </h3>
             }
-            {/* <Pagination
-                totalRecords={totalArticles}
-                limit={limit}
-                currentPage={articleListData.page}
-                onPageChange={handlePageChange}
-            /> */}
-            <Pagination2
+            <Pagination
                 totalRecords={recordsCount}
                 limit={10}
                 currentPage={currentPage}

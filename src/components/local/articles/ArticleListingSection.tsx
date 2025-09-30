@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, type FC } from "react";
-import { Pagination2 } from "@/components/ui";
+import { Pagination } from "@/components/ui";
 import { useRouter } from "next/navigation";
 import { Loader, SearchBar } from "@/components/global";
 import dayjs from "dayjs";
@@ -106,7 +106,7 @@ const ArticleListingSection: FC<props> = ({
                         No results found
                     </h3>
             }
-            <Pagination2
+            <Pagination
                 totalRecords={recordsCount}
                 limit={10}
                 currentPage={currentPage}

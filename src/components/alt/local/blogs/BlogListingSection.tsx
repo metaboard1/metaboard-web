@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, type FC } from "react";
-import { Pagination2 } from "@/components/ui";
+import { Pagination } from "@/components/ui";
 import { FilterSection } from "../../global";
 import BlogCard from "./BlogCard";
 import { useRouter } from "next/navigation";
@@ -73,7 +73,7 @@ const BlogListingSection: FC<props> = ({
                     }
                 </div>
             </section>
-            <Pagination2
+            <Pagination
                 totalRecords={recordsCount}
                 limit={12}
                 currentPage={currentPage}

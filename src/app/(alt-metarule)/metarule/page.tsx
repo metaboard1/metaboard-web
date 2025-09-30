@@ -5,7 +5,6 @@ export const dynamicParams = true;
 import { Metadata } from "next";
 import {
     AuthorProfile,
-    BrowseByTagSection,
     HeroSection,
     LatestBlogsSection,
     NewDocumentsFloatingCard,
